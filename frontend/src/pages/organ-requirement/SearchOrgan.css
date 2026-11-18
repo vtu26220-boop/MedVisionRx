@@ -1,0 +1,757 @@
+/* ============================================================
+   SEARCH ORGAN - REGISTERED DONOR DIRECTORY
+============================================================ */
+
+.search-organ-page {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 24px 22px 45px;
+  box-sizing: border-box;
+}
+
+.search-organ-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.search-organ-eyebrow {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #3978db;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .1em;
+}
+
+.search-organ-header h1 {
+  margin: 0;
+  color: #18253a;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 780;
+}
+
+.search-organ-header p {
+  margin: 8px 0 0;
+  color: #77859b;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.search-organ-directory-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid #dce9fb;
+  border-radius: 9px;
+  background: #f4f8ff;
+  color: #3476cf;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.search-organ-filter-panel {
+  padding: 20px;
+  border: 1px solid #e2e9f2;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 3px 14px rgba(30,55,90,.04);
+}
+
+.search-organ-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 12px;
+}
+
+.search-organ-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.search-organ-field > span {
+  color: #45536a;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.search-organ-select-wrapper,
+.search-organ-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 43px;
+}
+
+.search-organ-select-wrapper > svg:first-child,
+.search-organ-input-wrapper > svg {
+  position: absolute;
+  left: 12px;
+  z-index: 2;
+  color: #7e91aa;
+  pointer-events: none;
+}
+
+.search-organ-select-wrapper > svg:last-child {
+  position: absolute;
+  right: 11px;
+  color: #7e91aa;
+  pointer-events: none;
+}
+
+.search-organ-field select,
+.search-organ-field input {
+  width: 100%;
+  height: 43px;
+  box-sizing: border-box;
+  border: 1px solid #dce5ef;
+  border-radius: 9px;
+  outline: none;
+  background: #fff;
+  color: #30415b;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.search-organ-field select {
+  padding: 0 34px 0 37px;
+  appearance: none;
+  cursor: pointer;
+}
+
+.search-organ-field input {
+  padding: 0 12px 0 37px;
+}
+
+.search-organ-field select:focus,
+.search-organ-field input:focus,
+.search-organ-main-search input:focus {
+  border-color: #4d8df7;
+  box-shadow: 0 0 0 3px rgba(50,125,255,.09);
+}
+
+.search-organ-search-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.search-organ-main-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.search-organ-main-search > svg {
+  position: absolute;
+  left: 13px;
+  color: #8a9bb1;
+  pointer-events: none;
+}
+
+.search-organ-main-search input {
+  width: 100%;
+  height: 45px;
+  box-sizing: border-box;
+  padding: 0 14px 0 40px;
+  border: 1px solid #dce5ef;
+  border-radius: 9px;
+  outline: none;
+  color: #30415b;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.search-organ-clear-button,
+.search-organ-refresh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #dce5ef;
+  border-radius: 8px;
+  background: #fff;
+  color: #56657b;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.search-organ-clear-button {
+  height: 45px;
+  padding: 0 15px;
+}
+
+.search-organ-results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 26px 0 14px;
+}
+
+.search-organ-results-header h2 {
+  margin: 0;
+  color: #1d2a40;
+  font-size: 18px;
+  font-weight: 720;
+}
+
+.search-organ-results-header p {
+  margin: 5px 0 0;
+  color: #8290a5;
+  font-size: 13px;
+}
+
+.search-organ-results-header p strong {
+  color: #34445d;
+}
+
+.search-organ-refresh {
+  padding: 9px 13px;
+}
+
+.search-organ-refresh:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+.search-organ-refresh-spin {
+  animation: search-organ-spin .9s linear infinite;
+}
+
+@keyframes search-organ-spin { to { transform: rotate(360deg); } }
+
+.search-organ-error {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border: 1px solid #f2c8c8;
+  border-radius: 10px;
+  background: #fff6f6;
+  color: #b63838;
+}
+
+.search-organ-error div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.search-organ-error strong { font-size: 13px; }
+.search-organ-error span { color: #b86161; font-size: 12px; }
+.search-organ-error button {
+  border: 1px solid #efb7b7;
+  border-radius: 7px;
+  background: #fff;
+  color: #b63838;
+  padding: 7px 11px;
+  cursor: pointer;
+}
+
+.search-organ-loading {
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 13px;
+  color: #73839a;
+  font-size: 13px;
+}
+
+.search-organ-empty {
+  padding: 65px 20px;
+  border: 1px solid #e3eaf3;
+  border-radius: 15px;
+  background: #fff;
+  text-align: center;
+}
+
+.search-organ-empty-icon {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  border-radius: 17px;
+  background: #eef5ff;
+  color: #3d82ef;
+}
+
+.search-organ-empty h3 {
+  margin: 0;
+  color: #27364e;
+  font-size: 17px;
+}
+
+.search-organ-empty p {
+  max-width: 520px;
+  margin: 8px auto 17px;
+  color: #7c899c;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.search-organ-empty button {
+  height: 38px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 8px;
+  background: #1677ff;
+  color: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.search-organ-card-list {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 14px;
+}
+
+.search-organ-card {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid #e1e8f1;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 2px 9px rgba(29,52,83,.035);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.search-organ-card:hover {
+  transform: translateY(-2px);
+  border-color: #d4e0ee;
+  box-shadow: 0 7px 22px rgba(29,52,83,.08);
+}
+
+.search-organ-donor-card-top,
+.search-organ-donor-identity,
+.search-organ-donor-badges,
+.search-organ-donor-info-grid,
+.search-organ-donor-info-grid > div,
+.search-organ-donor-contact-preview,
+.search-organ-donor-contact-preview a {
+  display: flex;
+  align-items: center;
+}
+
+.search-organ-donor-card-top {
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.search-organ-donor-identity { min-width: 0; gap: 11px; }
+
+.search-organ-donor-avatar {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #edf5ff;
+  color: #3984ee;
+}
+
+.search-organ-donor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.search-organ-donor-name { min-width: 0; }
+
+.search-organ-donor-name h3 {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: #20304a;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.search-organ-donor-name > span {
+  display: block;
+  margin-top: 4px;
+  color: #8491a4;
+  font-size: 11px;
+}
+
+.search-organ-save-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 10px;
+  border: 1px solid #d8e4f2;
+  border-radius: 8px;
+  background: #fff;
+  color: #4276bd;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.search-organ-save-button.is-saved {
+  border-color: #f4c7d4;
+  background: #fff4f7;
+  color: #d34e76;
+}
+
+.search-organ-donor-badges {
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 15px;
+}
+
+.search-organ-blood-badge,
+.search-organ-availability,
+.search-organ-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 25px;
+  padding: 4px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.search-organ-blood-badge { background: #edf4ff; color: #3475cf; }
+.search-organ-availability { background: #edf8f2; color: #2d8a5d; }
+.search-organ-availability > span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+.search-organ-availability.unavailable { background: #fff1f1; color: #c54d4d; }
+.search-organ-verified { background: #eef7ff; color: #3977c7; }
+
+.search-organ-donor-organs { margin-top: 15px; }
+.search-organ-detail-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #718199;
+  font-size: 10px;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.search-organ-organ-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.search-organ-organ-chips span {
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: #f3f7fc;
+  color: #536a86;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.search-organ-donor-info-grid {
+  flex-wrap: wrap;
+  gap: 10px 15px;
+  margin-top: 14px;
+}
+
+.search-organ-donor-info-grid > div {
+  gap: 6px;
+  min-width: 0;
+  color: #73849a;
+  font-size: 11px;
+}
+
+.search-organ-donor-info-grid svg { flex-shrink: 0; color: #6593d3; }
+
+.search-organ-donor-contact-preview {
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid #edf1f6;
+}
+
+.search-organ-donor-contact-preview a {
+  gap: 6px;
+  color: #577796;
+  font-size: 11px;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.search-organ-donor-contact-preview a:hover { color: #1677ff; }
+.search-organ-donor-contact-preview > span { color: #8997a9; font-size: 11px; }
+
+.search-organ-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 13px;
+  margin-top: 13px;
+  border-top: 1px solid #edf1f6;
+}
+
+.search-organ-details-button,
+.search-organ-call-button,
+.search-organ-modal-call,
+.search-organ-modal-close {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 13px;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.search-organ-details-button,
+.search-organ-modal-close {
+  border: 1px solid #d8e4f2;
+  background: #fff;
+  color: #2779e8;
+}
+
+.search-organ-call-button,
+.search-organ-modal-call {
+  border: 1px solid #1677ff;
+  background: #1677ff;
+  color: #fff;
+}
+
+.search-organ-information {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin-top: 20px;
+  padding: 14px 16px;
+  border: 1px solid #dce9f8;
+  border-radius: 11px;
+  background: #f6faff;
+  color: #4d73a5;
+}
+
+.search-organ-information > svg { flex-shrink: 0; }
+.search-organ-information div { display: flex; flex-direction: column; gap: 4px; }
+.search-organ-information strong { color: #385d91; font-size: 12px; }
+.search-organ-information span { color: #7287a4; font-size: 11px; line-height: 1.5; }
+
+.search-organ-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  background: rgba(18,30,48,.48);
+  backdrop-filter: blur(3px);
+}
+
+.search-organ-modal {
+  width: min(700px,100%);
+  max-height: calc(100vh - 44px);
+  overflow-y: auto;
+  border: 1px solid #e0e7f0;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 25px 70px rgba(16,31,52,.2);
+}
+
+.search-organ-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 24px;
+  border-bottom: 1px solid #edf1f6;
+}
+
+.search-organ-modal-header h2 { margin: 0; color: #1c2a40; font-size: 22px; }
+.search-organ-modal-header button {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e1e7ef;
+  border-radius: 8px;
+  background: #fff;
+  color: #66778e;
+  cursor: pointer;
+}
+
+.search-organ-modal-body { padding: 22px 24px; }
+.search-organ-modal-status-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 18px; }
+
+.search-organ-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid #e7edf4;
+  border-radius: 10px;
+  background: #e7edf4;
+}
+
+.search-organ-detail-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+  padding: 13px 14px;
+  background: #fff;
+}
+
+.search-organ-detail-grid span {
+  color: #8491a3;
+  font-size: 10px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.search-organ-detail-grid strong { overflow-wrap: anywhere; color: #33465f; font-size: 12px; }
+
+.search-organ-reason { margin-top: 15px; padding: 14px; border-radius: 10px; background: #f7f9fc; }
+.search-organ-reason > span { display: block; margin-bottom: 6px; color: #596b82; font-size: 11px; font-weight: 700; }
+.search-organ-reason p { margin: 0; color: #6f7f94; font-size: 12px; line-height: 1.6; white-space: pre-wrap; }
+
+.search-organ-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+  padding: 16px 24px;
+  border-top: 1px solid #edf1f6;
+}
+
+[data-theme="dark"] .search-organ-header h1,
+[data-theme="dark"] .search-organ-results-header h2,
+[data-theme="dark"] .search-organ-donor-name h3 { color: #edf3fb; }
+[data-theme="dark"] .search-organ-header p,
+[data-theme="dark"] .search-organ-results-header p { color: #a2b2c5; }
+[data-theme="dark"] .search-organ-filter-panel,
+[data-theme="dark"] .search-organ-card,
+[data-theme="dark"] .search-organ-empty,
+[data-theme="dark"] .search-organ-modal,
+[data-theme="dark"] .search-organ-modal-header button { background: #142533; border-color: #294052; }
+[data-theme="dark"] .search-organ-field > span,
+[data-theme="dark"] .search-organ-donor-name > span,
+[data-theme="dark"] .search-organ-donor-info-grid > div,
+[data-theme="dark"] .search-organ-donor-contact-preview a { color: #a5b6c7; }
+[data-theme="dark"] .search-organ-field select,
+[data-theme="dark"] .search-organ-field input,
+[data-theme="dark"] .search-organ-main-search input,
+[data-theme="dark"] .search-organ-details-button,
+[data-theme="dark"] .search-organ-clear-button,
+[data-theme="dark"] .search-organ-refresh,
+[data-theme="dark"] .search-organ-modal-close { background: #1a3040; border-color: #344b5e; color: #dce8f2; }
+[data-theme="dark"] .search-organ-directory-tag { background: #1a3047; border-color: #294b70; color: #9bc4ff; }
+[data-theme="dark"] .search-organ-organ-chips span,
+[data-theme="dark"] .search-organ-meta span { background: #1c3447; color: #b2c5d8; }
+[data-theme="dark"] .search-organ-information { background: #172d40; border-color: #29475f; }
+[data-theme="dark"] .search-organ-information strong,
+[data-theme="dark"] .search-organ-information span { color: #a9c2da; }
+[data-theme="dark"] .search-organ-detail-grid { border-color: #294052; background: #294052; }
+[data-theme="dark"] .search-organ-detail-grid > div { background: #192d3d; }
+[data-theme="dark"] .search-organ-detail-grid strong { color: #dce8f2; }
+[data-theme="dark"] .search-organ-detail-grid span { color: #93a9bb; }
+[data-theme="dark"] .search-organ-modal-header { border-color: #294052; }
+[data-theme="dark"] .search-organ-modal-header h2 { color: #edf3fb; }
+[data-theme="dark"] .search-organ-modal-footer { border-color: #294052; }
+
+@media (max-width: 1000px) {
+  .search-organ-card-list { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .search-organ-page { padding: 18px 15px 35px; }
+  .search-organ-header { align-items: flex-start; flex-direction: column; }
+  .search-organ-header h1 { font-size: 25px; }
+  .search-organ-filter-grid { grid-template-columns: 1fr; }
+  .search-organ-search-row { flex-direction: column; align-items: stretch; }
+  .search-organ-clear-button { width: 100%; }
+  .search-organ-results-header { align-items: flex-start; gap: 12px; }
+  .search-organ-donor-card-top { align-items: flex-start; }
+  .search-organ-detail-grid { grid-template-columns: 1fr; }
+  .search-organ-modal-footer { align-items: stretch; flex-direction: column; }
+  .search-organ-modal-call,
+  .search-organ-modal-close { width: 100%; }
+}
+
+@media (max-width: 480px) {
+  .search-organ-filter-panel { padding: 14px; }
+  .search-organ-donor-card-top { flex-wrap: wrap; }
+  .search-organ-card-actions { flex-wrap: wrap; }
+  .search-organ-details-button,
+  .search-organ-call-button { flex: 1; }
+  .search-organ-modal-overlay { padding: 10px; }
+  .search-organ-modal-header,
+  .search-organ-modal-body,
+  .search-organ-modal-footer { padding-left: 16px; padding-right: 16px; }
+}
+/* LIVE DONOR REGISTRATION INDICATOR */
+
+.search-organ-live-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 15px;
+  border: 1px solid #ccebd9;
+  border-radius: 9px;
+  background: #f0fbf5;
+  color: #16834b;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.search-organ-live-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #16a765;
+  box-shadow: 0 0 0 3px rgba(22, 167, 101, 0.12);
+  animation: donorLiveBlink 1.3s ease-in-out infinite;
+}
+
+@keyframes donorLiveBlink {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 3px rgba(22, 167, 101, 0.15);
+  }
+
+  50% {
+    opacity: 0.35;
+    box-shadow: 0 0 0 6px rgba(22, 167, 101, 0.04);
+  }
+}

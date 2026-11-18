@@ -1,0 +1,37 @@
+.support-notice-widget { position:fixed; top:88px; right:24px; z-index:45; font-family:Inter,system-ui,sans-serif; }
+.support-notice-bell { position:relative; display:flex; align-items:center; gap:9px; padding:11px 15px; border:1px solid #ccdff5; border-radius:12px; background:#fff; color:#2159a3; box-shadow:0 5px 20px #1d466a12; cursor:pointer; font-size:13px; font-weight:650; }
+.support-notice-count { display:grid; place-items:center; background:#e7354f; color:white; font-size:10px; min-width:19px; height:19px; padding:2px 5px; border:2px solid #fff; border-radius:20px; position:absolute; right:-6px; top:-7px; }
+.support-notice-panel { position:absolute; top:55px; right:0; width:min(430px,calc(100vw - 28px)); max-height:calc(100dvh - 170px); border-radius:16px; border:1px solid #d5e2f0; background:#fff; box-shadow:0 15px 50px #18365d2b; overflow:hidden; color:#16304b; }
+.support-notice-panel header { display:flex; align-items:center; gap:8px; padding:16px 17px; border-bottom:1px solid #e4edf6; background:#f6faff; }
+.support-notice-panel header>div { flex:1; }
+.support-notice-panel h2 { margin:0; font-size:17px; font-weight:750; }
+.support-notice-panel header p { margin:4px 0 0; font-size:11px; color:#6f8298; }
+.support-notice-panel header>button { padding:7px; border:0; border-radius:7px; background:transparent; color:#57708c; cursor:pointer; }
+.support-notice-list { max-height:calc(100dvh - 280px); overflow:auto; overscroll-behavior:contain; }
+.support-notice-item { border-bottom:1px solid #e7eef7; }
+.support-notice-item.is-unread { background:#f4f8ff; }
+.support-notice-open { display:flex; width:100%; align-items:center; gap:10px; border:0; padding:17px; background:transparent; color:inherit; cursor:pointer; text-align:left; }
+.support-notice-open>span:nth-child(2) { flex:1; min-width:0; }
+.support-notice-open strong { display:block; font-size:13px; line-height:1.4; overflow-wrap:anywhere; }
+.support-notice-open small { display:block; font-size:10px; color:#7c8fa5; margin-top:5px; }
+.support-notice-light { display:inline-block; width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.support-notice-light.is-read { background:#18a06a; }
+.support-notice-light.is-unread { background:#e83e59; box-shadow:0 0 0 3px #fce6ea; }
+.support-notice-body { padding:0 18px 18px 35px; }
+.support-notice-body h3 { margin:10px 0 7px; font-size:11px; color:#637a94; text-transform:uppercase; letter-spacing:.5px; }
+.support-notice-body>p { white-space:pre-wrap; overflow-wrap:anywhere; margin:0 0 14px; font-size:13px; line-height:1.65; }
+.support-notice-reactions { display:flex; flex-wrap:wrap; gap:9px; margin-top:15px; }
+.support-notice-reactions>button,.support-notice-clear { display:inline-flex; align-items:center; gap:7px; border:1px solid #dbe5ee; background:#fff; border-radius:8px; padding:8px 10px; cursor:pointer; font-size:11px; }
+.support-notice-reactions .is-positive { color:#16865b; }
+.support-notice-reactions .is-negative { color:#c34154; }
+.support-notice-reactions .is-positive.is-selected { background:#e5f7ee; border-color:#71c79f; }
+.support-notice-reactions .is-negative.is-selected { background:#ffedf1; border-color:#ed9aab; }
+.support-notice-body .support-notice-feedback-sent { color:#537b68; font-size:11px; margin:10px 0; }
+.support-notice-clear { color:#64768b; margin-top:12px; }
+.support-notice-empty { padding:30px 18px; color:#7b8fa5; font-size:13px; text-align:center; }
+.support-notice-error { padding:10px 15px; background:#fff1f3; color:#b64052; font-size:12px; }
+.support-notice-panel button:disabled { cursor:wait; opacity:.65; }
+.support-notice-widget button:focus-visible { outline:2px solid #65a0ef; outline-offset:2px; }
+[data-theme="dark"] .support-notice-bell,[data-theme="dark"] .support-notice-panel { background:#15263b; color:#dbe9f8; border-color:#304967; }
+[data-theme="dark"] .support-notice-panel header,[data-theme="dark"] .support-notice-item.is-unread { background:#1b304a; }
+@media(max-width:650px) { .support-notice-widget { top:74px; right:13px; } .support-notice-bell { padding:9px; } .support-notice-bell>span { display:none; } .support-notice-panel { top:46px; max-height:calc(100dvh - 140px); } .support-notice-list { max-height:calc(100dvh - 230px); } }

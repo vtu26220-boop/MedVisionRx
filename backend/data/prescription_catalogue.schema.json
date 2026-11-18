@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Prescription-only reviewed catalogue",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "generic_name", "information_source", "verified"],
+    "properties": {
+      "name": { "type": "string", "minLength": 1 },
+      "brand_name": { "type": "string" },
+      "brand_names": { "type": "array", "items": { "type": "string" } },
+      "generic_name": { "type": "string", "description": "All active ingredients, including combination ingredients." },
+      "strength": { "type": "string" },
+      "dosage_form": { "type": "string" },
+      "uses": { "type": "array", "items": { "type": "string" } },
+      "side_effects": { "type": "array", "items": { "type": "string" } },
+      "warnings": { "type": "array", "items": { "type": "string" } },
+      "age_restrictions": { "type": "object", "additionalProperties": { "type": "string" } },
+      "information_source": { "type": "string", "format": "uri" },
+      "verified": { "const": true },
+      "last_verified": { "type": "string", "format": "date-time" }
+    }
+  }
+}

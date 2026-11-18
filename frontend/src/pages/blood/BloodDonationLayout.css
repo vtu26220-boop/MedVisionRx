@@ -1,0 +1,1522 @@
+/* =========================================================
+   MEDVISIONRX BLOOD DONATION - APP SHELL
+   ========================================================= */
+
+.blood-app-shell {
+  min-height: 100vh;
+  width: 100%;
+  background: #f3f8fc;
+  color: #102a43;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.blood-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: 250px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+  border-right: 1px solid #e2eaf1;
+
+  z-index: 1000;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+  scrollbar-color: #d5e2ec transparent;
+
+  transition: width 0.25s ease;
+}
+
+.blood-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.blood-sidebar::-webkit-scrollbar-thumb {
+  background: #d5e2ec;
+  border-radius: 20px;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.blood-sidebar-brand {
+  min-height: 78px;
+  padding: 18px 18px 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #edf2f6;
+}
+
+.blood-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  min-width: 0;
+
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+
+  text-decoration: none;
+  color: inherit;
+
+  font: inherit;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.blood-brand-link:hover,
+.blood-brand-link:active,
+.blood-brand-link:focus,
+.blood-brand-link:focus-visible {
+  background: transparent;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.blood-brand-logo {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: linear-gradient(
+    135deg,
+    #1677e8,
+    #0b63ce
+  );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 7px 16px rgba(22, 119, 232, 0.2);
+}
+
+.blood-brand-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.blood-brand-name {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+
+  color: #102a43;
+}
+
+.blood-brand-subtitle {
+  margin-top: 2px;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  color: #8295a8;
+
+  letter-spacing: 0.3px;
+}
+
+.blood-sidebar-close {
+  display: none;
+
+  border: 0;
+  background: transparent;
+
+  color: #52677c;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   SERVICE BOX
+   ========================================================= */
+
+.blood-service-box {
+  margin: 17px 15px 12px;
+  padding: 13px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  background: #edf6ff;
+
+  border: 1px solid #d9ebfb;
+  border-radius: 13px;
+}
+
+.blood-service-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #1476df;
+
+  box-shadow:
+    0 2px 8px rgba(32, 93, 145, 0.08);
+}
+
+.blood-service-box > div:last-child {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.blood-service-label {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  color: #7b93aa;
+}
+
+.blood-service-box strong {
+  margin-top: 3px;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  color: #163a59;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.blood-sidebar-section-title {
+  padding: 14px 20px 7px;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+
+  color: #91a2b2;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.blood-sidebar-nav {
+  padding: 0 10px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.blood-nav-link {
+  position: relative;
+
+  min-height: 45px;
+
+  padding: 0 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  border-radius: 10px;
+
+  color: #52677c;
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  background: transparent;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.blood-nav-link:hover {
+  background: #f1f7fc;
+  color: #126ed0;
+}
+
+/* =========================================================
+   ACTIVE NAVIGATION
+   React Router adds aria-current="page"
+   ========================================================= */
+
+.blood-nav-link-active,
+.blood-nav-link[aria-current="page"] {
+  position: relative;
+
+  background: #e8f3ff !important;
+  color: #096bd2 !important;
+
+  font-weight: 700;
+
+  border-radius: 10px;
+}
+
+/* Blue vertical active indicator */
+
+.blood-nav-link-active::before,
+.blood-nav-link[aria-current="page"]::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 7px;
+  bottom: 7px;
+
+  width: 3px;
+
+  background: #1479e8;
+
+  border-radius: 0 5px 5px 0;
+}
+
+/* Active icon */
+
+.blood-nav-link-active .blood-nav-icon,
+.blood-nav-link[aria-current="page"] .blood-nav-icon {
+  color: #096bd2;
+}
+
+/* Active arrow */
+
+.blood-nav-link-active .blood-nav-arrow,
+.blood-nav-link[aria-current="page"] .blood-nav-arrow {
+  opacity: 0.8;
+  transform: translateX(0);
+}
+
+/* =========================================================
+   SIDEBAR BOTTOM
+   ========================================================= */
+
+.blood-sidebar-bottom {
+  margin-top: auto;
+  padding: 12px 10px 16px;
+}
+
+.blood-sidebar-divider {
+  height: 1px;
+
+  margin: 0 8px 10px;
+
+  background: #edf1f5;
+}
+
+.blood-bottom-link {
+  width: 100%;
+  min-height: 41px;
+
+  padding: 0 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #667b8e;
+
+  text-decoration: none;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.blood-bottom-link:hover {
+  background: #f4f8fb;
+  color: #1475da;
+}
+
+/* ACTIVE ABOUT / CONTACT */
+
+.blood-bottom-link-active {
+  background: #e8f3ff;
+  color: #096bd2;
+  font-weight: 700;
+}
+
+.blood-bottom-link-active:hover {
+  background: #e8f3ff;
+  color: #096bd2;
+}
+
+.blood-home-button {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.blood-home-button:focus,
+.blood-home-button:focus-visible,
+.blood-home-button:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.blood-logout-button {
+  margin-top: 3px;
+}
+
+/* =========================================================
+   MAIN AREA
+   ========================================================= */
+
+.blood-main-area {
+  min-height: 100vh;
+
+  margin-left: 250px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #f3f8fc;
+
+  transition: margin-left 0.25s ease;
+}
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.blood-topbar {
+  position: sticky;
+  top: 0;
+
+  height: 70px;
+
+  padding: 0 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid #e4edf4;
+
+  backdrop-filter: blur(12px);
+
+  z-index: 900;
+}
+
+.blood-topbar-left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+.blood-menu-button {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dce7ef;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #38556e;
+
+  cursor: pointer;
+}
+
+.blood-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  min-width: 0;
+
+  font-size: 12px;
+  color: #8799aa;
+}
+
+.blood-breadcrumb-home {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+
+  color: #7c90a3;
+  text-decoration: none;
+
+  font: inherit;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.blood-breadcrumb-home:hover,
+.blood-breadcrumb-home:focus,
+.blood-breadcrumb-home:focus-visible,
+.blood-breadcrumb-home:active {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  color: #1675dc;
+}
+
+.blood-breadcrumb strong {
+  color: #29465e;
+  font-weight: 700;
+}
+
+/* =========================================================
+   TOP ACTIONS
+   ========================================================= */
+
+.blood-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.blood-icon-button {
+  position: relative;
+
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e0e9f0;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #5c7184;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.blood-icon-button:hover {
+  color: #1675dd;
+  border-color: #cbdfee;
+  background: #f6faff;
+}
+
+.blood-notification-dot {
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+
+  border: 1.5px solid #ffffff;
+}
+
+.blood-user {
+  padding-left: 7px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.blood-user-avatar {
+  width: 37px;
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eaf4ff;
+  color: #1475da;
+}
+
+.blood-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.blood-user-info strong {
+  font-size: 12px;
+  font-weight: 750;
+
+  color: #243f56;
+}
+
+.blood-user-info span {
+  margin-top: 1px;
+
+  font-size: 10px;
+
+  color: #8a9baa;
+}
+
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
+
+.blood-page-content {
+  flex: 1;
+
+  width: 100%;
+
+  min-width: 0;
+}
+
+/* =========================================================
+   MOBILE OVERLAY
+   ========================================================= */
+
+.blood-mobile-overlay {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  border: 0;
+
+  background: rgba(8, 27, 43, 0.42);
+
+  z-index: 1100;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+[data-theme="dark"] .blood-app-shell {
+  background: #0c1722;
+  color: #e7f0f7;
+}
+
+[data-theme="dark"] .blood-sidebar {
+  background: #101d29;
+  border-right-color: #223443;
+}
+
+[data-theme="dark"] .blood-sidebar-brand {
+  border-bottom-color: #223443;
+}
+
+[data-theme="dark"] .blood-brand-name {
+  color: #edf6fd;
+}
+
+[data-theme="dark"] .blood-brand-subtitle {
+  color: #7f95a8;
+}
+
+[data-theme="dark"] .blood-service-box {
+  background: #13283a;
+  border-color: #24445c;
+}
+
+[data-theme="dark"] .blood-service-icon {
+  background: #19364d;
+  color: #55a8ff;
+}
+
+[data-theme="dark"] .blood-service-box strong {
+  color: #e4f1fb;
+}
+
+[data-theme="dark"] .blood-sidebar-section-title {
+  color: #6f8597;
+}
+
+[data-theme="dark"] .blood-nav-link {
+  color: #9cb0c0;
+}
+
+[data-theme="dark"] .blood-nav-link:hover {
+  background: #172c3d;
+  color: #65afff;
+}
+
+[data-theme="dark"] .blood-nav-link-active {
+  background: #173652;
+  color: #63afff;
+}
+
+[data-theme="dark"] .blood-nav-link-active::before {
+  background: #55a8ff;
+}
+
+[data-theme="dark"] .blood-bottom-link {
+  color: #91a6b7;
+}
+
+[data-theme="dark"] .blood-bottom-link:hover {
+  background: #172b3a;
+  color: #64adfb;
+}
+
+[data-theme="dark"] .blood-bottom-link-active {
+  background: #173652;
+  color: #63afff;
+}
+
+[data-theme="dark"] .blood-bottom-link-active:hover {
+  background: #173652;
+  color: #63afff;
+}
+
+[data-theme="dark"] .blood-sidebar-divider {
+  background: #223443;
+}
+
+[data-theme="dark"] .blood-main-area {
+  background: #0c1722;
+}
+
+[data-theme="dark"] .blood-topbar {
+  background: rgba(16, 29, 41, 0.96);
+  border-bottom-color: #223443;
+}
+
+[data-theme="dark"] .blood-breadcrumb {
+  color: #71879a;
+}
+
+[data-theme="dark"] .blood-breadcrumb-home {
+  color: #8499aa;
+}
+
+[data-theme="dark"] .blood-breadcrumb-home:hover {
+  color: #65afff;
+}
+
+[data-theme="dark"] .blood-breadcrumb strong {
+  color: #d9e7f0;
+}
+
+[data-theme="dark"] .blood-icon-button {
+  background: #142533;
+  border-color: #294052;
+  color: #9bb0c0;
+}
+
+[data-theme="dark"] .blood-user-avatar {
+  background: #18344b;
+  color: #5eafff;
+}
+
+[data-theme="dark"] .blood-user-info strong {
+  color: #e2edf5;
+}
+
+[data-theme="dark"] .blood-user-info span {
+  color: #8196a7;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .blood-sidebar {
+    width: 230px;
+  }
+
+  .blood-main-area {
+    margin-left: 230px;
+  }
+
+  .blood-topbar {
+    padding: 0 20px;
+  }
+
+  .blood-user-info {
+    display: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .blood-sidebar {
+    width: 270px;
+
+    transform: translateX(-100%);
+
+    transition: transform 0.25s ease;
+
+    box-shadow:
+      10px 0 35px rgba(0, 0, 0, 0.12);
+  }
+
+  .blood-sidebar-open {
+    transform: translateX(0);
+  }
+
+  .blood-sidebar-close {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #f2f6fa;
+  }
+
+  .blood-main-area {
+    margin-left: 0;
+  }
+
+  .blood-topbar {
+    height: 62px;
+
+    padding: 0 15px;
+  }
+
+  .blood-menu-button {
+    display: flex;
+    margin-right: 10px;
+  }
+
+  .blood-breadcrumb {
+    font-size: 11px;
+  }
+
+  .blood-breadcrumb-home {
+    display: none;
+  }
+
+  .blood-topbar-actions {
+    gap: 6px;
+  }
+
+  .blood-user {
+    display: none;
+  }
+
+  .blood-mobile-overlay {
+    display: block;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .blood-topbar {
+    padding: 0 11px;
+  }
+
+  .blood-breadcrumb svg {
+    display: none;
+  }
+
+  .blood-breadcrumb span {
+    display: none;
+  }
+
+  .blood-breadcrumb strong {
+    font-size: 12px;
+  }
+
+  .blood-icon-button {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* =========================================================
+   SIDEBAR COLLAPSE
+   ========================================================= */
+
+.blood-sidebar-collapsed {
+  width: 78px !important;
+}
+
+.blood-layout-collapsed .blood-main-area {
+  margin-left: 78px;
+}
+
+.blood-sidebar-collapsed .blood-sidebar-brand {
+  justify-content: center;
+}
+
+.blood-sidebar-collapsed .blood-brand-link {
+  justify-content: center;
+
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.blood-sidebar-collapsed .blood-brand-link:focus,
+.blood-sidebar-collapsed .blood-brand-link:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.blood-sidebar-collapsed .blood-brand-logo {
+  margin: 0;
+}
+
+.blood-sidebar-collapsed .blood-nav-link {
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.blood-sidebar-collapsed .blood-nav-icon {
+  margin: 0;
+}
+
+.blood-sidebar-collapsed .blood-sidebar-bottom {
+  align-items: center;
+}
+
+.blood-sidebar-collapsed .blood-bottom-link {
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.blood-sidebar-collapsed .blood-sidebar-divider {
+  width: 35px;
+}
+
+.blood-sidebar-collapse-button {
+  width: 34px;
+  height: 34px;
+
+  margin: 12px auto 4px;
+
+  border: 1px solid #dbe4ef;
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #64748b;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  flex-shrink: 0;
+}
+
+.blood-sidebar-collapse-button:hover {
+  color: #2563eb;
+  border-color: #bfdbfe;
+  background: #eff6ff;
+}
+
+.blood-collapse-arrow {
+  transition: transform 0.25s ease;
+}
+
+.blood-collapse-arrow-open {
+  transform: rotate(180deg);
+}
+
+/* =========================================================
+   FOCUS RESET
+   ========================================================= */
+
+.blood-brand-link:focus,
+.blood-brand-link:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.blood-breadcrumb-home:focus,
+.blood-breadcrumb-home:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.blood-home-button:focus,
+.blood-home-button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* =========================================================
+   MOBILE COLLAPSE OVERRIDE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .blood-sidebar-collapsed {
+    width: 270px !important;
+  }
+
+  .blood-layout-collapsed .blood-main-area {
+    margin-left: 0;
+  }
+}
+
+
+/* =========================================================
+   PROFILE DROPDOWN + HEADER CLEANUP
+   Additions for the authenticated Blood Donation layout
+   ========================================================= */
+
+/* Keep the existing topbar controls aligned */
+.blood-topbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* The notification button is intentionally removed from the layout */
+.blood-icon-button,
+.blood-notification-dot {
+  display: none !important;
+}
+
+/* Profile trigger */
+.blood-profile-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.blood-user {
+  padding: 5px 7px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  transition: background 0.2s ease;
+}
+
+.blood-user:hover {
+  background: #f1f6fb;
+}
+
+.blood-profile-chevron {
+  color: #8295a8;
+  transition: transform 0.2s ease;
+}
+
+.blood-profile-chevron-open {
+  transform: rotate(180deg);
+}
+
+/* Dropdown panel */
+.blood-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 1200;
+  width: 290px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #e2eaf1;
+  border-radius: 14px;
+  box-shadow: 0 14px 36px rgba(16, 42, 67, 0.16);
+}
+
+.blood-profile-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #edf2f6;
+}
+
+.blood-profile-large-avatar {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eaf4ff;
+  color: #1475da;
+}
+
+.blood-profile-heading-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.blood-profile-heading-text strong {
+  color: #243f56;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.blood-profile-heading-text span {
+  color: #8295a8;
+  font-size: 11px;
+}
+
+.blood-profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 15px 0;
+}
+
+.blood-profile-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  color: #60778b;
+  font-size: 12px;
+}
+
+.blood-profile-detail svg {
+  flex: 0 0 16px;
+  color: #1475da;
+}
+
+.blood-profile-detail span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.blood-profile-error {
+  margin: 0 0 12px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  background: #fff1f2;
+  color: #be123c;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.blood-profile-dropdown .blood-logout-button {
+  width: 100%;
+  min-height: 39px;
+  margin-top: 0;
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #fee2e2;
+  border-radius: 9px;
+  background: #fff1f2;
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.blood-profile-dropdown .blood-logout-button:hover {
+  background: #fee2e2;
+}
+
+.blood-profile-dropdown .blood-logout-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Make the service heading/card render consistently */
+.blood-service-box {
+  box-sizing: border-box;
+  width: auto;
+  min-width: 0;
+  align-items: center;
+}
+
+.blood-service-box > div:last-child {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.blood-service-box strong {
+  display: block;
+  white-space: nowrap;
+}
+
+/* Ensure the sidebar collapse control remains centered */
+.blood-sidebar-collapse-button {
+  flex: 0 0 34px;
+}
+
+/* Desktop: mobile menu and close controls must not appear */
+@media (min-width: 761px) {
+  .blood-menu-button,
+  .blood-sidebar-close {
+    display: none !important;
+  }
+}
+
+/* Dark mode profile dropdown */
+[data-theme="dark"] .blood-user:hover {
+  background: #172b3a;
+}
+
+[data-theme="dark"] .blood-profile-dropdown {
+  background: #101d29;
+  border-color: #294052;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.38);
+}
+
+[data-theme="dark"] .blood-profile-heading {
+  border-bottom-color: #294052;
+}
+
+[data-theme="dark"] .blood-profile-heading-text strong {
+  color: #e2edf5;
+}
+
+[data-theme="dark"] .blood-profile-heading-text span,
+[data-theme="dark"] .blood-profile-detail {
+  color: #9bb0c0;
+}
+
+[data-theme="dark"] .blood-profile-large-avatar {
+  background: #18344b;
+  color: #5eafff;
+}
+
+[data-theme="dark"] .blood-profile-dropdown .blood-logout-button {
+  background: #451a24;
+  border-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+[data-theme="dark"] .blood-profile-dropdown .blood-logout-button:hover {
+  background: #5b202b;
+}
+
+/* Mobile profile: show avatar so the menu remains accessible */
+@media (max-width: 760px) {
+  .blood-user {
+    display: flex !important;
+    padding: 3px;
+  }
+
+  .blood-user-info,
+  .blood-profile-chevron {
+    display: none !important;
+  }
+
+  .blood-profile-dropdown {
+    position: fixed;
+    top: 68px;
+    right: 12px;
+    width: min(290px, calc(100vw - 24px));
+  }
+
+  .blood-topbar-actions {
+    gap: 7px;
+  }
+}
+
+/* Simple theme toggle – remove square button styling */
+.blood-topbar-actions > button {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+.blood-topbar-actions > button:hover {
+  background: rgba(100, 116, 139, 0.10) !important;
+}
+
+.blood-topbar-actions > button:focus,
+.blood-topbar-actions > button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* =========================================================
+   BLOOD DONATION BRAND, SERVICE PHOTO AND PROFILE AVATARS
+   ========================================================= */
+.blood-brand-logo {
+  overflow: hidden;
+  background: #fff;
+}
+.blood-brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.blood-service-icon-photo {
+  overflow: hidden;
+  padding: 0;
+}
+.blood-service-icon-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.blood-user-avatar,
+.blood-profile-large-avatar {
+  overflow: hidden;
+}
+.blood-user-avatar img,
+.blood-profile-large-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.blood-edit-profile-button {
+  width: 100%;
+  min-height: 38px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #d9e8f7;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #176dcc;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.blood-edit-profile-button:hover { background: #e3f0ff; }
+.blood-profile-save-success {
+  position: relative;
+  z-index: 20;
+  margin: 10px 18px 0;
+  padding: 10px 38px 10px 14px;
+  border: 1px solid #bce8ce;
+  border-radius: 8px;
+  background: #effbf3;
+  color: #187345;
+  font-size: 12px;
+  font-weight: 650;
+}
+.blood-profile-save-success button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 20px;
+  cursor: pointer;
+}
+.blood-edit-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: rgba(15, 31, 48, .56);
+  backdrop-filter: blur(3px);
+}
+.blood-edit-modal {
+  width: min(100%, 480px);
+  max-height: min(92vh, 780px);
+  overflow-y: auto;
+  padding: 24px;
+  border: 1px solid #e4ebf2;
+  border-radius: 18px;
+  background: #fff;
+  color: #243f56;
+  box-shadow: 0 24px 70px rgba(15, 35, 55, .22);
+}
+.blood-edit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+.blood-edit-header span {
+  color: #1676df;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.blood-edit-header h2 { margin: 5px 0 0; font-size: 22px; }
+.blood-edit-header > button {
+  border: 0;
+  background: transparent;
+  color: #7b8da0;
+  cursor: pointer;
+}
+.blood-edit-avatar-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 16px;
+}
+.blood-edit-avatar-preview img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #edf5ff;
+}
+.blood-edit-avatar-preview small { color: #91a1b1; font-size: 10px; text-align: center; }
+.blood-avatar-picker > strong { font-size: 12px; }
+.blood-avatar-options {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 8px;
+  margin: 10px 0 18px;
+}
+.blood-avatar-options button {
+  aspect-ratio: 1;
+  min-width: 0;
+  padding: 3px;
+  border: 2px solid #e4ebf2;
+  border-radius: 50%;
+  background: #f7faff;
+  cursor: pointer;
+  transition: border-color .15s, transform .15s;
+}
+.blood-avatar-options button:hover { transform: translateY(-2px); }
+.blood-avatar-options button.selected {
+  border-color: #1680ef;
+  box-shadow: 0 0 0 3px rgba(22, 128, 239, .12);
+}
+.blood-avatar-options img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+.blood-edit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+  color: #61768a;
+  font-size: 11px;
+  font-weight: 700;
+}
+.blood-edit-field input {
+  width: 100%;
+  height: 41px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border: 1px solid #dce6ef;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #29445d;
+  font: inherit;
+  font-size: 13px;
+}
+.blood-edit-field input:focus { border-color: #7bb6f2; box-shadow: 0 0 0 3px rgba(22, 119, 232, .09); }
+.blood-edit-field input[readonly] { background: #f3f6f9; color: #8a9bad; }
+.blood-edit-error { margin: 12px 0 0; color: #d3344d; font-size: 11px; }
+.blood-edit-actions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 18px; }
+.blood-edit-actions button {
+  min-height: 39px;
+  padding: 0 15px;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.blood-edit-cancel { border: 1px solid #dce6ef; background: #fff; color: #60758a; }
+.blood-edit-save { display: inline-flex; align-items: center; gap: 7px; border: 1px solid #176fce; background: #1976df; color: #fff; }
+.blood-edit-actions button:disabled { opacity: .6; cursor: not-allowed; }
+@media (max-width: 520px) {
+  .blood-edit-modal { padding: 18px; }
+  .blood-avatar-options { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+[data-theme="dark"] .blood-edit-modal { background: #172635; color: #e6eef6; border-color: #34495b; }
+[data-theme="dark"] .blood-edit-field { color: #b5c5d4; }
+[data-theme="dark"] .blood-edit-field input { background: #203447; border-color: #40566a; color: #edf5fc; }
+[data-theme="dark"] .blood-edit-field input[readonly] { background: #1c2d3d; color: #9fb1c2; }
+[data-theme="dark"] .blood-edit-cancel { background: #203447; color: #d3e0eb; border-color: #40566a; }

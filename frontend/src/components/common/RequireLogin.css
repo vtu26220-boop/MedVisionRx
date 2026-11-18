@@ -1,0 +1,3 @@
+.auth-route-check { min-height:100dvh; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:16px; background:#f4f8ff; color:#395a7b; font-family:Inter,system-ui,sans-serif; }
+.auth-route-check img { width:70px; height:74px; object-fit:contain; }
+.auth-route-check p { margin:0; font-size:14px; }

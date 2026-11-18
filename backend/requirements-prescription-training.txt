@@ -1,0 +1,5 @@
+# Optional research/training packages. Not required to serve prescription OCR.
+# Install in a separate training environment when deploying.
+torch==2.15.0
+Pillow>=11.0,<13
+numpy>=2,<3

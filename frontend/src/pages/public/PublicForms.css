@@ -1,0 +1,21 @@
+.mv-public-form-page { --pf-card:#fff; --pf-text:#193654; --pf-muted:#73879e; --pf-border:#dce8f5; min-height:100vh; display:grid; place-items:center; background:#f0f7fd; padding:30px 18px; color:var(--pf-text); font-family:Inter,"Segoe UI",sans-serif; }
+[data-theme=dark] .mv-public-form-page { --pf-card:#17283c; --pf-text:#e7f0fc; --pf-muted:#a8bad0; --pf-border:#304963; background:#101d2c; }
+.mv-public-form-page * { box-sizing:border-box; }
+.mv-public-form-card { width:min(100%,510px); padding:32px; border:1px solid var(--pf-border); border-radius:20px; background:var(--pf-card); box-shadow:0 15px 55px #1e416412; }
+.mv-public-form-brand { display:flex; justify-content:center; align-items:center; gap:12px; color:var(--pf-text); text-decoration:none; font-size:24px; }
+.mv-public-form-brand img { width:60px; height:64px; object-fit:contain; }
+.mv-public-form-card h1 { text-align:center; font-size:28px; margin:24px 0 12px; }
+.mv-public-form-card p { font-size:13px; line-height:1.7; color:var(--pf-muted); }
+.mv-public-form-card label { display:flex; flex-direction:column; gap:7px; margin:18px 0; font-size:13px; font-weight:600; }
+.mv-public-form-card input,.mv-public-form-card textarea { width:100%; padding:12px; border:1px solid var(--pf-border); border-radius:9px; color:var(--pf-text); background:var(--pf-card); font:inherit; }
+.mv-public-form-card textarea { resize:vertical; }
+.mv-public-form-card button { width:100%; border:0; border-radius:9px; padding:13px; background:#2563eb; color:white; font:inherit; cursor:pointer; }
+.mv-public-form-card button:disabled,.mv-public-form-card fieldset:disabled { opacity:.6; cursor:not-allowed; }
+.mv-public-form-card fieldset { border:0; padding:0; margin:0; min-width:0; }
+.mv-public-form-card a { color:#2563eb; }
+.mv-public-form-card .mv-public-form-brand { color:var(--pf-text); }
+.mv-form-secondary { display:block; margin-top:18px; text-align:center; font-size:13px; }
+.mv-form-error,.mv-form-success { border:1px solid #efc9ce; background:#fff1f1; color:#ae3544; padding:12px; border-radius:9px; font-size:13px; line-height:1.6; margin:16px 0; }
+.mv-form-success { background:#eaf8f0; color:#257451; border-color:#b4dfca; }
+.mv-public-form-page :focus-visible { outline:3px solid #80adff; outline-offset:3px; }
+@media(max-width:450px) { .mv-public-form-card { padding:24px 20px; } }

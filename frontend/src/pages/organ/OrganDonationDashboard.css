@@ -1,0 +1,1245 @@
+/* =========================================================
+   ORGAN DONATION DASHBOARD
+   Designed to match the MedVisionRx Blood Donation Dashboard
+   ========================================================= */
+
+.organ-dashboard-page {
+  min-height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 28px 32px 45px;
+
+  background: #f4f8fc;
+  color: #12324d;
+}
+
+.organ-dashboard-container {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.organ-dashboard-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 22px;
+}
+
+.organ-dashboard-page-header h1 {
+  margin: 0;
+  color: #102f4a;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -0.6px;
+}
+
+.organ-dashboard-page-header p {
+  margin: 6px 0 0;
+  color: #71869a;
+  font-size: 13px;
+}
+
+/* Header contains only the dashboard title and description. */
+
+/* =========================================================
+   WELCOME BANNER
+   ========================================================= */
+
+.organ-dashboard-welcome {
+  position: relative;
+
+  min-height: 185px;
+  padding: 28px 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  overflow: hidden;
+
+  border-radius: 17px;
+
+  background: linear-gradient(
+    115deg,
+    #1769e8,
+    #2879ee 58%,
+    #5a9af5
+  );
+
+  box-shadow:
+    0 12px 28px rgba(37, 113, 226, 0.16);
+
+  box-sizing: border-box;
+}
+
+.organ-dashboard-welcome::before {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  right: -80px;
+  top: -125px;
+
+  border: 38px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 50%;
+}
+
+.organ-dashboard-welcome::after {
+  content: "";
+
+  position: absolute;
+
+  width: 160px;
+  height: 160px;
+
+  right: 85px;
+  bottom: -125px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.organ-dashboard-welcome-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.organ-dashboard-welcome-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.organ-dashboard-welcome h2 {
+  margin: 8px 0 0;
+  color: #ffffff;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.organ-dashboard-welcome p {
+  margin: 9px 0 0;
+  max-width: 610px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.organ-dashboard-donation-info {
+  position: relative;
+  z-index: 2;
+
+  min-width: 220px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 18px 21px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 13px;
+
+  background: rgba(255, 255, 255, 0.11);
+
+  backdrop-filter: blur(5px);
+}
+
+.organ-dashboard-donation-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
+
+.organ-dashboard-donation-info span {
+  display: block;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 10px;
+}
+
+.organ-dashboard-donation-info strong {
+  display: block;
+  margin-top: 2px;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.organ-dashboard-donation-info small {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  margin-top: 3px;
+
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 9px;
+}
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.organ-dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 17px;
+}
+
+.organ-dashboard-stat {
+  min-height: 100px;
+
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  padding: 18px;
+
+  border: 1px solid #e0e8ef;
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 14px rgba(30, 70, 100, 0.035);
+
+  box-sizing: border-box;
+}
+
+.organ-dashboard-stat-icon {
+  width: 43px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+}
+
+.organ-dashboard-stat-icon.blue {
+  background: #edf5ff;
+  color: #2879d7;
+}
+
+.organ-dashboard-stat-icon.green {
+  background: #ecfaf3;
+  color: #219765;
+}
+
+.organ-dashboard-stat-icon.purple {
+  background: #f3efff;
+  color: #7456d6;
+}
+
+.organ-dashboard-stat-icon.teal {
+  background: #eaf9f8;
+  color: #199d99;
+}
+
+.organ-dashboard-stat span {
+  display: block;
+  color: #8b9bab;
+  font-size: 9px;
+}
+
+.organ-dashboard-stat strong {
+  display: block;
+  margin-top: 4px;
+  color: #27445b;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.organ-dashboard-stat small {
+  display: block;
+  margin-top: 2px;
+  color: #8c9cab;
+  font-size: 8px;
+}
+
+/* =========================================================
+   CONTENT GRID
+   ========================================================= */
+
+.organ-dashboard-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(330px, 0.85fr);
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.organ-dashboard-card {
+  border: 1px solid #e0e8ef;
+  border-radius: 11px;
+  background: #ffffff;
+  box-shadow:
+    0 5px 14px rgba(30, 70, 100, 0.035);
+  overflow: hidden;
+}
+
+.organ-dashboard-card-header {
+  min-height: 63px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 13px 15px;
+
+  border-bottom: 1px solid #edf2f6;
+  box-sizing: border-box;
+}
+
+.organ-dashboard-card-header h3 {
+  margin: 0;
+  color: #29465b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.organ-dashboard-card-header p {
+  margin: 3px 0 0;
+  color: #94a2af;
+  font-size: 8px;
+}
+
+.organ-dashboard-card-header > svg {
+  color: #2879d7;
+}
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.organ-dashboard-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.organ-dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.organ-dashboard-table th {
+  padding: 10px 12px;
+
+  text-align: left;
+
+  background: #f8fafc;
+
+  border-bottom: 1px solid #edf2f6;
+
+  color: #8293a2;
+
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.35px;
+}
+
+.organ-dashboard-table td {
+  padding: 13px 12px;
+
+  border-bottom: 1px solid #edf2f6;
+
+  color: #6f8293;
+
+  font-size: 9px;
+
+  vertical-align: middle;
+}
+
+.organ-dashboard-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.organ-dashboard-table td strong {
+  color: #29465b;
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.organ-dashboard-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.organ-dashboard-location svg {
+  color: #6c91b7;
+}
+
+.organ-dashboard-status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 4px 8px;
+
+  border-radius: 20px;
+
+  font-size: 8px;
+  font-weight: 750;
+  text-transform: capitalize;
+}
+
+.organ-dashboard-status.active {
+  background: #eaf9f1;
+  color: #1c9160;
+}
+
+/* =========================================================
+   CARD FOOTER
+   ========================================================= */
+
+.organ-dashboard-card-footer {
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 11px 15px;
+
+  border-top: 1px solid #edf2f6;
+}
+
+.organ-dashboard-footer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  color: #2879d7;
+
+  font-size: 9px;
+  font-weight: 750;
+
+  text-decoration: none;
+}
+
+.organ-dashboard-footer-link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   ORGAN DISTRIBUTION
+   ========================================================= */
+
+.organ-dashboard-distribution {
+  padding: 15px;
+}
+
+.organ-dashboard-distribution-item {
+  margin-bottom: 15px;
+}
+
+.organ-dashboard-distribution-item:last-of-type {
+  margin-bottom: 13px;
+}
+
+.organ-dashboard-distribution-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  margin-bottom: 6px;
+}
+
+.organ-dashboard-distribution-top span {
+  color: #5f7487;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.organ-dashboard-distribution-top strong {
+  color: #29465b;
+  font-size: 10px;
+}
+
+.organ-dashboard-progress {
+  width: 100%;
+  height: 7px;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  background: #edf3f8;
+}
+
+.organ-dashboard-progress span {
+  display: block;
+  height: 100%;
+
+  border-radius: inherit;
+
+  background: #2879d7;
+
+  transition: width 0.35s ease;
+}
+
+.organ-dashboard-distribution-item small {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #9aa8b4;
+  font-size: 8px;
+}
+
+.organ-dashboard-organ-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 12px;
+
+  border-top: 1px solid #edf2f6;
+}
+
+.organ-dashboard-organ-summary span {
+  color: #8999a8;
+  font-size: 9px;
+}
+
+.organ-dashboard-organ-summary strong {
+  color: #2879d7;
+  font-size: 16px;
+}
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.organ-dashboard-quick-card {
+  margin-top: 15px;
+}
+
+.organ-dashboard-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.organ-dashboard-action {
+  min-height: 91px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 15px;
+
+  color: inherit;
+  text-decoration: none;
+
+  border-right: 1px solid #edf2f6;
+
+  box-sizing: border-box;
+}
+
+.organ-dashboard-action:last-child {
+  border-right: 0;
+}
+
+.organ-dashboard-action:hover {
+  background: #f8fbff;
+}
+
+.organ-dashboard-action-icon {
+  width: 35px;
+  height: 35px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #edf5ff;
+  color: #2879d7;
+}
+
+.organ-dashboard-action > div:nth-child(2) {
+  flex: 1;
+}
+
+.organ-dashboard-action strong {
+  display: block;
+
+  color: #2b475c;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.organ-dashboard-action span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #8999a8;
+
+  font-size: 8px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   INFORMATION
+   ========================================================= */
+
+.organ-dashboard-bottom {
+  margin-top: 15px;
+}
+
+.organ-dashboard-information-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.organ-dashboard-information-item {
+  min-height: 100px;
+
+  display: flex;
+  gap: 11px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+}
+
+.organ-dashboard-information-item + .organ-dashboard-information-item {
+  border-left: 1px solid #edf2f6;
+}
+
+.organ-dashboard-information-icon {
+  width: 35px;
+  height: 35px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #edf5ff;
+  color: #2879d7;
+}
+
+.organ-dashboard-information-item strong {
+  display: block;
+
+  color: #2b475c;
+
+  font-size: 10px;
+  font-weight: 750;
+}
+
+.organ-dashboard-information-item p {
+  margin: 5px 0 0;
+
+  color: #8999a8;
+
+  font-size: 8px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   EMPTY / LOADING / ERROR
+   ========================================================= */
+
+.organ-dashboard-empty {
+  min-height: 220px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px 20px;
+
+  text-align: center;
+
+  color: #8999a8;
+}
+
+.organ-dashboard-empty svg {
+  margin-bottom: 10px;
+  color: #2879d7;
+}
+
+.organ-dashboard-empty strong {
+  color: #2b475c;
+  font-size: 12px;
+}
+
+.organ-dashboard-empty p {
+  max-width: 320px;
+
+  margin: 6px 0 15px;
+
+  color: #8999a8;
+
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.organ-dashboard-empty.compact {
+  min-height: 260px;
+}
+
+.organ-dashboard-small-button,
+.organ-dashboard-outline-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 8px 12px;
+
+  border: 1px solid #dbe5ed;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #2879d7;
+
+  font-size: 9px;
+  font-weight: 750;
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.organ-dashboard-small-button:hover,
+.organ-dashboard-outline-button:hover {
+  background: #f5f9fd;
+}
+
+.organ-dashboard-loading,
+.organ-dashboard-error {
+  min-height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.organ-dashboard-loading p,
+.organ-dashboard-error p {
+  margin: 8px 0 0;
+  color: #8999a8;
+  font-size: 11px;
+}
+
+.organ-dashboard-error h2 {
+  margin: 12px 0 0;
+  color: #29465b;
+  font-size: 17px;
+}
+
+.organ-dashboard-error svg {
+  color: #2879d7;
+}
+
+.organ-dashboard-loading-spinner {
+  width: 30px;
+  height: 30px;
+
+  border: 3px solid #dce9f5;
+  border-top-color: #2879d7;
+
+  border-radius: 50%;
+
+  animation: organ-dashboard-spin 0.8s linear infinite;
+}
+
+@keyframes organ-dashboard-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   FOOTER NOTE
+   ========================================================= */
+
+.organ-dashboard-note {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 17px;
+  padding: 12px 15px;
+
+  border: 1px solid #e1e9ef;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #8193a2;
+
+  font-size: 9px;
+}
+
+.organ-dashboard-note svg {
+  flex-shrink: 0;
+  color: #3d83d7;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+[data-theme="dark"] .organ-dashboard-page {
+  background: #0c1722;
+}
+
+[data-theme="dark"] .organ-dashboard-page-header h1 {
+  color: #edf5fa;
+}
+
+[data-theme="dark"] .organ-dashboard-page-header p {
+  color: #8296a7;
+}
+
+[data-theme="dark"] .organ-dashboard-stat,
+[data-theme="dark"] .organ-dashboard-card,
+[data-theme="dark"] .organ-dashboard-note {
+  background: #101d29;
+  border-color: #233746;
+}
+
+[data-theme="dark"] .organ-dashboard-user strong,
+[data-theme="dark"] .organ-dashboard-stat strong,
+[data-theme="dark"] .organ-dashboard-card-header h3,
+[data-theme="dark"] .organ-dashboard-action strong,
+[data-theme="dark"] .organ-dashboard-information-item strong,
+[data-theme="dark"] .organ-dashboard-distribution-top strong,
+[data-theme="dark"] .organ-dashboard-organ-summary strong {
+  color: #e5eff5;
+}
+
+[data-theme="dark"] .organ-dashboard-stat span,
+[data-theme="dark"] .organ-dashboard-stat small,
+[data-theme="dark"] .organ-dashboard-card-header p,
+[data-theme="dark"] .organ-dashboard-action span,
+[data-theme="dark"] .organ-dashboard-information-item p,
+[data-theme="dark"] .organ-dashboard-distribution-top span,
+[data-theme="dark"] .organ-dashboard-distribution-item small,
+[data-theme="dark"] .organ-dashboard-organ-summary span,
+[data-theme="dark"] .organ-dashboard-note {
+  color: #8297a8;
+}
+
+[data-theme="dark"] .organ-dashboard-card-header,
+[data-theme="dark"] .organ-dashboard-card-footer,
+[data-theme="dark"] .organ-dashboard-table td,
+[data-theme="dark"] .organ-dashboard-table th,
+[data-theme="dark"] .organ-dashboard-action,
+[data-theme="dark"] .organ-dashboard-information-item + .organ-dashboard-information-item,
+[data-theme="dark"] .organ-dashboard-organ-summary {
+  border-color: #233746;
+}
+
+[data-theme="dark"] .organ-dashboard-table th {
+  background: #13212d;
+}
+
+[data-theme="dark"] .organ-dashboard-table td {
+  color: #aabcc8;
+}
+
+[data-theme="dark"] .organ-dashboard-action:hover {
+  background: #142735;
+}
+
+[data-theme="dark"] .organ-dashboard-distribution-top span {
+  color: #aabcc8;
+}
+
+[data-theme="dark"] .organ-dashboard-empty strong,
+[data-theme="dark"] .organ-dashboard-error h2 {
+  color: #e5eff5;
+}
+
+[data-theme="dark"] .organ-dashboard-empty p,
+[data-theme="dark"] .organ-dashboard-loading p,
+[data-theme="dark"] .organ-dashboard-error p {
+  color: #8297a8;
+}
+
+[data-theme="dark"] .organ-dashboard-small-button,
+[data-theme="dark"] .organ-dashboard-outline-button {
+  background: #101d29;
+  border-color: #2a4051;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .organ-dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .organ-dashboard-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .organ-dashboard-actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .organ-dashboard-action:nth-child(2) {
+    border-right: 0;
+  }
+
+  .organ-dashboard-action:nth-child(3),
+  .organ-dashboard-action:nth-child(4) {
+    border-top: 1px solid #edf2f6;
+  }
+
+  .organ-dashboard-information-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .organ-dashboard-information-item + .organ-dashboard-information-item {
+    border-left: 0;
+    border-top: 1px solid #edf2f6;
+  }
+}
+
+@media (max-width: 850px) {
+  .organ-dashboard-page {
+    padding: 22px 20px 35px;
+  }
+
+  .organ-dashboard-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .organ-dashboard-welcome {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .organ-dashboard-donation-info {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 560px) {
+  .organ-dashboard-page {
+    padding: 18px 12px 30px;
+  }
+
+  .organ-dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .organ-dashboard-welcome {
+    padding: 22px;
+  }
+
+  .organ-dashboard-welcome h2 {
+    font-size: 23px;
+  }
+
+  .organ-dashboard-donation-info {
+    min-width: 0;
+  }
+
+  .organ-dashboard-actions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .organ-dashboard-action,
+  .organ-dashboard-action:nth-child(2),
+  .organ-dashboard-action:nth-child(3),
+  .organ-dashboard-action:nth-child(4) {
+    border-right: 0;
+    border-top: 1px solid #edf2f6;
+  }
+
+  .organ-dashboard-action:first-child {
+    border-top: 0;
+  }
+}
+
+
+/* =========================================================
+   ORGAN DONATION WELCOME ILLUSTRATION
+   ========================================================= */
+
+.organ-dashboard-welcome {
+  isolation: isolate;
+}
+
+.organ-dashboard-welcome-content {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 58%;
+}
+
+.organ-dashboard-welcome-illustration {
+  position: relative;
+  z-index: 1;
+  flex: 0 1 300px;
+  width: min(30%, 300px);
+  height: 150px;
+  margin: 0 18px 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.organ-dashboard-welcome-illustration img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 9px 15px rgba(12, 36, 75, 0.14));
+}
+
+.organ-dashboard-donation-info {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 1100px) {
+  .organ-dashboard-welcome-content {
+    max-width: 52%;
+  }
+
+  .organ-dashboard-welcome-illustration {
+    flex-basis: 240px;
+    width: 26%;
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 850px) {
+  .organ-dashboard-welcome {
+    flex-wrap: wrap;
+  }
+
+  .organ-dashboard-welcome-content {
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  .organ-dashboard-welcome-illustration {
+    width: 190px;
+    height: 120px;
+    flex-basis: 190px;
+    margin: 0 auto;
+  }
+
+  .organ-dashboard-donation-info {
+    width: 100%;
+  }
+}
+
+@media (max-width: 560px) {
+  .organ-dashboard-welcome-illustration {
+    width: 160px;
+    height: 105px;
+    flex-basis: 160px;
+  }
+}
+
+[data-theme="dark"] .organ-dashboard-welcome-illustration img {
+  filter: drop-shadow(0 9px 18px rgba(0, 0, 0, 0.28));
+}
+
+
+/* =========================================================
+   DASHBOARD REFINEMENTS
+   Recent pledges now use the full dashboard width.
+   ========================================================= */
+
+.organ-dashboard-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.organ-dashboard-content-grid > .organ-dashboard-card {
+  width: 100%;
+  min-width: 0;
+}
+
+.organ-dashboard-content-grid .organ-dashboard-card-header {
+  min-height: 78px;
+  padding: 18px 22px;
+}
+
+.organ-dashboard-content-grid .organ-dashboard-card-header h3 {
+  font-size: 16px;
+}
+
+.organ-dashboard-content-grid .organ-dashboard-card-header p {
+  font-size: 11px;
+  margin-top: 5px;
+}
+
+.organ-dashboard-content-grid .organ-dashboard-card-header > svg {
+  width: 24px;
+  height: 24px;
+}
+
+.organ-dashboard-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.organ-dashboard-table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+}
+
+.organ-dashboard-table th {
+  padding: 14px 18px;
+  font-size: 10px;
+}
+
+.organ-dashboard-table td {
+  padding: 16px 18px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.organ-dashboard-table td strong {
+  font-size: 11px;
+}
+
+.organ-dashboard-status.inactive {
+  background: #fff5e8;
+  color: #bd791c;
+}
+
+.organ-dashboard-status.cancelled {
+  background: #fff0f0;
+  color: #d34e4e;
+}
+
+.organ-dashboard-status.active {
+  background: #eaf9f1;
+  color: #1c9160;
+}
+
+.organ-dashboard-card-footer {
+  padding: 14px 20px;
+}
+
+.organ-dashboard-footer-link {
+  font-size: 11px;
+}
+
+.organ-dashboard-empty {
+  min-height: 260px;
+}
+
+.organ-dashboard-empty strong {
+  font-size: 14px;
+}
+
+.organ-dashboard-empty p {
+  font-size: 11px;
+}
+
+.organ-dashboard-welcome {
+  min-height: 205px;
+}
+
+.organ-dashboard-welcome h2 {
+  font-size: 30px;
+}
+
+.organ-dashboard-welcome p {
+  font-size: 13px;
+}
+
+.organ-dashboard-stat {
+  min-height: 112px;
+}
+
+.organ-dashboard-stat span {
+  font-size: 11px;
+}
+
+.organ-dashboard-stat strong {
+  font-size: 25px;
+}
+
+.organ-dashboard-stat small {
+  font-size: 9px;
+}
+
+@media (max-width: 850px) {
+  .organ-dashboard-content-grid .organ-dashboard-card-header {
+    padding: 15px 16px;
+  }
+
+  .organ-dashboard-table th,
+  .organ-dashboard-table td {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 560px) {
+  .organ-dashboard-welcome h2 {
+    font-size: 23px;
+  }
+
+  .organ-dashboard-content-grid .organ-dashboard-card-header h3 {
+    font-size: 14px;
+  }
+}
+
+[data-theme="dark"] .organ-dashboard-status.inactive {
+  background: rgba(189, 121, 28, 0.16);
+  color: #f0bd70;
+}
+
+[data-theme="dark"] .organ-dashboard-status.cancelled {
+  background: rgba(211, 78, 78, 0.16);
+  color: #ff9292;
+}

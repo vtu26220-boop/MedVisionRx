@@ -1,0 +1,578 @@
+.register-page {
+  min-height: 100vh;
+  width: 100%;
+  background: #eef6fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 32px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 1180px;
+  min-height: 698px;
+  display: grid;
+  grid-template-columns: 47% 53%;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 12px 40px rgba(31, 91, 140, 0.13);
+}
+
+/* =========================================================
+   LEFT SIDE
+   ========================================================= */
+
+.register-visual {
+  position: relative;
+  overflow: hidden;
+  min-height: 698px;
+  color: #ffffff;
+  background: #1162a5;
+}
+
+.register-doctor-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.register-image-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 65, 119, 0.48) 0%,
+      rgba(4, 83, 147, 0.54) 48%,
+      rgba(2, 62, 116, 0.88) 100%
+    );
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.register-brand {
+  position: absolute;
+  top: 32px;
+  left: 34px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.register-brand-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 13px;
+  background: #1976f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 7px 18px rgba(0, 0, 0, 0.18);
+}
+
+.register-brand h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.register-brand h2 span {
+  color: #39bdf8;
+}
+
+.register-brand p {
+  margin: 2px 0 0;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.register-hero-content {
+  position: absolute;
+  z-index: 3;
+  left: 34px;
+  right: 38px;
+  bottom: 178px;
+}
+
+.register-small-label {
+  display: inline-block;
+  margin-bottom: 9px;
+  color: #42c9fa;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2.4px;
+}
+
+.register-hero-content h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 46px;
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -1.8px;
+}
+
+.register-hero-content h1 span {
+  color: #29c2fa;
+}
+
+.register-hero-content p {
+  max-width: 355px;
+  margin: 17px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.register-features {
+  position: absolute;
+  z-index: 3;
+  left: 34px;
+  right: 30px;
+  bottom: 31px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.register-feature {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.register-feature-icon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-feature strong {
+  display: block;
+  margin-bottom: 2px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.register-feature span {
+  display: block;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 9px;
+  line-height: 1.35;
+}
+
+/* =========================================================
+   RIGHT SIDE
+   ========================================================= */
+
+.register-form-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding: 30px 42px;
+}
+
+.register-form-wrapper {
+  width: 100%;
+  max-width: 430px;
+}
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.register-heading {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.register-heading h1 {
+  margin: 0;
+  color: #0d1f38;
+  font-size: 31px;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+}
+
+.register-heading h1 span {
+  color: #2c6ff3;
+}
+
+.register-heading p {
+  margin: 8px 0 0;
+  color: #8a98a9;
+  font-size: 11px;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.register-field label {
+  display: block;
+  margin-bottom: 6px;
+  color: #23364e;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.register-input-wrapper {
+  position: relative;
+  height: 47px;
+  border: 1px solid #d9e3ef;
+  border-radius: 9px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-input-wrapper:focus-within {
+  border-color: #3978ef;
+  box-shadow: 0 0 0 3px rgba(57, 120, 239, 0.08);
+}
+
+.register-input-icon {
+  flex: 0 0 auto;
+  margin-left: 13px;
+  color: #7c91aa;
+}
+
+.register-input-wrapper input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0 42px 0 12px;
+  color: #1b2c40;
+  font-size: 12px;
+  box-sizing: border-box;
+}
+
+.register-input-wrapper input::placeholder {
+  color: #a5b1bf;
+}
+
+.register-password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #8194aa;
+  cursor: pointer;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-password-toggle:hover {
+  color: #2869e9;
+}
+
+/* =========================================================
+   TERMS
+   ========================================================= */
+
+.register-terms {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 2px;
+  color: #7d8997;
+  font-size: 10px;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.register-terms input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.register-checkmark {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  border: 1px solid #ccd8e5;
+  border-radius: 4px;
+  color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-top: 1px;
+  transition: 0.2s ease;
+}
+
+.register-terms input:checked + .register-checkmark {
+  border-color: #2e70ef;
+  background: #2e70ef;
+  color: #ffffff;
+}
+
+.register-terms a {
+  color: #2b6fe9;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.register-terms a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.register-error {
+  padding: 9px 11px;
+  border: 1px solid #ffd1d1;
+  border-radius: 7px;
+  background: #fff4f4;
+  color: #d83b3b;
+  font-size: 10px;
+}
+
+/* =========================================================
+   CREATE ACCOUNT BUTTON
+   ========================================================= */
+
+.register-submit {
+  width: 100%;
+  height: 46px;
+  margin-top: 3px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(90deg, #2870ee, #2462df);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 8px 20px rgba(42, 105, 232, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.register-submit span {
+  font-size: 16px;
+}
+
+.register-submit:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(42, 105, 232, 0.27);
+}
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.register-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0 15px;
+}
+
+.register-divider span {
+  flex: 1;
+  height: 1px;
+  background: #e1e8f0;
+}
+
+.register-divider p {
+  margin: 0;
+  color: #9ba8b6;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   GOOGLE
+   ========================================================= */
+
+.register-google {
+  width: 100%;
+  height: 45px;
+  border: 1px solid #d9e3ef;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #1e2d40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.register-google:hover {
+  background: #f8fbff;
+  border-color: #bfd0e4;
+}
+
+.google-letter {
+  color: #4285f4;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+.register-login-text {
+  margin: 16px 0 0;
+  text-align: center;
+  color: #8c98a7;
+  font-size: 10px;
+}
+
+.register-login-text a {
+  color: #286df0;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.register-login-text a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   BACK HOME
+   ========================================================= */
+
+.register-back-home {
+  display: block;
+  width: fit-content;
+  margin: 15px auto 0;
+  color: #9aa7b5;
+  font-size: 9px;
+  text-decoration: none;
+}
+
+.register-back-home:hover {
+  color: #286df0;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .register-page {
+    padding: 20px;
+  }
+
+  .register-container {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+  }
+
+  .register-visual {
+    min-height: 340px;
+  }
+
+  .register-hero-content {
+    bottom: 50px;
+  }
+
+  .register-hero-content h1 {
+    font-size: 36px;
+  }
+
+  .register-features {
+    display: none;
+  }
+
+  .register-form-section {
+    padding: 40px 35px;
+  }
+}
+
+@media (max-width: 560px) {
+  .register-page {
+    padding: 0;
+  }
+
+  .register-container {
+    min-height: 100vh;
+    border-radius: 0;
+  }
+
+  .register-visual {
+    min-height: 300px;
+  }
+
+  .register-brand {
+    top: 22px;
+    left: 22px;
+  }
+
+  .register-hero-content {
+    left: 22px;
+    right: 22px;
+    bottom: 30px;
+  }
+
+  .register-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .register-form-section {
+    padding: 35px 22px;
+  }
+
+  .register-heading h1 {
+    font-size: 27px;
+  }
+}
+/* MedVisionRx brand image. */
+.register-page .register-brand-icon { background: transparent; box-shadow: none; flex-shrink: 0; }
+.register-page .register-brand-icon img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.register-page .register-heading-logo { display: block; width: 68px; height: 68px; object-fit: contain; margin: 0 auto 14px; }

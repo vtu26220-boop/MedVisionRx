@@ -1,0 +1,36 @@
+.mv-maintenance { min-height:100dvh; color:#102b50; background:radial-gradient(ellipse at 90% 35%,#d4edff,transparent 55%),linear-gradient(135deg,#f6fcff,#e2f2fd); font-family:Inter,system-ui,sans-serif; }
+.mv-maintenance * { box-sizing:border-box; }
+.mv-maintenance-brand { height:88px; padding:12px clamp(20px,5vw,80px); display:flex; align-items:center; gap:17px; background:#ffffffd9; border-bottom:1px solid #d8e8f4; }
+.mv-maintenance-brand img { width:60px; height:64px; object-fit:contain; }
+.mv-maintenance-brand div { display:grid; gap:1px; border-left:1px solid #8ca5bb; padding-left:18px; }
+.mv-maintenance-brand strong { font-size:clamp(22px,3vw,32px); letter-spacing:-1px; }
+.mv-maintenance-brand span { color:#637996; font-size:14px; }
+.mv-maintenance-main { padding:32px 24px 22px; max-width:1260px; margin:auto; }
+.mv-maintenance-card { background:#fff; padding:32px clamp(22px,4vw,62px) 22px; border:1px solid #dbe9f5; border-radius:28px; box-shadow:0 18px 50px #21497512; text-align:center; overflow:hidden; }
+.mv-maintenance-hero { display:flex; align-items:center; justify-content:center; gap:18px; }
+.mv-maintenance-copy { flex:1; min-width:0; }
+.mv-maintenance-logo { width:155px; height:164px; object-fit:contain; margin:0 auto 12px; display:block; }
+.mv-maintenance-badge { display:inline-block; border-radius:30px; background:linear-gradient(110deg,#1284ff,#1255dd); color:white; font-size:13px; font-weight:750; letter-spacing:.8px; padding:9px 22px; }
+.mv-maintenance-copy h1 { font-size:clamp(28px,3.4vw,49px); line-height:1.13; letter-spacing:-1.6px; margin:20px 0 10px; font-weight:800; }
+.mv-maintenance-copy p { font-size:clamp(15px,1.5vw,19px); color:#526681; margin:0 0 24px; }
+.mv-maintenance-art { width:29%; max-width:290px; height:auto; object-fit:contain; animation:mv-maintenance-float 5s ease-in-out infinite; }
+.mv-maintenance-reason { display:flex; align-items:center; justify-content:center; gap:22px; background:#eff7ff; border:1px solid #91b9ff; padding:20px 26px; border-radius:15px; margin:14px 0 21px; text-align:left; }
+.mv-maintenance-reason svg { flex-shrink:0; color:#0963e7; }
+.mv-maintenance-reason h2 { margin:0 0 6px; font-size:21px; font-weight:750; }
+.mv-maintenance-reason p { margin:0; color:#465d79; overflow-wrap:anywhere; white-space:pre-wrap; }
+.mv-maintenance-return { font-size:20px; font-weight:750; margin:10px 0 20px; }
+.mv-maintenance-clock { display:flex; justify-content:center; gap:20px; margin:0 auto 24px; }
+.mv-maintenance-clock>div { width:145px; background:linear-gradient(#f7fbff,#eaf4ff); border:1px solid #c5e1fb; border-radius:13px; padding:10px 16px; display:grid; }
+.mv-maintenance-clock strong { color:#075ad9; font-size:49px; line-height:1.2; font-variant-numeric:tabular-nums; }
+.mv-maintenance-clock span { color:#556d8b; font-size:13px; }
+.mv-maintenance-auto { border-top:1px solid #e4edf7; padding-top:15px; color:#6b7e97; font-size:14px; }
+.mv-maintenance-other p { color:#667d96; margin:12px; }
+.mv-maintenance-other a,.mv-maintenance-loading button { display:inline-flex; align-items:center; justify-content:center; gap:9px; border:1px solid #1760e6; color:#075bd5; background:white; border-radius:9px; text-decoration:none; padding:11px 23px; font-weight:650; }
+.mv-maintenance-thanks { text-align:center; margin:18px 0 0; font-style:italic; color:#355476; }
+.mv-maintenance-loading { min-height:100dvh; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; background:#f0f8ff; text-align:center; padding:24px; color:#163957; }
+.mv-maintenance-loading img { width:100px; }
+.mv-maintenance-loading h1 { margin:0; font-size:26px; }
+.mv-maintenance-loading p { margin:0; }
+@keyframes mv-maintenance-float { 50% { transform:translateY(-9px); } }
+@media(prefers-reduced-motion:reduce) { .mv-maintenance-art { animation:none; } }
+@media(max-width:700px) { .mv-maintenance-brand { height:76px; } .mv-maintenance-brand img { width:46px; height:52px; } .mv-maintenance-main { padding:20px 12px; } .mv-maintenance-card { padding:24px 18px 16px; border-radius:20px; } .mv-maintenance-hero { flex-direction:column; gap:0; } .mv-maintenance-art { width:160px; order:2; } .mv-maintenance-logo { width:105px; height:112px; } .mv-maintenance-copy h1 { letter-spacing:-.7px; } .mv-maintenance-reason { padding:16px; gap:12px; align-items:flex-start; } .mv-maintenance-reason h2 { font-size:17px; } .mv-maintenance-reason p { font-size:14px; } .mv-maintenance-reason svg { width:25px; } .mv-maintenance-return { font-size:16px; } .mv-maintenance-clock { gap:10px; } .mv-maintenance-clock>div { width:95px; padding:10px 7px; } .mv-maintenance-clock strong { font-size:34px; } .mv-maintenance-clock span { font-size:10px; } }

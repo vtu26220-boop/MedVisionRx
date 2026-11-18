@@ -1,0 +1,2127 @@
+/* =========================================================
+   MEDVISIONRX - ORGAN REQUIREMENT LAYOUT
+   Same design as Organ Donation layout
+   ========================================================= */
+
+.organ-requirement-layout {
+  min-height: 100vh;
+  width: 100%;
+
+  background: #f3f8fc;
+  color: #102a43;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.organ-requirement-sidebar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: 228px;
+  min-width: 228px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border-right: 1px solid #e2eaf1;
+
+  box-sizing: border-box;
+
+  z-index: 1000;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+  scrollbar-color: #d5e2ec transparent;
+
+  transition:
+    width 0.25s ease,
+    min-width 0.25s ease,
+    transform 0.25s ease;
+}
+
+.organ-requirement-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.organ-requirement-sidebar::-webkit-scrollbar-thumb {
+  background: #d5e2ec;
+  border-radius: 20px;
+}
+
+/* =========================================================
+   COLLAPSED SIDEBAR
+   ========================================================= */
+
+.organ-requirement-layout.sidebar-collapsed
+  .organ-requirement-sidebar {
+  width: 78px;
+  min-width: 78px;
+}
+
+.organ-requirement-layout.sidebar-collapsed
+  .organ-requirement-main {
+  margin-left: 78px;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.organ-requirement-brand {
+  min-height: 68px;
+
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid #edf1f5;
+
+  box-sizing: border-box;
+}
+
+.organ-requirement-brand-link {
+  width: 100%;
+  min-width: 0;
+
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+  outline: none !important;
+
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color: #102a43;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  box-shadow: none !important;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.organ-requirement-brand-link:hover,
+.organ-requirement-brand-link:focus,
+.organ-requirement-brand-link:focus-visible,
+.organ-requirement-brand-link:active {
+  background: transparent;
+  border: 0;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.organ-requirement-brand-icon {
+  width: 40px;
+  height: 40px;
+
+  min-width: 40px;
+
+  border-radius: 11px;
+
+  background: #1677e8;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 7px 16px rgba(22, 119, 232, 0.2);
+}
+
+.organ-requirement-brand-text {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.organ-requirement-brand-text strong {
+  color: #102a43;
+
+  font-size: 17px;
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: -0.3px;
+
+  white-space: nowrap;
+}
+
+.organ-requirement-brand-text span {
+  margin-top: 2px;
+
+  color: #8295a8;
+
+  font-size: 10px;
+  line-height: 1.2;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   MOBILE CLOSE
+   ========================================================= */
+
+.organ-requirement-mobile-close {
+  display: none;
+
+  width: 34px;
+  height: 34px;
+
+  margin-left: auto;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: #f2f5f8;
+  color: #475467;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   SERVICE CARD
+   ========================================================= */
+
+.organ-requirement-service-card {
+  margin: 14px 13px 12px;
+
+  padding: 12px;
+
+  min-height: 64px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  border: 1px solid #d9ebfb;
+
+  border-radius: 12px;
+
+  background: #edf6ff;
+
+  box-sizing: border-box;
+}
+
+.organ-requirement-service-icon {
+  width: 38px;
+  height: 38px;
+
+  min-width: 38px;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #1476df;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 2px 8px rgba(32, 93, 145, 0.08);
+}
+
+.organ-requirement-service-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.organ-requirement-service-card span {
+  color: #7b93aa;
+
+  font-size: 9px;
+  line-height: 1;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.organ-requirement-service-card strong {
+  margin-top: 4px;
+
+  color: #163a59;
+
+  font-size: 13px;
+  line-height: 1.2;
+
+  font-weight: 750;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   NAVIGATION HEADING
+   ========================================================= */
+
+.organ-requirement-nav-heading {
+  margin: 10px 17px 7px;
+
+  color: #91a2b2;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.organ-requirement-navigation {
+  padding: 0 9px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.organ-requirement-nav-item {
+  position: relative;
+
+  width: 100%;
+  min-height: 43px;
+
+  padding: 0 12px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: #52677c;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.organ-requirement-nav-item:hover {
+  background: #f1f7fc;
+
+  color: #126ed0;
+}
+
+.organ-requirement-nav-item:focus,
+.organ-requirement-nav-item:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* =========================================================
+   ACTIVE NAVIGATION
+   ========================================================= */
+
+.organ-requirement-nav-item-active,
+.organ-requirement-nav-item[aria-current="page"] {
+  position: relative;
+
+  background: #e8f3ff !important;
+
+  color: #096bd2 !important;
+
+  font-weight: 700;
+}
+
+.organ-requirement-nav-item-active::before,
+.organ-requirement-nav-item[aria-current="page"]::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 7px;
+  bottom: 7px;
+
+  width: 3px;
+
+  border-radius: 0 5px 5px 0;
+
+  background: #1479e8;
+}
+
+.organ-requirement-nav-item-active
+  .organ-requirement-nav-icon,
+.organ-requirement-nav-item[aria-current="page"]
+  .organ-requirement-nav-icon {
+  color: #096bd2;
+}
+
+.organ-requirement-nav-icon {
+  width: 19px;
+  min-width: 19px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #71839a;
+}
+
+.organ-requirement-nav-label {
+  flex: 1;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   BOTTOM AREA
+   ========================================================= */
+
+.organ-requirement-sidebar-bottom {
+  margin-top: auto;
+
+  padding: 13px 10px 15px;
+
+  border-top: 1px solid #edf1f5;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.organ-requirement-bottom-item {
+  width: 100%;
+  min-height: 41px;
+
+  padding: 0 11px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #667b8e;
+
+  text-decoration: none;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.organ-requirement-bottom-item:hover {
+  background: #f4f8fb;
+
+  color: #1475da;
+}
+
+.organ-requirement-bottom-item:focus,
+.organ-requirement-bottom-item:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/*
+   About and Contact stay simple.
+   They do NOT receive the blue active box.
+*/
+
+.organ-requirement-bottom-item.active,
+.organ-requirement-bottom-item[aria-current="page"] {
+  background: transparent !important;
+
+  color: #667b8e !important;
+
+  box-shadow: none !important;
+}
+
+/* =========================================================
+   COLLAPSE BUTTON
+   ========================================================= */
+
+.organ-requirement-collapse-button {
+  width: 34px;
+  height: 34px;
+
+  min-width: 34px;
+
+  margin: 12px auto 2px;
+
+  padding: 0;
+
+  border: 1px solid #cfe0ef;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: #1475da;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.organ-requirement-collapse-button:hover {
+  background: #e8f3ff;
+
+  border-color: #9dc9f5;
+
+  color: #096bd2;
+}
+
+.organ-requirement-collapse-button:focus,
+.organ-requirement-collapse-button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.organ-requirement-collapse-arrow {
+  transition: transform 0.25s ease;
+}
+
+.organ-requirement-collapse-arrow-open {
+  transform: rotate(180deg);
+}
+
+/* =========================================================
+   COLLAPSED CONTENT
+   ========================================================= */
+
+.sidebar-collapsed
+  .organ-requirement-brand {
+  justify-content: center;
+}
+
+.sidebar-collapsed
+  .organ-requirement-brand-link {
+  width: auto;
+
+  justify-content: center;
+}
+
+.sidebar-collapsed
+  .organ-requirement-navigation {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sidebar-collapsed
+  .organ-requirement-nav-item {
+  justify-content: center;
+
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sidebar-collapsed
+  .organ-requirement-nav-item-active::before,
+.sidebar-collapsed
+  .organ-requirement-nav-item[aria-current="page"]::before {
+  display: none;
+}
+
+.sidebar-collapsed
+  .organ-requirement-sidebar-bottom {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.sidebar-collapsed
+  .organ-requirement-bottom-item {
+  justify-content: center;
+
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* =========================================================
+   MAIN AREA
+   ========================================================= */
+
+.organ-requirement-main {
+  width: calc(100% - 228px);
+
+  min-height: 100vh;
+
+  margin-left: 228px;
+
+  background: #f3f8fc;
+
+  transition: margin-left 0.25s ease;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.organ-requirement-header {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 900;
+
+  height: 70px;
+
+  padding: 0 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid #e4edf4;
+
+  backdrop-filter: blur(12px);
+
+  box-sizing: border-box;
+}
+
+.organ-requirement-header-left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.organ-requirement-menu-button {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dce7ef;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #38556e;
+
+  cursor: pointer;
+}
+
+.organ-requirement-menu-button:focus,
+.organ-requirement-menu-button:focus-visible {
+  outline: none;
+}
+
+/* =========================================================
+   BREADCRUMB
+   ========================================================= */
+
+.organ-requirement-breadcrumb {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  min-width: 0;
+
+  color: #8799aa;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+.organ-requirement-breadcrumb button {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+
+  color: #7c90a3;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+.organ-requirement-breadcrumb button:hover {
+  color: #1675dc;
+}
+
+.organ-requirement-breadcrumb button:focus,
+.organ-requirement-breadcrumb button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.organ-requirement-breadcrumb strong {
+  color: #29465e;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   HEADER ACTIONS
+   ========================================================= */
+
+.organ-requirement-header-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+/* SEARCH */
+
+.organ-requirement-header-search {
+  height: 39px;
+  min-width: 135px;
+
+  padding: 0 11px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  border: 1px solid #e0e9f0;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #8497a8;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.organ-requirement-header-search:hover {
+  color: #1675dd;
+
+  border-color: #cbdfee;
+
+  background: #f6faff;
+}
+
+.organ-requirement-header-search:focus,
+.organ-requirement-header-search:focus-visible {
+  outline: none;
+
+  box-shadow: none;
+}
+
+/* HEADER ICONS */
+
+.organ-requirement-header-icon {
+  width: 39px;
+  height: 39px;
+
+  padding: 0;
+
+  position: relative;
+
+  border: 1px solid #e0e9f0;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #5c7184;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.organ-requirement-header-icon:hover {
+  color: #1675dd;
+
+  border-color: #cbdfee;
+
+  background: #f6faff;
+}
+
+.organ-requirement-header-icon:focus,
+.organ-requirement-header-icon:focus-visible {
+  outline: none;
+
+  box-shadow: none;
+}
+
+.organ-requirement-notification {
+  position: relative;
+}
+
+.organ-requirement-notification span {
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+
+  border: 1.5px solid #ffffff;
+}
+
+/* =========================================================
+   USER
+   ========================================================= */
+
+.organ-requirement-user {
+  padding-left: 7px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.organ-requirement-user-avatar {
+  width: 37px;
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eaf4ff;
+
+  color: #1475da;
+}
+
+.organ-requirement-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.organ-requirement-user-info strong {
+  color: #243f56;
+
+  font-size: 12px;
+
+  font-weight: 750;
+}
+
+.organ-requirement-user-info span {
+  margin-top: 1px;
+
+  color: #8a9baa;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
+
+.organ-requirement-page-content {
+  min-height: calc(100vh - 70px);
+
+  padding: 22px;
+
+  background: #f3f8fc;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MOBILE OVERLAY
+   ========================================================= */
+
+.organ-requirement-mobile-overlay {
+  display: none;
+
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  background: rgba(8, 27, 43, 0.42);
+
+  z-index: 1100;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+[data-theme="dark"]
+  .organ-requirement-layout {
+  background: #0c1722;
+
+  color: #e7f0f7;
+}
+
+[data-theme="dark"]
+  .organ-requirement-sidebar {
+  background: #101d29;
+
+  border-right-color: #223443;
+}
+
+[data-theme="dark"]
+  .organ-requirement-brand {
+  border-bottom-color: #223443;
+}
+
+[data-theme="dark"]
+  .organ-requirement-brand-text strong {
+  color: #edf6fd;
+}
+
+[data-theme="dark"]
+  .organ-requirement-brand-text span {
+  color: #7f95a8;
+}
+
+[data-theme="dark"]
+  .organ-requirement-service-card {
+  background: #13283a;
+
+  border-color: #24445c;
+}
+
+[data-theme="dark"]
+  .organ-requirement-service-icon {
+  background: #19364d;
+
+  color: #55a8ff;
+}
+
+[data-theme="dark"]
+  .organ-requirement-service-card span {
+  color: #7f95a8;
+}
+
+[data-theme="dark"]
+  .organ-requirement-service-card strong {
+  color: #e4f1fb;
+}
+
+[data-theme="dark"]
+  .organ-requirement-nav-heading {
+  color: #6f8597;
+}
+
+[data-theme="dark"]
+  .organ-requirement-nav-item {
+  color: #9cb0c0;
+}
+
+[data-theme="dark"]
+  .organ-requirement-nav-item:hover {
+  background: #172c3d;
+
+  color: #65afff;
+}
+
+[data-theme="dark"]
+  .organ-requirement-nav-item-active,
+[data-theme="dark"]
+  .organ-requirement-nav-item[aria-current="page"] {
+  background: #173652 !important;
+
+  color: #63afff !important;
+}
+
+[data-theme="dark"]
+  .organ-requirement-nav-item-active
+  .organ-requirement-nav-icon,
+[data-theme="dark"]
+  .organ-requirement-nav-item[aria-current="page"]
+  .organ-requirement-nav-icon {
+  color: #63afff;
+}
+
+[data-theme="dark"]
+  .organ-requirement-nav-icon {
+  color: #8198aa;
+}
+
+[data-theme="dark"]
+  .organ-requirement-sidebar-bottom {
+  border-top-color: #223443;
+}
+
+[data-theme="dark"]
+  .organ-requirement-bottom-item {
+  color: #91a6b7;
+}
+
+[data-theme="dark"]
+  .organ-requirement-bottom-item:hover {
+  background: #172b3a;
+
+  color: #64adfb;
+}
+
+[data-theme="dark"]
+  .organ-requirement-collapse-button {
+  background: #142533;
+
+  border-color: #294052;
+
+  color: #5eafff;
+}
+
+[data-theme="dark"]
+  .organ-requirement-collapse-button:hover {
+  background: #173652;
+
+  border-color: #3c6b92;
+}
+
+[data-theme="dark"]
+  .organ-requirement-main {
+  background: #0c1722;
+}
+
+[data-theme="dark"]
+  .organ-requirement-header {
+  background: rgba(16, 29, 41, 0.96);
+
+  border-bottom-color: #223443;
+}
+
+[data-theme="dark"]
+  .organ-requirement-breadcrumb {
+  color: #71879a;
+}
+
+[data-theme="dark"]
+  .organ-requirement-breadcrumb button {
+  color: #8499aa;
+}
+
+[data-theme="dark"]
+  .organ-requirement-breadcrumb strong {
+  color: #d9e7f0;
+}
+
+[data-theme="dark"]
+  .organ-requirement-header-search,
+[data-theme="dark"]
+  .organ-requirement-header-icon {
+  background: #142533;
+
+  border-color: #294052;
+
+  color: #9bb0c0;
+}
+
+[data-theme="dark"]
+  .organ-requirement-user-info strong {
+  color: #e2edf5;
+}
+
+[data-theme="dark"]
+  .organ-requirement-user-info span {
+  color: #8196a7;
+}
+
+[data-theme="dark"]
+  .organ-requirement-user-avatar {
+  background: #18344b;
+
+  color: #5eafff;
+}
+
+[data-theme="dark"]
+  .organ-requirement-page-content {
+  background: #0c1722;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .organ-requirement-sidebar {
+    width: 230px;
+    min-width: 230px;
+  }
+
+  .organ-requirement-main {
+    width: calc(100% - 230px);
+
+    margin-left: 230px;
+  }
+
+  .organ-requirement-header {
+    padding: 0 20px;
+  }
+
+  .organ-requirement-user-info {
+    display: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .organ-requirement-sidebar {
+    width: 270px;
+    min-width: 270px;
+
+    transform: translateX(-100%);
+
+    box-shadow:
+      10px 0 35px rgba(0, 0, 0, 0.12);
+  }
+
+  .organ-requirement-sidebar.organ-requirement-sidebar-open {
+    transform: translateX(0);
+  }
+
+  .organ-requirement-mobile-close {
+    display: flex;
+  }
+
+  .organ-requirement-mobile-overlay {
+    display: block;
+  }
+
+  .organ-requirement-main,
+  .organ-requirement-layout.sidebar-collapsed
+    .organ-requirement-main {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+  .organ-requirement-header {
+    height: 62px;
+
+    padding: 0 15px;
+  }
+
+  .organ-requirement-menu-button {
+    display: flex;
+  }
+
+  .organ-requirement-breadcrumb button {
+    display: none;
+  }
+
+  .organ-requirement-breadcrumb > span,
+  .organ-requirement-breadcrumb > svg {
+    display: none;
+  }
+
+  .organ-requirement-user {
+    display: none;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .organ-requirement-header {
+    padding: 0 11px;
+  }
+
+  .organ-requirement-breadcrumb strong {
+    font-size: 12px;
+  }
+
+  .organ-requirement-header-search {
+    min-width: 39px;
+
+    width: 39px;
+
+    justify-content: center;
+  }
+
+  .organ-requirement-header-search span {
+    display: none;
+  }
+
+  .organ-requirement-page-content {
+    padding: 14px;
+  }
+
+  .organ-requirement-header-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* =========================================================
+   AUTHENTICATED USER PROFILE DROPDOWN
+   ========================================================= */
+
+.organ-requirement-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.organ-requirement-theme-button {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #5c7184;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.organ-requirement-theme-button:hover {
+  color: #1675dd;
+  background: rgba(22, 117, 221, 0.08);
+}
+
+.organ-requirement-theme-button:focus,
+.organ-requirement-theme-button:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.organ-requirement-profile-wrap {
+  position: relative;
+}
+
+.organ-requirement-user {
+  padding: 4px 7px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  cursor: pointer;
+  font: inherit;
+}
+
+.organ-requirement-user:hover {
+  background: rgba(22, 117, 221, 0.06);
+}
+
+.organ-requirement-user:focus,
+.organ-requirement-user:focus-visible {
+  outline: none;
+}
+
+.organ-requirement-user-avatar {
+  width: 39px;
+  height: 39px;
+  min-width: 39px;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #eaf4ff;
+  color: #1475da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.organ-requirement-user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.organ-requirement-user-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.organ-requirement-user-info strong {
+  max-width: 150px;
+  overflow: hidden;
+  color: #243f56;
+  font-size: 12px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.organ-requirement-user-info span {
+  margin-top: 2px;
+  color: #8a9baa;
+  font-size: 10px;
+}
+
+.organ-requirement-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 1200;
+  width: 270px;
+  padding: 15px;
+  border: 1px solid #e1eaf2;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 14px 38px rgba(18, 45, 68, 0.16);
+}
+
+.organ-requirement-profile-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.organ-requirement-profile-heading strong {
+  color: #203c53;
+  font-size: 14px;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.organ-requirement-profile-heading span {
+  color: #8295a8;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.organ-requirement-profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 0;
+}
+
+.organ-requirement-profile-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.organ-requirement-profile-details span {
+  color: #8a9baa;
+  font-size: 10px;
+}
+
+.organ-requirement-profile-details strong {
+  color: #344f65;
+  font-size: 12px;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.organ-requirement-signout-button {
+  width: 100%;
+  min-height: 37px;
+  border: 0;
+  border-radius: 9px;
+  background: #fff0f0;
+  color: #d14343;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.organ-requirement-signout-button:hover {
+  background: #ffe3e3;
+}
+
+[data-theme="dark"] .organ-requirement-theme-button {
+  color: #a8bdce;
+}
+
+[data-theme="dark"] .organ-requirement-theme-button:hover {
+  color: #65afff;
+  background: rgba(101, 175, 255, 0.1);
+}
+
+[data-theme="dark"] .organ-requirement-user:hover {
+  background: rgba(101, 175, 255, 0.08);
+}
+
+[data-theme="dark"] .organ-requirement-user-info strong {
+  color: #e2edf5;
+}
+
+[data-theme="dark"] .organ-requirement-user-info span {
+  color: #8196a7;
+}
+
+[data-theme="dark"] .organ-requirement-user-avatar {
+  background: #18344b;
+  color: #5eafff;
+}
+
+[data-theme="dark"] .organ-requirement-profile-dropdown {
+  background: #142533;
+  border-color: #294052;
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .organ-requirement-profile-heading {
+  border-bottom-color: #294052;
+}
+
+[data-theme="dark"] .organ-requirement-profile-heading strong,
+[data-theme="dark"] .organ-requirement-profile-details strong {
+  color: #e2edf5;
+}
+
+[data-theme="dark"] .organ-requirement-profile-heading span,
+[data-theme="dark"] .organ-requirement-profile-details span {
+  color: #91a6b7;
+}
+
+@media (max-width: 1000px) {
+  .organ-requirement-user-info {
+    display: flex;
+  }
+}
+
+@media (max-width: 760px) {
+  .organ-requirement-user-info {
+    display: none;
+  }
+
+  .organ-requirement-profile-dropdown {
+    right: 0;
+    width: min(270px, calc(100vw - 28px));
+  }
+}
+
+
+/* =========================================================
+   PROFILE MENU — MATCHES THE ORGAN DONATION PROFILE STYLE
+   ========================================================= */
+
+.organ-requirement-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.organ-requirement-theme-button {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #17212b;
+  cursor: pointer;
+}
+
+.organ-requirement-theme-button:hover {
+  background: #f3f7fb;
+}
+
+.organ-requirement-profile-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.organ-requirement-user {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 3px 5px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.organ-requirement-user:hover {
+  background: #f7faff;
+}
+
+.organ-requirement-user-avatar,
+.organ-requirement-dropdown-avatar {
+  width: 39px;
+  height: 39px;
+  min-width: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #eaf3ff;
+  color: #1680ee;
+}
+
+.organ-requirement-user-avatar img,
+.organ-requirement-dropdown-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.organ-requirement-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.organ-requirement-user-info strong {
+  max-width: 145px;
+  overflow: hidden;
+  color: #30465b;
+  font-size: 12px;
+  font-weight: 750;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.organ-requirement-user-info span {
+  color: #8b9daf;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.organ-requirement-profile-chevron {
+  color: #91a2b4;
+  margin-left: 3px;
+}
+
+.organ-requirement-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 1300;
+  width: 288px;
+  padding: 16px;
+  border: 1px solid #e5edf5;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(25, 55, 85, 0.17);
+  box-sizing: border-box;
+}
+
+.organ-requirement-profile-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #eaf0f5;
+}
+
+.organ-requirement-dropdown-avatar {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+}
+
+.organ-requirement-profile-title {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.organ-requirement-profile-title strong {
+  color: #30465b;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.organ-requirement-profile-title > span {
+  color: #8b9daf;
+  font-size: 11px;
+}
+
+.organ-requirement-profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 13px 0;
+}
+
+.organ-requirement-profile-details > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+  color: #8ba1b6;
+}
+
+.organ-requirement-profile-details > div span {
+  overflow-wrap: anywhere;
+  color: #8197ad;
+  font-size: 11px;
+}
+
+.organ-requirement-signout-button {
+  width: 100%;
+  min-height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 1px solid #ffdddd;
+  border-radius: 9px;
+  background: #fff5f5;
+  color: #f04444;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.organ-requirement-signout-button:hover {
+  background: #ffeded;
+}
+
+.organ-requirement-signout-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+[data-theme="dark"] .organ-requirement-theme-button {
+  color: #e3edf5;
+}
+
+[data-theme="dark"] .organ-requirement-theme-button:hover,
+[data-theme="dark"] .organ-requirement-user:hover {
+  background: #1a3042;
+}
+
+[data-theme="dark"] .organ-requirement-user-info strong,
+[data-theme="dark"] .organ-requirement-profile-title strong {
+  color: #e4edf5;
+}
+
+[data-theme="dark"] .organ-requirement-user-info span,
+[data-theme="dark"] .organ-requirement-profile-title > span {
+  color: #91a6b7;
+}
+
+[data-theme="dark"] .organ-requirement-profile-chevron {
+  color: #91a6b7;
+}
+
+[data-theme="dark"] .organ-requirement-profile-dropdown {
+  background: #142533;
+  border-color: #294052;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="dark"] .organ-requirement-profile-heading {
+  border-bottom-color: #294052;
+}
+
+[data-theme="dark"] .organ-requirement-profile-details > div span {
+  color: #a0b4c4;
+}
+
+[data-theme="dark"] .organ-requirement-profile-details > div {
+  color: #9bb0c0;
+}
+
+@media (max-width: 760px) {
+  .organ-requirement-user-info,
+  .organ-requirement-profile-chevron {
+    display: none;
+  }
+
+  .organ-requirement-profile-dropdown {
+    right: 0;
+    width: min(288px, calc(100vw - 24px));
+  }
+}
+
+
+/* FINAL ALIGNMENT OVERRIDE: keep profile content left-aligned like reference */
+.organ-requirement-profile-dropdown {
+  display: block !important;
+  text-align: left !important;
+}
+
+.organ-requirement-profile-dropdown .organ-requirement-profile-heading {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 11px !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+.organ-requirement-profile-dropdown .organ-requirement-dropdown-avatar {
+  display: flex !important;
+  flex: 0 0 44px !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
+.organ-requirement-profile-dropdown .organ-requirement-profile-title {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 3px !important;
+  min-width: 0 !important;
+  text-align: left !important;
+}
+
+.organ-requirement-profile-dropdown .organ-requirement-profile-title strong,
+.organ-requirement-profile-dropdown .organ-requirement-profile-title > span {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.organ-requirement-profile-dropdown .organ-requirement-profile-details {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+.organ-requirement-profile-dropdown .organ-requirement-profile-details > div {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 9px !important;
+  width: 100% !important;
+  text-align: left !important;
+}
+
+.organ-requirement-profile-dropdown .organ-requirement-profile-details > div svg {
+  flex: 0 0 16px !important;
+  margin: 0 !important;
+}
+
+.organ-requirement-profile-dropdown .organ-requirement-profile-details > div span {
+  display: block !important;
+  flex: 1 1 auto !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.organ-requirement-profile-dropdown .organ-requirement-signout-button {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+
+/* Profile editor matching Blood Requirement */
+.organ-requirement-edit-button {
+  width: 100%;
+  min-height: 38px;
+  margin: 0 0 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #d8e9f8;
+  border-radius: 9px;
+  background: #eff7ff;
+  color: #1268bd;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.organ-requirement-edit-button:hover { background: #e1f0ff; }
+
+.organ-requirement-edit-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 24, 40, .56);
+  overflow-y: auto;
+}
+.organ-requirement-edit-modal {
+  width: min(100%, 480px);
+  max-height: 94vh;
+  overflow-y: auto;
+  padding: 22px;
+  border: 1px solid #e2eaf1;
+  border-radius: 18px;
+  background: #fff;
+  color: #243f56;
+  box-shadow: 0 24px 70px rgba(0,0,0,.22);
+  box-sizing: border-box;
+}
+.organ-requirement-edit-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.organ-requirement-edit-header span {
+  color: #1475da;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.organ-requirement-edit-header h2 { margin: 5px 0 0; font-size: 22px; }
+.organ-requirement-edit-header button {
+  border: 0;
+  background: transparent;
+  color: #718096;
+  cursor: pointer;
+}
+.organ-requirement-edit-avatar-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0 15px;
+}
+.organ-requirement-edit-preview {
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eaf4ff;
+  color: #1475da;
+}
+.organ-requirement-edit-preview img { width: 100%; height: 100%; object-fit: cover; }
+.organ-requirement-edit-avatar-area small { color: #8a9baa; font-size: 10px; }
+
+.organ-requirement-avatar-picker { margin: 0 0 14px; }
+.organ-requirement-avatar-picker > strong { font-size: 12px; }
+ .organ-requirement-avatar-options {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 9px;
+}
+.organ-requirement-avatar-options button {
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 2px;
+  overflow: hidden;
+  border: 2px solid #e2eaf1;
+  border-radius: 50%;
+  background: #f7fafc;
+  cursor: pointer;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.organ-requirement-avatar-options button:hover { transform: translateY(-2px); }
+.organ-requirement-avatar-options button.selected {
+  border-color: #1475da;
+  box-shadow: 0 0 0 3px #dceeff;
+}
+.organ-requirement-avatar-options img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.organ-requirement-edit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 11px 0;
+  color: #52677c;
+  font-size: 11px;
+  font-weight: 700;
+}
+.organ-requirement-edit-field input {
+  width: 100%;
+  height: 40px;
+  padding: 0 11px;
+  border: 1px solid #dce5ed;
+  border-radius: 8px;
+  background: #fff;
+  color: #243f56;
+  font: inherit;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+.organ-requirement-edit-field input:focus {
+  outline: 2px solid #c7e2ff;
+  border-color: #75b7f5;
+}
+.organ-requirement-edit-field input[readonly] {
+  background: #f5f7fa;
+  color: #8295a8;
+}
+.organ-requirement-edit-error {
+  color: #be123c;
+  background: #fff1f2;
+  padding: 9px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.organ-requirement-edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 18px;
+}
+.organ-requirement-edit-actions button {
+  min-height: 39px;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.organ-requirement-edit-cancel {
+  border: 1px solid #dce5ed;
+  background: #fff;
+  color: #52677c;
+}
+.organ-requirement-edit-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #1268bd;
+  background: #1475da;
+  color: #fff;
+}
+.organ-requirement-edit-actions button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+[data-theme="dark"] .organ-requirement-edit-modal {
+  background: #101d29;
+  color: #e2edf5;
+  border-color: #294052;
+}
+[data-theme="dark"] .organ-requirement-edit-field { color: #b5c6d3; }
+[data-theme="dark"] .organ-requirement-edit-field input {
+  background: #142533;
+  border-color: #294052;
+  color: #e2edf5;
+}
+[data-theme="dark"] .organ-requirement-edit-field input[readonly] { background: #1a2b39; }
+[data-theme="dark"] .organ-requirement-edit-button {
+  background: #173652;
+  border-color: #294f70;
+  color: #82c1ff;
+}
+[data-theme="dark"] .organ-requirement-edit-cancel {
+  background: #142533;
+  border-color: #294052;
+  color: #c3d2de;
+}
+@media (max-width: 520px) {
+  .organ-requirement-edit-overlay { padding: 9px; }
+  .organ-requirement-edit-modal { padding: 17px; }
+  .organ-requirement-avatar-options { gap: 7px; }
+}
+
+
+/* Profile save confirmation */
+.organ-requirement-save-success {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 14px;
+  padding: 11px 14px;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 13px;
+  font-weight: 600;
+}
+.organ-requirement-save-success button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+[data-theme="dark"] .organ-requirement-save-success {
+  border-color: #166534;
+  background: #102b20;
+  color: #86efac;
+}
+
+/* Avatar-only profile editor */
+.organ-requirement-edit-avatar-area.avatar-only {
+  padding: 12px 0 18px;
+  gap: 7px;
+}
+.organ-requirement-edit-avatar-area.avatar-only .organ-requirement-edit-preview {
+  width: 96px;
+  height: 96px;
+  border: 4px solid #edf5ff;
+  box-shadow: 0 3px 12px rgba(35, 105, 180, .10);
+}
+.organ-requirement-edit-avatar-area.avatar-only small {
+  max-width: 300px;
+  text-align: center;
+  line-height: 1.45;
+}
+.organ-requirement-avatar-options button {
+  background: #f1f7fc;
+}
+.organ-requirement-avatar-options img {
+  object-fit: contain;
+  transform: scale(1.08);
+}
+
+/* Shared brand logo and organ service thumbnail */
+.organ-requirement-brand-icon {
+  background: transparent;
+  box-shadow: none;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.organ-requirement-brand-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.organ-requirement-service-icon {
+  padding: 0;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #fff;
+}
+.organ-requirement-service-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.organ-requirement-edit-modal button:focus-visible {
+  outline: 2px solid #1475da;
+  outline-offset: 3px;
+}
+.organ-requirement-edit-modal :disabled {
+  cursor: not-allowed;
+}
+@media (max-width: 520px) {
+  .organ-requirement-avatar-options { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}

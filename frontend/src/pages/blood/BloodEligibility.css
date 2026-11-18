@@ -1,0 +1,453 @@
+.blood-eligibility-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.blood-eligibility-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.blood-eligibility-eyebrow {
+  margin: 0 0 6px;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.blood-eligibility-header h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 30px;
+  font-weight: 750;
+}
+
+.blood-eligibility-subtitle {
+  margin: 8px 0 0;
+  color: #667085;
+  font-size: 14px;
+}
+
+.blood-eligibility-header-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #eaf2ff;
+  color: #2563eb;
+}
+
+
+/* ============================================================
+   NOTICE
+   ============================================================ */
+
+.blood-eligibility-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #bfdbfe;
+  border-radius: 16px;
+  background: #eff6ff;
+}
+
+.blood-eligibility-notice-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.blood-eligibility-notice h2 {
+  margin: 0 0 5px;
+  color: #172033;
+  font-size: 16px;
+}
+
+.blood-eligibility-notice p {
+  margin: 0;
+  color: #475467;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+
+.blood-eligibility-card {
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid var(--blood-border, #e6eaf0);
+  border-radius: 16px;
+  background: var(--blood-card-bg, #ffffff);
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
+}
+
+.blood-eligibility-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-eligibility-card-header h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 18px;
+}
+
+.blood-eligibility-card-header p {
+  margin: 5px 0 0;
+  color: #667085;
+  font-size: 13px;
+}
+
+.blood-eligibility-card-header > svg {
+  flex-shrink: 0;
+  color: #2563eb;
+}
+
+
+/* ============================================================
+   GENERAL REQUIREMENTS
+   ============================================================ */
+
+.blood-eligibility-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.blood-eligibility-item {
+  display: flex;
+  gap: 14px;
+  padding: 22px;
+  border-bottom: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-eligibility-item:nth-child(odd) {
+  border-right: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-eligibility-item:nth-child(3),
+.blood-eligibility-item:nth-child(4) {
+  border-bottom: none;
+}
+
+.blood-eligibility-item-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.blood-eligibility-item h3 {
+  margin: 0 0 6px;
+  color: #172033;
+  font-size: 15px;
+}
+
+.blood-eligibility-item p {
+  margin: 0;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   CHECK LIST
+   ============================================================ */
+
+.blood-eligibility-check-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.blood-eligibility-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 17px 22px;
+  color: #475467;
+  font-size: 13px;
+  line-height: 1.55;
+  border-bottom: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-eligibility-check:nth-child(odd) {
+  border-right: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-eligibility-check:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.blood-eligibility-check svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #16a34a;
+}
+
+
+/* ============================================================
+   MEDICAL SCREENING
+   ============================================================ */
+
+.blood-eligibility-screening-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.blood-eligibility-screening-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 20px 22px;
+  border-right: 1px solid var(--blood-border, #e6eaf0);
+  border-bottom: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-eligibility-screening-grid > div:nth-child(3n) {
+  border-right: none;
+}
+
+.blood-eligibility-screening-grid > div:nth-last-child(-n + 3) {
+  border-bottom: none;
+}
+
+.blood-eligibility-screening-grid strong {
+  color: #172033;
+  font-size: 14px;
+}
+
+.blood-eligibility-screening-grid span {
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   WARNING
+   ============================================================ */
+
+.blood-eligibility-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #fed7aa;
+  border-radius: 16px;
+  background: #fff7ed;
+}
+
+.blood-eligibility-warning-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+.blood-eligibility-warning h2 {
+  margin: 0 0 6px;
+  color: #172033;
+  font-size: 16px;
+}
+
+.blood-eligibility-warning p {
+  margin: 5px 0 0;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   FINAL
+   ============================================================ */
+
+.blood-eligibility-final {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid #bbf7d0;
+  border-radius: 16px;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.blood-eligibility-final h2 {
+  margin: 0 0 5px;
+  color: #172033;
+  font-size: 16px;
+}
+
+.blood-eligibility-final p {
+  margin: 0;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+
+[data-theme="dark"] .blood-eligibility-header h1,
+[data-theme="dark"] .blood-eligibility-notice h2,
+[data-theme="dark"] .blood-eligibility-card-header h2,
+[data-theme="dark"] .blood-eligibility-item h3,
+[data-theme="dark"] .blood-eligibility-screening-grid strong,
+[data-theme="dark"] .blood-eligibility-warning h2,
+[data-theme="dark"] .blood-eligibility-final h2 {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .blood-eligibility-subtitle,
+[data-theme="dark"] .blood-eligibility-card-header p,
+[data-theme="dark"] .blood-eligibility-item p,
+[data-theme="dark"] .blood-eligibility-check,
+[data-theme="dark"] .blood-eligibility-screening-grid span,
+[data-theme="dark"] .blood-eligibility-notice p,
+[data-theme="dark"] .blood-eligibility-warning p,
+[data-theme="dark"] .blood-eligibility-final p {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .blood-eligibility-card {
+  background: #111827;
+  border-color: #263244;
+}
+
+[data-theme="dark"] .blood-eligibility-card-header,
+[data-theme="dark"] .blood-eligibility-item,
+[data-theme="dark"] .blood-eligibility-check,
+[data-theme="dark"] .blood-eligibility-screening-grid > div {
+  border-color: #263244;
+}
+
+[data-theme="dark"] .blood-eligibility-notice {
+  background: #172554;
+  border-color: #1e40af;
+}
+
+[data-theme="dark"] .blood-eligibility-warning {
+  background: #291d12;
+  border-color: #9a3412;
+}
+
+[data-theme="dark"] .blood-eligibility-final {
+  background: #10261a;
+  border-color: #166534;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .blood-eligibility-screening-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .blood-eligibility-screening-grid > div:nth-child(3n) {
+    border-right: 1px solid var(--blood-border, #e6eaf0);
+  }
+
+  .blood-eligibility-screening-grid > div:nth-child(2n) {
+    border-right: none;
+  }
+
+  .blood-eligibility-screening-grid > div:nth-last-child(-n + 3) {
+    border-bottom: 1px solid var(--blood-border, #e6eaf0);
+  }
+
+  .blood-eligibility-screening-grid > div:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .blood-eligibility-page {
+    padding: 20px 16px;
+  }
+
+  .blood-eligibility-header h1 {
+    font-size: 25px;
+  }
+
+  .blood-eligibility-grid,
+  .blood-eligibility-check-list,
+  .blood-eligibility-screening-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blood-eligibility-item:nth-child(odd),
+  .blood-eligibility-check:nth-child(odd),
+  .blood-eligibility-screening-grid > div:nth-child(2n) {
+    border-right: none;
+  }
+
+  .blood-eligibility-item,
+  .blood-eligibility-check {
+    border-right: none !important;
+  }
+
+  .blood-eligibility-item:nth-child(3),
+  .blood-eligibility-item:nth-child(4),
+  .blood-eligibility-check:nth-last-child(-n + 2),
+  .blood-eligibility-screening-grid > div:nth-last-child(-n + 2) {
+    border-bottom: 1px solid var(--blood-border, #e6eaf0);
+  }
+
+  .blood-eligibility-item:last-child,
+  .blood-eligibility-check:last-child,
+  .blood-eligibility-screening-grid > div:last-child {
+    border-bottom: none;
+  }
+
+  .blood-eligibility-header {
+    align-items: flex-start;
+  }
+
+  .blood-eligibility-notice,
+  .blood-eligibility-warning,
+  .blood-eligibility-final {
+    padding: 16px;
+  }
+}

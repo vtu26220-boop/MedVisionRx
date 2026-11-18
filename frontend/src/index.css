@@ -1,0 +1,1812 @@
+@import "./styles/themes.css";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #7c3aed;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--background);
+  color: var(--text-primary);
+  min-width: 320px;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* =========================================
+   MEDVISIONRX SERVICES PAGE
+========================================= */
+
+.services-page {
+  min-height: 100vh;
+  background: #03152f;
+  color: #ffffff;
+}
+
+.services-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(2, 20, 47, 0.96),
+      rgba(3, 31, 69, 0.90),
+      rgba(2, 20, 47, 0.96)
+    );
+}
+
+.services-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(2, 24, 55, 0.78),
+      rgba(2, 24, 55, 0.92)
+    ),
+    url("/images/services-background.png");
+
+  background-size: cover;
+  background-position: center;
+  opacity: 0.9;
+}
+
+.services-background-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(30, 111, 255, 0.20),
+      transparent 45%
+    );
+}
+
+.services-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1500px;
+  margin: auto;
+
+  padding: 42px 30px 55px;
+}
+
+.services-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.services-heading h1 {
+  margin: 0;
+
+  font-size: 30px;
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+
+  color: #ffffff;
+}
+
+.services-heading p {
+  margin-top: 7px;
+
+  font-size: 13px;
+  color: #d6e6ff;
+}
+
+/* =========================================
+   CARDS
+========================================= */
+
+.services-cards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 10px;
+
+  align-items: stretch;
+}
+
+.service-card {
+  position: relative;
+
+  min-height: 360px;
+
+  overflow: hidden;
+
+  border-radius: 13px;
+
+  border: 1px solid rgba(255, 255, 255, 0.28);
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.30);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.42);
+}
+
+/* =========================================
+   CARD COLORS
+========================================= */
+
+.prescription-card {
+  background:
+    linear-gradient(
+      145deg,
+      #dceeff,
+      #a9d5ff
+    );
+}
+
+.blood-donation-card {
+  background:
+    linear-gradient(
+      145deg,
+      #ffe1e5,
+      #ffb8c0
+    );
+}
+
+.blood-requirement-card {
+  background:
+    linear-gradient(
+      145deg,
+      #ffe4ed,
+      #ffc3d7
+    );
+}
+
+.organ-donation-card {
+  background:
+    linear-gradient(
+      145deg,
+      #dcf8e7,
+      #b6edce
+    );
+}
+
+.organ-requirement-card {
+  background:
+    linear-gradient(
+      145deg,
+      #eee4ff,
+      #d9c2ff
+    );
+}
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.service-top {
+  position: relative;
+
+  padding: 12px 12px 0;
+}
+
+.service-icon {
+  width: 43px;
+  height: 43px;
+
+  border-radius: 11px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.prescription-card .service-icon {
+  color: #2563eb;
+}
+
+.blood-donation-card .service-icon {
+  color: #ef3340;
+}
+
+.blood-requirement-card .service-icon {
+  color: #e11d48;
+}
+
+.organ-donation-card .service-icon {
+  color: #16a34a;
+}
+
+.organ-requirement-card .service-icon {
+  color: #7c3aed;
+}
+
+/* =========================================
+   SERVICE IMAGE
+========================================= */
+
+.service-image-wrapper {
+  height: 145px;
+
+  margin: 8px 9px 0;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.4s ease;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.05);
+}
+
+/* =========================================
+   INFORMATION
+========================================= */
+
+.service-info {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 11px 13px 13px;
+}
+
+.service-info h2 {
+  margin: 0 0 6px;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  color: #10213d;
+}
+
+.service-info p {
+  margin: 0;
+
+  font-size: 10px;
+
+  line-height: 1.45;
+
+  color: #30476b;
+}
+
+/* =========================================
+   KNOW MORE
+========================================= */
+
+.service-know-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  width: fit-content;
+
+  margin-top: auto;
+  padding: 7px 11px;
+
+  border-radius: 7px;
+
+  color: white;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease;
+}
+
+.service-know-more:hover {
+  transform: translateX(3px);
+}
+
+.prescription-card .service-know-more {
+  background: #2563eb;
+}
+
+.blood-donation-card .service-know-more {
+  background: #ef3340;
+}
+
+.blood-requirement-card .service-know-more {
+  background: #e11d48;
+}
+
+.organ-donation-card .service-know-more {
+  background: #16a34a;
+}
+
+.organ-requirement-card .service-know-more {
+  background: #7c3aed;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .services-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 750px) {
+  .services-content {
+    padding: 35px 18px;
+  }
+
+  .services-heading h1 {
+    font-size: 25px;
+  }
+
+  .services-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .services-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 380px;
+  }
+}
+
+/* =========================================================
+   MEDVISIONRX
+   BLOOD DONOR REGISTRATION
+   ========================================================= */
+
+.blood-registration-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  padding: 32px 30px 45px;
+
+  background: #f3f8fc;
+}
+
+.blood-registration-container {
+  width: min(1230px, 100%);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.blood-registration-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  margin-bottom: 24px;
+}
+
+.registration-title-row {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+}
+
+.registration-title-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 15px;
+
+  background: #e9f3ff;
+  color: #2475d1;
+}
+
+.blood-registration-header h1,
+.preview-page-header h1 {
+  margin: 0;
+
+  color: #15243a;
+
+  font-size: 28px;
+  line-height: 1.15;
+
+  font-weight: 750;
+
+  letter-spacing: -0.6px;
+}
+
+.blood-registration-header p,
+.preview-page-header p {
+  margin: 6px 0 0;
+
+  color: #718096;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.registration-security {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 10px 14px;
+
+  border: 1px solid #cde8d7;
+  border-radius: 10px;
+
+  background: #f0faf4;
+
+  color: #237947;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.registration-message {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  padding: 13px 15px;
+
+  border-radius: 10px;
+
+  background: #fff1f1;
+  border: 1px solid #efc1c1;
+
+  color: #a32b2b;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.registration-message svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.blood-registration-form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+/* =========================================================
+   SECTION
+   ========================================================= */
+
+.registration-section {
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe7ef;
+  border-radius: 16px;
+
+  box-shadow:
+    0 5px 22px rgba(31, 64, 100, 0.055);
+}
+
+.registration-section-header {
+  width: 100%;
+
+  min-height: 58px;
+
+  padding: 0 20px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  border: 0;
+  border-bottom: 1px solid #e8eef4;
+
+  background: #ffffff;
+
+  color: #1e2d42;
+
+  font-family: inherit;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-align: left;
+}
+
+.registration-section-header > span {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.registration-section-header svg {
+  color: #2776d1;
+}
+
+.registration-section-body {
+  padding: 22px 20px 24px;
+}
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px 22px;
+}
+
+.form-field {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.form-field-wide {
+  grid-column: span 3;
+}
+
+.form-field label {
+  color: #344054;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.form-field small {
+  color: #8290a0;
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d5dfe9;
+  border-radius: 9px;
+
+  background: #fbfdff;
+
+  color: #263548;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.form-field input,
+.form-field select {
+  height: 42px;
+
+  padding: 0 12px;
+}
+
+.form-field textarea {
+  min-height: 90px;
+
+  padding: 11px 12px;
+
+  resize: vertical;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #9ba6b3;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: #4389dd;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(67, 137, 221, 0.10);
+}
+
+/* =========================================================
+   SCREENING
+   ========================================================= */
+
+.screening-section {
+  border-color: #d6e4f3;
+}
+
+.screening-header {
+  background:
+    linear-gradient(
+      90deg,
+      #f7fbff 0%,
+      #ffffff 65%
+    );
+}
+
+.screening-intro {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 11px;
+
+  margin-bottom: 22px;
+
+  padding: 14px 15px;
+
+  border: 1px solid #cfe1f4;
+  border-radius: 11px;
+
+  background: #f2f8ff;
+
+  color: #31587f;
+}
+
+.screening-intro svg {
+  flex-shrink: 0;
+
+  color: #2c79d5;
+}
+
+.screening-intro strong {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #264e76;
+
+  font-size: 13px;
+}
+
+.screening-intro p {
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.registration-section-body h3 {
+  margin: 26px 0 13px;
+
+  padding-bottom: 9px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  color: #27364a;
+
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.registration-section-body h3:first-child {
+  margin-top: 0;
+}
+
+.screening-help {
+  margin: -5px 0 14px;
+
+  color: #7b8797;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   QUESTIONS
+   ========================================================= */
+
+.screening-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  column-gap: 30px;
+}
+
+.screening-question {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 16px;
+
+  border-bottom: 1px solid #edf1f5;
+}
+
+.screening-question-text {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.screening-question-text strong {
+  color: #344054;
+
+  font-size: 12px;
+  line-height: 1.45;
+
+  font-weight: 600;
+}
+
+.screening-question-text small {
+  color: #8793a2;
+
+  font-size: 10px;
+}
+
+.yes-no-control {
+  display: flex;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  border: 1px solid #d8e1ea;
+  border-radius: 8px;
+}
+
+.yes-no-option {
+  min-width: 57px;
+
+  height: 32px;
+
+  padding: 0 10px;
+
+  border: 0;
+
+  background: #ffffff;
+
+  color: #697586;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.18s ease,
+    color 0.18s ease;
+}
+
+.yes-no-option + .yes-no-option {
+  border-left: 1px solid #d8e1ea;
+}
+
+.yes-no-option:hover {
+  background: #f5f8fb;
+}
+
+.yes-no-option.selected-no {
+  background: #edf9f2;
+
+  color: #227846;
+
+  font-weight: 750;
+}
+
+.yes-no-option.selected-yes {
+  background: #fff0f0;
+
+  color: #bb3030;
+
+  font-weight: 750;
+}
+
+.screening-extra-field {
+  margin-top: 16px;
+}
+
+/* =========================================================
+   LIVE SCREENING RESULT
+   ========================================================= */
+
+.live-screening-result {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin-top: 24px;
+
+  padding: 17px;
+
+  border: 1px solid;
+  border-radius: 12px;
+}
+
+.live-screening-result svg {
+  flex-shrink: 0;
+
+  margin-top: 1px;
+}
+
+.live-screening-result strong {
+  display: block;
+
+  margin-bottom: 4px;
+
+  font-size: 15px;
+}
+
+.live-screening-result p {
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.live-screening-result.clear {
+  background: #effaf3;
+
+  border-color: #bee4cc;
+
+  color: #217744;
+}
+
+.live-screening-result.review {
+  background: #fff8e7;
+
+  border-color: #efd88e;
+
+  color: #886100;
+}
+
+.live-screening-result.deferred {
+  background: #fff0f0;
+
+  border-color: #efbcbc;
+
+  color: #a52b2b;
+}
+
+/* =========================================================
+   FINAL CONSENT
+   ========================================================= */
+
+.final-section {
+  padding-bottom: 20px;
+}
+
+.availability-check,
+.consent-check {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-bottom: 13px;
+
+  color: #536174;
+
+  font-size: 12px;
+  line-height: 1.55;
+
+  cursor: pointer;
+}
+
+.availability-check input,
+.consent-check input {
+  width: 16px;
+  height: 16px;
+
+  margin: 2px 0 0;
+
+  flex-shrink: 0;
+
+  accent-color: #2675d0;
+}
+
+.consent-check {
+  padding: 13px;
+
+  border: 1px solid #e0e7ee;
+  border-radius: 10px;
+
+  background: #f7f9fb;
+}
+
+.registration-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 18px;
+}
+
+.register-donor-button {
+  min-height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 21px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: #2674ce;
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.register-donor-button:hover {
+  background: #1d61b3;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   FOOTER NOTE
+   ========================================================= */
+
+.registration-footer-note {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin: 17px 2px 0;
+
+  color: #7b8796;
+
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.registration-footer-note svg {
+  flex-shrink: 0;
+
+  color: #4c83c7;
+}
+
+/* =========================================================
+   PREVIEW PAGE
+   ========================================================= */
+
+.preview-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+.preview-top-status {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 10px 14px;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.preview-top-status.clear {
+  background: #edf9f2;
+  color: #227846;
+}
+
+.preview-top-status.review {
+  background: #fff8e7;
+  color: #8a6200;
+}
+
+.preview-top-status.deferred {
+  background: #fff0f0;
+  color: #a52b2b;
+}
+
+/* =========================================================
+   PREVIEW CARD
+   ========================================================= */
+
+.preview-card {
+  margin-bottom: 16px;
+
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe7ef;
+  border-radius: 15px;
+
+  box-shadow:
+    0 5px 20px rgba(31, 64, 100, 0.045);
+}
+
+.preview-card h2 {
+  margin: 0 0 18px;
+
+  color: #25354a;
+
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.preview-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px 24px;
+}
+
+.preview-field {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.preview-field span {
+  color: #7c8797;
+
+  font-size: 11px;
+}
+
+.preview-field strong {
+  color: #29384c;
+
+  font-size: 13px;
+  line-height: 1.45;
+
+  word-break: break-word;
+}
+
+.preview-wide {
+  grid-column: span 3;
+}
+
+.preview-question-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  column-gap: 30px;
+}
+
+.preview-answer {
+  min-height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  border-bottom: 1px solid #edf1f5;
+}
+
+.preview-answer span {
+  color: #687586;
+
+  font-size: 12px;
+}
+
+.preview-answer strong {
+  font-size: 12px;
+}
+
+.answer-yes {
+  color: #b92f2f;
+}
+
+.answer-no {
+  color: #287d4a;
+}
+
+.preview-measurements {
+  margin-top: 24px;
+}
+
+.preview-measurements h3 {
+  margin: 0 0 14px;
+
+  color: #344054;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   PREVIEW RESULT
+   ========================================================= */
+
+.preview-result {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin: 18px 0;
+
+  padding: 18px;
+
+  border: 1px solid;
+  border-radius: 12px;
+}
+
+.preview-result svg {
+  flex-shrink: 0;
+
+  margin-top: 1px;
+}
+
+.preview-result h3 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+}
+
+.preview-result p {
+  margin: 0;
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.preview-result.clear {
+  background: #effaf3;
+
+  border-color: #bee4cc;
+
+  color: #217744;
+}
+
+.preview-result.review {
+  background: #fff8e7;
+
+  border-color: #efd88e;
+
+  color: #886100;
+}
+
+.preview-result.deferred {
+  background: #fff0f0;
+
+  border-color: #efbcbc;
+
+  color: #a52b2b;
+}
+
+/* =========================================================
+   REASONS
+   ========================================================= */
+
+.preview-reasons {
+  margin-bottom: 16px;
+
+  padding: 16px 18px;
+
+  border-radius: 11px;
+
+  border: 1px solid;
+}
+
+.preview-reasons h3 {
+  margin: 0 0 9px;
+
+  font-size: 13px;
+}
+
+.preview-reasons ul {
+  margin: 0;
+
+  padding-left: 19px;
+}
+
+.preview-reasons li {
+  margin: 5px 0;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.deferred-reasons {
+  background: #fff4f4;
+
+  border-color: #efc5c5;
+
+  color: #a52b2b;
+}
+
+.review-reasons {
+  background: #fff9ed;
+
+  border-color: #efdca4;
+
+  color: #866100;
+}
+
+/* =========================================================
+   PREVIEW ACTIONS
+   ========================================================= */
+
+.preview-actions {
+  display: flex;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 22px;
+}
+
+.preview-back-button,
+.confirm-save-button {
+  min-height: 44px;
+
+  padding: 0 20px;
+
+  border-radius: 9px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.preview-back-button {
+  border: 1px solid #d3dde7;
+
+  background: #ffffff;
+
+  color: #566476;
+}
+
+.preview-back-button:hover {
+  background: #f7f9fb;
+}
+
+.confirm-save-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 0;
+
+  background: #2674ce;
+
+  color: #ffffff;
+}
+
+.confirm-save-button:hover {
+  background: #1d61b3;
+}
+
+.confirm-save-button:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   SUCCESS
+   ========================================================= */
+
+.success-card {
+  width: min(600px, 100%);
+
+  margin: 70px auto 0;
+
+  padding: 40px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe7ef;
+  border-radius: 18px;
+
+  box-shadow:
+    0 10px 35px rgba(31, 64, 100, 0.08);
+}
+
+.success-icon {
+  width: 76px;
+  height: 76px;
+
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eaf8ef;
+
+  color: #23814b;
+}
+
+.success-card h1 {
+  margin: 0;
+
+  color: #1c2c42;
+
+  font-size: 24px;
+}
+
+.success-card > p {
+  margin: 10px auto 20px;
+
+  max-width: 470px;
+
+  color: #718096;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.success-status {
+  width: fit-content;
+
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 10px 15px;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.success-status.clear {
+  background: #edf9f2;
+  color: #227846;
+}
+
+.success-status.review {
+  background: #fff8e7;
+  color: #886100;
+}
+
+.success-status.deferred {
+  background: #fff0f0;
+  color: #a52b2b;
+}
+
+.success-note {
+  font-size: 11px !important;
+  color: #8490a0 !important;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+[data-theme="dark"] .blood-registration-page {
+  background: #0c1521;
+}
+
+[data-theme="dark"] .blood-registration-header h1,
+[data-theme="dark"] .preview-page-header h1 {
+  color: #f2f6fa;
+}
+
+[data-theme="dark"] .blood-registration-header p,
+[data-theme="dark"] .preview-page-header p {
+  color: #98a6b7;
+}
+
+[data-theme="dark"] .registration-title-icon {
+  background: rgba(57, 127, 218, 0.14);
+  color: #69a8ff;
+}
+
+[data-theme="dark"] .registration-section,
+[data-theme="dark"] .preview-card,
+[data-theme="dark"] .success-card {
+  background: #121d2b;
+
+  border-color: #27384c;
+
+  box-shadow: none;
+}
+
+[data-theme="dark"] .registration-section-header {
+  background: #121d2b;
+
+  border-color: #27384c;
+
+  color: #e8eef5;
+}
+
+[data-theme="dark"] .form-field label {
+  color: #d9e3ed;
+}
+
+[data-theme="dark"] .form-field input,
+[data-theme="dark"] .form-field select,
+[data-theme="dark"] .form-field textarea {
+  background: #0d1724;
+
+  border-color: #304258;
+
+  color: #e5edf5;
+}
+
+[data-theme="dark"] .form-field input:focus,
+[data-theme="dark"] .form-field select:focus,
+[data-theme="dark"] .form-field textarea:focus {
+  background: #101c2b;
+}
+
+[data-theme="dark"] .registration-section-body h3 {
+  color: #dbe5ef;
+
+  border-color: #27384c;
+}
+
+[data-theme="dark"] .screening-intro {
+  background: rgba(45, 121, 213, 0.1);
+
+  border-color: #2b4d70;
+
+  color: #a9c9eb;
+}
+
+[data-theme="dark"] .screening-intro strong {
+  color: #c3dcf3;
+}
+
+[data-theme="dark"] .screening-question {
+  border-color: #27374b;
+}
+
+[data-theme="dark"] .screening-question-text strong {
+  color: #d9e2ec;
+}
+
+[data-theme="dark"] .screening-question-text small {
+  color: #8492a4;
+}
+
+[data-theme="dark"] .yes-no-control {
+  border-color: #34475d;
+}
+
+[data-theme="dark"] .yes-no-option {
+  background: #101a28;
+
+  color: #aab6c5;
+}
+
+[data-theme="dark"] .yes-no-option + .yes-no-option {
+  border-color: #34475d;
+}
+
+[data-theme="dark"] .yes-no-option:hover {
+  background: #172334;
+}
+
+[data-theme="dark"] .selected-no {
+  background: rgba(39, 133, 76, 0.17);
+
+  color: #72d79a;
+}
+
+[data-theme="dark"] .selected-yes {
+  background: rgba(188, 48, 48, 0.17);
+
+  color: #ff8d8d;
+}
+
+[data-theme="dark"] .consent-check {
+  background: #0e1825;
+
+  border-color: #29394c;
+
+  color: #b7c3d0;
+}
+
+[data-theme="dark"] .preview-card h2,
+[data-theme="dark"] .preview-measurements h3 {
+  color: #dce5ef;
+}
+
+[data-theme="dark"] .preview-field strong {
+  color: #dce6f0;
+}
+
+[data-theme="dark"] .preview-field span,
+[data-theme="dark"] .preview-answer span {
+  color: #8796a8;
+}
+
+[data-theme="dark"] .preview-answer {
+  border-color: #27374b;
+}
+
+[data-theme="dark"] .preview-back-button {
+  background: #121d2b;
+
+  border-color: #3a4b60;
+
+  color: #c2ccd7;
+}
+
+[data-theme="dark"] .registration-footer-note {
+  color: #8290a2;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+  .blood-registration-page {
+    padding: 24px 20px 35px;
+  }
+
+  .form-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .form-field-wide {
+    grid-column: span 2;
+  }
+
+  .preview-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .preview-wide {
+    grid-column: span 2;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 680px) {
+  .blood-registration-page {
+    padding: 15px 12px 30px;
+  }
+
+  .blood-registration-header,
+  .preview-page-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 14px;
+  }
+
+  .registration-security {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    justify-content: center;
+  }
+
+  .blood-registration-header h1,
+  .preview-page-header h1 {
+    font-size: 23px;
+  }
+
+  .form-grid,
+  .screening-grid,
+  .preview-grid,
+  .preview-question-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-field-wide,
+  .preview-wide {
+    grid-column: span 1;
+  }
+
+  .registration-section-body {
+    padding: 18px 15px 20px;
+  }
+
+  .registration-section-header {
+    min-height: 54px;
+
+    padding: 0 15px;
+  }
+
+  .screening-question {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 12px 0;
+  }
+
+  .yes-no-control {
+    width: 100%;
+  }
+
+  .yes-no-option {
+    flex: 1;
+  }
+
+  .registration-actions {
+    justify-content: stretch;
+  }
+
+  .register-donor-button {
+    width: 100%;
+  }
+
+  .preview-actions {
+    flex-direction: column;
+  }
+
+  .preview-back-button,
+  .confirm-save-button {
+    width: 100%;
+  }
+
+  .success-card {
+    margin-top: 35px;
+
+    padding: 30px 20px;
+  }
+}

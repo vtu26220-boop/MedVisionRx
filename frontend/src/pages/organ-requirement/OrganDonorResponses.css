@@ -1,0 +1,1062 @@
+.organ-donor-responses-page {
+  width: 100%;
+  min-height: 100%;
+  padding: 24px 28px 40px;
+  color: var(--text-primary, #172033);
+}
+
+/* ============================================================
+   BREADCRUMB
+   ============================================================ */
+
+.organ-donor-responses-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 22px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.organ-donor-responses-breadcrumb button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #64748b;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.organ-donor-responses-breadcrumb button:hover {
+  color: #2563eb;
+}
+
+.organ-donor-responses-breadcrumb strong {
+  color: var(--text-primary, #172033);
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.organ-donor-responses-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.organ-donor-responses-header-main {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.organ-donor-responses-organ-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 61px;
+  height: 61px;
+  flex-shrink: 0;
+  border: 1px solid #dbeafe;
+  border-radius: 13px;
+  background: #eff6ff;
+}
+
+.organ-donor-responses-organ-icon span {
+  font-size: 29px;
+}
+
+.organ-donor-responses-eyebrow {
+  display: block;
+  margin-bottom: 5px;
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
+}
+
+.organ-donor-responses-header h1 {
+  margin: 0;
+  color: var(--text-primary, #172033);
+  font-size: 25px;
+  line-height: 1.2;
+  font-weight: 750;
+}
+
+.organ-donor-responses-header p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.organ-donor-responses-refresh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.organ-donor-responses-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   REQUIREMENT SUMMARY
+   ============================================================ */
+
+.organ-donor-responses-requirement {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 11px;
+  background: var(--card-bg, #ffffff);
+}
+
+.organ-donor-responses-requirement-main {
+  display: grid;
+  grid-template-columns: repeat(
+    4,
+    minmax(100px, 1fr)
+  );
+  flex: 1;
+  gap: 9px;
+}
+
+.organ-donor-responses-requirement-main > div {
+  padding: 9px;
+  border: 1px solid var(--border-color, #edf2f7);
+  border-radius: 7px;
+  background: var(--soft-card-bg, #f8fafc);
+}
+
+.organ-donor-responses-requirement-main span {
+  display: block;
+  margin-bottom: 4px;
+  color: #94a3b8;
+  font-size: 8px;
+  text-transform: uppercase;
+}
+
+.organ-donor-responses-requirement-main strong {
+  display: block;
+  overflow: hidden;
+  color: var(--text-primary, #334155);
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.organ-donor-response-stats {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.organ-donor-response-stats > div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 31px;
+  padding: 0 8px;
+  border-radius: 7px;
+  font-size: 9px;
+}
+
+.organ-donor-response-stats strong {
+  font-size: 11px;
+}
+
+.organ-donor-response-stats span {
+  color: #64748b;
+}
+
+.organ-donor-response-stats .pending {
+  border: 1px solid #fde68a;
+  background: #fffbeb;
+  color: #d97706;
+}
+
+.organ-donor-response-stats .accepted {
+  border: 1px solid #bbf7d0;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.organ-donor-response-stats .rejected {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* ============================================================
+   MESSAGE
+   ============================================================ */
+
+.organ-donor-responses-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 11px 13px;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: #15803d;
+  font-size: 10px;
+}
+
+/* ============================================================
+   RESPONSE LIST
+   ============================================================ */
+
+.organ-donor-responses-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.organ-donor-response-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 16px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 11px;
+  background: var(--card-bg, #ffffff);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+  transition: border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.organ-donor-response-card:hover {
+  border-color: #bfdbfe;
+  box-shadow: 0 5px 15px rgba(15, 23, 42, 0.05);
+}
+
+.organ-donor-response-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 49px;
+  height: 49px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.organ-donor-response-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.organ-donor-response-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.organ-donor-response-title h3 {
+  margin: 0;
+  color: var(--text-primary, #172033);
+  font-size: 15px;
+  font-weight: 720;
+}
+
+.organ-donor-response-title > div > span {
+  display: block;
+  margin-top: 3px;
+  color: #94a3b8;
+  font-size: 9px;
+}
+
+.organ-donor-response-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 24px;
+  padding: 0 7px;
+  border-radius: 999px;
+  font-size: 8px;
+  font-weight: 750;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.organ-donor-response-status.pending {
+  border: 1px solid #fde68a;
+  background: #fffbeb;
+  color: #d97706;
+}
+
+.organ-donor-response-status.accepted {
+  border: 1px solid #bbf7d0;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.organ-donor-response-status.rejected {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+/* ============================================================
+   META
+   ============================================================ */
+
+.organ-donor-response-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 9px;
+}
+
+.organ-donor-response-meta > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 24px;
+  padding: 0 7px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 6px;
+  background: var(--soft-card-bg, #f8fafc);
+  color: #64748b;
+  font-size: 9px;
+}
+
+.organ-donor-response-meta .blood {
+  border-color: #bfdbfe;
+  background: #eff6ff;
+  color: #2563eb;
+  font-weight: 750;
+}
+
+/* ============================================================
+   ORGANS
+   ============================================================ */
+
+.organ-donor-response-organs {
+  margin-bottom: 8px;
+}
+
+.organ-donor-response-organs > span {
+  display: block;
+  margin-bottom: 5px;
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.organ-donor-response-organs > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.organ-donor-response-organs > div > span {
+  padding: 4px 7px;
+  border: 1px solid #dbeafe;
+  border-radius: 5px;
+  background: #f8fbff;
+  color: #2563eb;
+  font-size: 8px;
+  font-weight: 650;
+}
+
+/* ============================================================
+   VERIFICATION
+   ============================================================ */
+
+.organ-donor-response-verification {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.organ-donor-response-verification span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #94a3b8;
+  font-size: 8px;
+}
+
+.organ-donor-response-verification span:first-child {
+  color: #15803d;
+  font-weight: 650;
+}
+
+/* ============================================================
+   ACTIONS
+   ============================================================ */
+
+.organ-donor-response-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 116px;
+}
+
+.organ-donor-response-actions button,
+.organ-donor-response-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 32px;
+  padding: 0 8px;
+  border-radius: 7px;
+  font-size: 9px;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.organ-donor-response-view {
+  border: 0;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.organ-donor-response-view:hover {
+  background: #1d4ed8;
+}
+
+.organ-donor-response-call {
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.organ-donor-response-accept {
+  border: 1px solid #bbf7d0;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+.organ-donor-response-accept:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   EMPTY
+   ============================================================ */
+
+.organ-donor-responses-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 245px;
+  padding: 30px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 11px;
+  background: var(--card-bg, #ffffff);
+  text-align: center;
+}
+
+.organ-donor-responses-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 57px;
+  height: 57px;
+  margin-bottom: 12px;
+  border-radius: 13px;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.organ-donor-responses-empty h3 {
+  margin: 0;
+  color: var(--text-primary, #172033);
+  font-size: 15px;
+}
+
+.organ-donor-responses-empty p {
+  margin: 6px 0 13px;
+  color: #64748b;
+  font-size: 10px;
+}
+
+.organ-donor-responses-empty button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 11px;
+  border: 0;
+  border-radius: 7px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 9px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+/* ============================================================
+   SECURITY
+   ============================================================ */
+
+.organ-donor-responses-security {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 15px;
+  padding: 12px 14px;
+  border: 1px solid #dbeafe;
+  border-radius: 9px;
+  background: #f8fbff;
+  color: #2563eb;
+}
+
+.organ-donor-responses-security > svg {
+  flex-shrink: 0;
+}
+
+.organ-donor-responses-security > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.organ-donor-responses-security strong {
+  color: #1e40af;
+  font-size: 10px;
+}
+
+.organ-donor-responses-security span {
+  color: #64748b;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   BACK
+   ============================================================ */
+
+.organ-donor-responses-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 19px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.organ-donor-responses-back:hover {
+  color: #2563eb;
+}
+
+/* ============================================================
+   LOADING
+   ============================================================ */
+
+.organ-donor-responses-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 300px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.organ-donor-responses-spin {
+  animation: organDonorResponsesSpin 0.9s linear infinite;
+}
+
+@keyframes organDonorResponsesSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================================
+   ERROR
+   ============================================================ */
+
+.organ-donor-responses-error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 560px;
+  min-height: 320px;
+  margin: 35px auto;
+  padding: 35px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 12px;
+  background: var(--card-bg, #ffffff);
+  text-align: center;
+}
+
+.organ-donor-responses-error-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 61px;
+  height: 61px;
+  margin-bottom: 13px;
+  border-radius: 12px;
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.organ-donor-responses-error-page h2 {
+  margin: 0;
+  color: var(--text-primary, #172033);
+  font-size: 18px;
+}
+
+.organ-donor-responses-error-page p {
+  margin: 7px 0 17px;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.organ-donor-responses-error-page button {
+  min-height: 36px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: 7px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+
+.organ-donor-responses-overlay {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.organ-donor-responses-modal {
+  width: min(680px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 13px;
+  background: var(--card-bg, #ffffff);
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.2);
+}
+
+.organ-donor-responses-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 19px;
+  border-bottom: 1px solid var(--border-color, #edf2f7);
+}
+
+.organ-donor-responses-modal-header h2 {
+  margin: 0;
+  color: var(--text-primary, #172033);
+  font-size: 20px;
+}
+
+.organ-donor-responses-modal-header button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 31px;
+  height: 31px;
+  border: 0;
+  border-radius: 7px;
+  background: #f1f5f9;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.organ-donor-responses-modal-body {
+  padding: 19px;
+}
+
+/* ============================================================
+   MODAL PROFILE
+   ============================================================ */
+
+.organ-donor-modal-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 17px;
+}
+
+.organ-donor-modal-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 51px;
+  height: 51px;
+  border-radius: 11px;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.organ-donor-modal-profile > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.organ-donor-modal-profile strong {
+  color: var(--text-primary, #172033);
+  font-size: 15px;
+}
+
+.organ-donor-modal-profile span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #15803d;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+/* ============================================================
+   MODAL GRID
+   ============================================================ */
+
+.organ-donor-modal-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    2,
+    minmax(0, 1fr)
+  );
+  gap: 9px;
+}
+
+.organ-donor-modal-grid > div {
+  padding: 10px;
+  border: 1px solid var(--border-color, #edf2f7);
+  border-radius: 8px;
+  background: var(--soft-card-bg, #f8fafc);
+}
+
+.organ-donor-modal-grid > div.full {
+  grid-column: 1 / -1;
+}
+
+.organ-donor-modal-grid span {
+  display: block;
+  margin-bottom: 4px;
+  color: #94a3b8;
+  font-size: 8px;
+  font-weight: 650;
+  text-transform: uppercase;
+}
+
+.organ-donor-modal-grid strong {
+  display: block;
+  color: var(--text-primary, #334155);
+  font-size: 10px;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+/* ============================================================
+   MODAL ORGANS
+   ============================================================ */
+
+.organ-donor-modal-organs {
+  margin-top: 13px;
+}
+
+.organ-donor-modal-organs > span {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-primary, #334155);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.organ-donor-modal-organs > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.organ-donor-modal-organs > div span {
+  padding: 5px 7px;
+  border-radius: 6px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 8px;
+  font-weight: 650;
+}
+
+/* ============================================================
+   MODAL FOOTER
+   ============================================================ */
+
+.organ-donor-responses-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 13px 19px;
+  border-top: 1px solid var(--border-color, #edf2f7);
+}
+
+.organ-donor-responses-modal-footer a,
+.organ-donor-responses-modal-footer button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-height: 35px;
+  padding: 0 10px;
+  border-radius: 7px;
+  font-size: 9px;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.organ-donor-modal-call {
+  border: 1px solid #bfdbfe;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.organ-donor-modal-map {
+  border: 1px solid #dbe2ea;
+  background: #ffffff;
+  color: #475569;
+}
+
+.organ-donor-modal-reject {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.organ-donor-modal-accept {
+  border: 0;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.organ-donor-modal-close {
+  border: 1px solid #dbe2ea;
+  background: #ffffff;
+  color: #64748b;
+}
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+
+[data-theme="dark"] .organ-donor-responses-page {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .organ-donor-responses-requirement,
+[data-theme="dark"] .organ-donor-response-card,
+[data-theme="dark"] .organ-donor-responses-empty,
+[data-theme="dark"] .organ-donor-responses-modal,
+[data-theme="dark"] .organ-donor-responses-error-page {
+  background: #111827;
+  border-color: #263244;
+}
+
+[data-theme="dark"] .organ-donor-responses-header h1,
+[data-theme="dark"] .organ-donor-response-title h3,
+[data-theme="dark"] .organ-donor-responses-requirement-main strong,
+[data-theme="dark"] .organ-donor-responses-empty h3,
+[data-theme="dark"] .organ-donor-responses-modal-header h2,
+[data-theme="dark"] .organ-donor-modal-profile strong,
+[data-theme="dark"] .organ-donor-modal-grid strong,
+[data-theme="dark"] .organ-donor-modal-organs > span,
+[data-theme="dark"] .organ-donor-responses-error-page h2 {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .organ-donor-responses-organ-icon,
+[data-theme="dark"] .organ-donor-response-avatar,
+[data-theme="dark"] .organ-donor-modal-avatar,
+[data-theme="dark"] .organ-donor-response-user {
+  background: #172554;
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .organ-donor-responses-requirement-main > div,
+[data-theme="dark"] .organ-donor-response-meta > span,
+[data-theme="dark"] .organ-donor-response-card .organ-donor-response-meta > span,
+[data-theme="dark"] .organ-donor-modal-grid > div {
+  background: #0f172a;
+  border-color: #263244;
+}
+
+[data-theme="dark"] .organ-donor-response-organs > div > span,
+[data-theme="dark"] .organ-donor-modal-organs > div span {
+  background: #172554;
+  border-color: #1e3a5f;
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .organ-donor-responses-security {
+  border-color: #1e3a5f;
+  background: #0f1f38;
+}
+
+[data-theme="dark"] .organ-donor-responses-security strong {
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .organ-donor-responses-modal-header,
+[data-theme="dark"] .organ-donor-responses-modal-footer {
+  border-color: #263244;
+}
+
+[data-theme="dark"] .organ-donor-responses-modal-header button,
+[data-theme="dark"] .organ-donor-modal-map,
+[data-theme="dark"] .organ-donor-modal-close {
+  background: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .organ-donor-responses-requirement {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .organ-donor-responses-requirement-main {
+    grid-template-columns: repeat(
+      2,
+      minmax(0, 1fr)
+    );
+  }
+
+  .organ-donor-response-stats {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .organ-donor-responses-page {
+    padding: 18px 16px 32px;
+  }
+
+  .organ-donor-responses-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .organ-donor-responses-refresh {
+    align-self: flex-start;
+  }
+
+  .organ-donor-response-card {
+    flex-wrap: wrap;
+  }
+
+  .organ-donor-response-actions {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .organ-donor-response-actions button,
+  .organ-donor-response-actions a {
+    flex: 1;
+  }
+}
+
+@media (max-width: 560px) {
+  .organ-donor-responses-header h1 {
+    font-size: 21px;
+  }
+
+  .organ-donor-responses-requirement-main {
+    grid-template-columns: 1fr;
+  }
+
+  .organ-donor-response-stats {
+    width: 100%;
+  }
+
+  .organ-donor-response-stats > div {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .organ-donor-response-title {
+    flex-direction: column;
+  }
+
+  .organ-donor-response-actions {
+    flex-direction: column;
+  }
+
+  .organ-donor-modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .organ-donor-modal-grid > div.full {
+    grid-column: auto;
+  }
+
+  .organ-donor-responses-overlay {
+    padding: 10px;
+  }
+
+  .organ-donor-responses-modal-footer {
+    justify-content: stretch;
+  }
+
+  .organ-donor-responses-modal-footer a,
+  .organ-donor-responses-modal-footer button {
+    flex: 1;
+  }
+}

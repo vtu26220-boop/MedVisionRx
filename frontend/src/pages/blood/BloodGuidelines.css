@@ -1,0 +1,626 @@
+.blood-guidelines-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.blood-guidelines-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.blood-guidelines-eyebrow {
+  margin: 0 0 6px;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.blood-guidelines-header h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 30px;
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.blood-guidelines-subtitle {
+  max-width: 720px;
+  margin: 9px 0 0;
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.blood-guidelines-header-icon {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: #eaf2ff;
+  color: #2563eb;
+}
+
+
+/* ============================================================
+   IMPORTANT NOTICE
+   ============================================================ */
+
+.blood-guidelines-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #bfdbfe;
+  border-radius: 16px;
+  background: #eff6ff;
+}
+
+.blood-guidelines-notice-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.blood-guidelines-notice h2 {
+  margin: 0 0 6px;
+  color: #172033;
+  font-size: 16px;
+}
+
+.blood-guidelines-notice p {
+  margin: 0;
+  color: #475467;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   CARD
+   ============================================================ */
+
+.blood-guidelines-card {
+  margin-bottom: 20px;
+  overflow: hidden;
+  border: 1px solid var(--blood-border, #e6eaf0);
+  border-radius: 16px;
+  background: var(--blood-card-bg, #ffffff);
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
+}
+
+.blood-guidelines-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-guidelines-card-header h2 {
+  margin: 0;
+  color: #172033;
+  font-size: 18px;
+}
+
+.blood-guidelines-card-header p {
+  margin: 5px 0 0;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* ============================================================
+   SECTION ICONS
+   ============================================================ */
+
+.blood-guidelines-section-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 11px;
+}
+
+.blood-guidelines-section-icon.blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.blood-guidelines-section-icon.orange {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.blood-guidelines-section-icon.purple {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.blood-guidelines-section-icon.red {
+  background: #fff1f2;
+  color: #dc2626;
+}
+
+.blood-guidelines-section-icon.green {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+
+/* ============================================================
+   BEFORE DONATION GRID
+   ============================================================ */
+
+.blood-guidelines-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.blood-guideline-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px 22px;
+  border-bottom: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-guideline-item:nth-child(odd) {
+  border-right: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-guideline-item:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.blood-guideline-item > svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #16a34a;
+}
+
+.blood-guideline-item h3 {
+  margin: 0 0 5px;
+  color: #172033;
+  font-size: 14px;
+}
+
+.blood-guideline-item p {
+  margin: 0;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   INFORMATION LIST
+   ============================================================ */
+
+.blood-guidelines-information-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.blood-guidelines-information-list > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 17px 22px;
+  border-bottom: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-guidelines-information-list > div:nth-child(odd) {
+  border-right: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-guidelines-information-list > div:last-child {
+  border-bottom: none;
+}
+
+.blood-guidelines-information-list svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #ea580c;
+}
+
+.blood-guidelines-information-list span {
+  color: #475467;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* ============================================================
+   PROCESS
+   ============================================================ */
+
+.blood-guidelines-process {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.blood-guidelines-step {
+  position: relative;
+  min-height: 155px;
+  padding: 24px 20px;
+  border-right: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-guidelines-step:last-child {
+  border-right: none;
+}
+
+.blood-guidelines-step-number {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.blood-guidelines-step h3 {
+  margin: 0 0 6px;
+  color: #172033;
+  font-size: 14px;
+}
+
+.blood-guidelines-step p {
+  margin: 0;
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   DURING DONATION
+   ============================================================ */
+
+.blood-guidelines-during {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.blood-guidelines-during-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 22px;
+  border-right: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-guidelines-during-item:last-child {
+  border-right: none;
+}
+
+.blood-guidelines-during-item > svg {
+  flex-shrink: 0;
+  color: #dc2626;
+}
+
+.blood-guidelines-during-item strong {
+  display: block;
+  margin-bottom: 5px;
+  color: #172033;
+  font-size: 14px;
+}
+
+.blood-guidelines-during-item span {
+  display: block;
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   AFTER DONATION
+   ============================================================ */
+
+.blood-guidelines-after-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.blood-guidelines-after-item {
+  padding: 22px;
+  border-right: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-guidelines-after-item:last-child {
+  border-right: none;
+}
+
+.blood-guidelines-after-item > svg {
+  margin-bottom: 12px;
+  color: #16a34a;
+}
+
+.blood-guidelines-after-item h3 {
+  margin: 0 0 6px;
+  color: #172033;
+  font-size: 14px;
+}
+
+.blood-guidelines-after-item p {
+  margin: 0;
+  color: #667085;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   AVOID LIST
+   ============================================================ */
+
+.blood-guidelines-avoid-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.blood-guidelines-avoid-list > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 17px 22px;
+  border-bottom: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-guidelines-avoid-list > div:nth-child(odd) {
+  border-right: 1px solid var(--blood-border, #e6eaf0);
+}
+
+.blood-guidelines-avoid-list > div:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.blood-guidelines-avoid-list svg {
+  flex-shrink: 0;
+  color: #dc2626;
+}
+
+.blood-guidelines-avoid-list span {
+  color: #475467;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* ============================================================
+   HELP
+   ============================================================ */
+
+.blood-guidelines-help {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #fecaca;
+  border-radius: 16px;
+  background: #fff7f7;
+}
+
+.blood-guidelines-help-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.blood-guidelines-help h2 {
+  margin: 0 0 6px;
+  color: #172033;
+  font-size: 16px;
+}
+
+.blood-guidelines-help p {
+  margin: 5px 0 0;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   FOOTER NOTE
+   ============================================================ */
+
+.blood-guidelines-footer-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 18px 20px;
+  border: 1px solid #bbf7d0;
+  border-radius: 14px;
+  background: #f0fdf4;
+}
+
+.blood-guidelines-footer-note svg {
+  flex-shrink: 0;
+  color: #15803d;
+}
+
+.blood-guidelines-footer-note p {
+  margin: 0;
+  color: #475467;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   DARK MODE
+   ============================================================ */
+
+[data-theme="dark"] .blood-guidelines-header h1,
+[data-theme="dark"] .blood-guidelines-notice h2,
+[data-theme="dark"] .blood-guidelines-card-header h2,
+[data-theme="dark"] .blood-guideline-item h3,
+[data-theme="dark"] .blood-guidelines-step h3,
+[data-theme="dark"] .blood-guidelines-during-item strong,
+[data-theme="dark"] .blood-guidelines-after-item h3,
+[data-theme="dark"] .blood-guidelines-help h2 {
+  color: #f1f5f9;
+}
+
+[data-theme="dark"] .blood-guidelines-subtitle,
+[data-theme="dark"] .blood-guidelines-notice p,
+[data-theme="dark"] .blood-guidelines-card-header p,
+[data-theme="dark"] .blood-guideline-item p,
+[data-theme="dark"] .blood-guidelines-information-list span,
+[data-theme="dark"] .blood-guidelines-step p,
+[data-theme="dark"] .blood-guidelines-during-item span,
+[data-theme="dark"] .blood-guidelines-after-item p,
+[data-theme="dark"] .blood-guidelines-avoid-list span,
+[data-theme="dark"] .blood-guidelines-help p,
+[data-theme="dark"] .blood-guidelines-footer-note p {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .blood-guidelines-card {
+  background: #111827;
+  border-color: #263244;
+}
+
+[data-theme="dark"] .blood-guidelines-card-header,
+[data-theme="dark"] .blood-guideline-item,
+[data-theme="dark"] .blood-guidelines-information-list > div,
+[data-theme="dark"] .blood-guidelines-step,
+[data-theme="dark"] .blood-guidelines-during-item,
+[data-theme="dark"] .blood-guidelines-after-item,
+[data-theme="dark"] .blood-guidelines-avoid-list > div {
+  border-color: #263244;
+}
+
+[data-theme="dark"] .blood-guidelines-notice {
+  background: #172554;
+  border-color: #1e40af;
+}
+
+[data-theme="dark"] .blood-guidelines-help {
+  background: #291719;
+  border-color: #991b1b;
+}
+
+[data-theme="dark"] .blood-guidelines-footer-note {
+  background: #10261a;
+  border-color: #166534;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1000px) {
+  .blood-guidelines-process {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .blood-guidelines-step:nth-child(2) {
+    border-right: none;
+  }
+
+  .blood-guidelines-step:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--blood-border, #e6eaf0);
+  }
+
+  .blood-guidelines-after-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .blood-guidelines-after-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .blood-guidelines-after-item:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--blood-border, #e6eaf0);
+  }
+}
+
+
+@media (max-width: 700px) {
+  .blood-guidelines-page {
+    padding: 20px 16px;
+  }
+
+  .blood-guidelines-header h1 {
+    font-size: 25px;
+  }
+
+  .blood-guidelines-header {
+    align-items: flex-start;
+  }
+
+  .blood-guidelines-grid,
+  .blood-guidelines-information-list,
+  .blood-guidelines-process,
+  .blood-guidelines-during,
+  .blood-guidelines-after-grid,
+  .blood-guidelines-avoid-list {
+    grid-template-columns: 1fr;
+  }
+
+  .blood-guideline-item,
+  .blood-guidelines-information-list > div,
+  .blood-guidelines-step,
+  .blood-guidelines-during-item,
+  .blood-guidelines-after-item,
+  .blood-guidelines-avoid-list > div {
+    border-right: none !important;
+    border-bottom: 1px solid var(--blood-border, #e6eaf0) !important;
+  }
+
+  .blood-guideline-item:last-child,
+  .blood-guidelines-information-list > div:last-child,
+  .blood-guidelines-step:last-child,
+  .blood-guidelines-during-item:last-child,
+  .blood-guidelines-after-item:last-child,
+  .blood-guidelines-avoid-list > div:last-child {
+    border-bottom: none !important;
+  }
+
+  .blood-guidelines-notice,
+  .blood-guidelines-help,
+  .blood-guidelines-footer-note {
+    padding: 16px;
+  }
+}

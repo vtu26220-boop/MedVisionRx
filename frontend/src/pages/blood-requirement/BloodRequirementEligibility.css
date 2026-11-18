@@ -1,0 +1,305 @@
+/* =========================================================
+   MedVisionRx Requirement Information Pages
+   Shared visual foundation
+   ========================================================= */
+
+.requirement-info-page {
+  min-height: 100%;
+  padding: 32px;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.requirement-info-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.requirement-info-hero {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 28px;
+  margin-bottom: 28px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.requirement-info-icon {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+}
+
+.requirement-info-eyebrow {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.requirement-info-title {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 750;
+  color: #0f172a;
+}
+
+.requirement-info-description {
+  margin: 8px 0 0;
+  max-width: 760px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+.requirement-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.requirement-info-card {
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.requirement-info-card-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  border-radius: 12px;
+}
+
+.requirement-info-card-title {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.requirement-info-card-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+.requirement-info-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.requirement-info-section {
+  padding: 28px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.requirement-info-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 750;
+  color: #0f172a;
+}
+
+.requirement-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.requirement-info-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.requirement-info-list-item p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.requirement-info-notice {
+  padding: 28px;
+  border-radius: 18px;
+}
+
+.requirement-info-notice-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  font-size: 20px;
+  font-weight: 750;
+  color: #0f172a;
+}
+
+.requirement-info-notice p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #475569;
+}
+
+.requirement-info-notice p + p {
+  margin-top: 14px;
+}
+
+.requirement-info-notice-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 18px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 12px;
+}
+
+.requirement-info-notice-box p {
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.requirement-info-step-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.requirement-info-step-card {
+  position: relative;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.requirement-info-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.requirement-info-step-number {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.requirement-info-step-title {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.requirement-info-step-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+.requirement-info-page-heading {
+  margin: 0 0 20px;
+  font-size: 24px;
+  font-weight: 750;
+  color: #0f172a;
+}
+
+/* Organ theme */
+.organ-requirement-page .requirement-info-eyebrow,
+.organ-requirement-page .requirement-info-step-number {
+  color: #2563eb;
+}
+
+.organ-requirement-page .requirement-info-icon,
+.organ-requirement-page .requirement-info-card-icon {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.organ-requirement-page .requirement-info-list-item svg {
+  color: #2563eb;
+}
+
+/* Blood theme */
+.blood-requirement-page .requirement-info-eyebrow,
+.blood-requirement-page .requirement-info-step-number {
+  color: #dc2626;
+}
+
+.blood-requirement-page .requirement-info-icon,
+.blood-requirement-page .requirement-info-card-icon {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.blood-requirement-page .requirement-info-list-item svg {
+  color: #dc2626;
+}
+
+@media (max-width: 1100px) {
+  .requirement-info-grid,
+  .requirement-info-step-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .requirement-info-page {
+    padding: 20px;
+  }
+
+  .requirement-info-two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .requirement-info-hero {
+    padding: 20px;
+  }
+
+  .requirement-info-title {
+    font-size: 25px;
+  }
+
+  .requirement-info-grid,
+  .requirement-info-step-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .requirement-info-section,
+  .requirement-info-notice,
+  .requirement-info-card,
+  .requirement-info-step-card {
+    padding: 20px;
+  }
+}

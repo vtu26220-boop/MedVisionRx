@@ -1,0 +1,1691 @@
+/* =========================================================
+   MEDVISIONRX - BLOOD REQUIREMENT LAYOUT
+   Same design as Blood Donation Layout
+   ========================================================= */
+
+.blood-requirement-layout {
+  min-height: 100vh;
+  width: 100%;
+
+  background: #f3f8fc;
+  color: #102a43;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.blood-requirement-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+
+  width: 228px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border-right: 1px solid #e2eaf1;
+
+  box-sizing: border-box;
+
+  z-index: 1000;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+  scrollbar-color: #d5e2ec transparent;
+
+  transition: width 0.25s ease;
+}
+
+.blood-requirement-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.blood-requirement-sidebar::-webkit-scrollbar-thumb {
+  background: #d5e2ec;
+  border-radius: 20px;
+}
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.blood-requirement-brand {
+  min-height: 68px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 15px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  box-sizing: border-box;
+}
+
+.blood-requirement-brand-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  width: 100%;
+  min-width: 0;
+
+  padding: 0;
+  margin: 0;
+
+  text-decoration: none;
+  color: inherit;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.blood-requirement-brand-link:hover,
+.blood-requirement-brand-link:active,
+.blood-requirement-brand-link:focus,
+.blood-requirement-brand-link:focus-visible {
+  background: transparent;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.blood-requirement-brand-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 0;
+
+  background: transparent;
+  color: inherit;
+
+  box-shadow: none;
+}
+
+.blood-requirement-brand-logo {
+  display: block;
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.blood-requirement-brand-text {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.blood-requirement-brand-text strong {
+  color: #102a43;
+
+  font-size: 17px;
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: -0.3px;
+}
+
+.blood-requirement-brand-text span {
+  margin-top: 2px;
+
+  color: #8295a8;
+
+  font-size: 10px;
+  line-height: 1.2;
+
+  font-weight: 600;
+}
+
+/* =========================================================
+   MOBILE CLOSE
+   ========================================================= */
+
+.blood-requirement-mobile-close {
+  display: none;
+
+  width: 34px;
+  height: 34px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: #f2f5f8;
+  color: #475467;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   SERVICE BOX
+   ========================================================= */
+
+.blood-requirement-service {
+  margin: 14px 13px 12px;
+  padding: 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  border: 1px solid #d9ebfb;
+  border-radius: 12px;
+
+  background: #edf6ff;
+
+  box-sizing: border-box;
+}
+
+.blood-requirement-service-icon {
+  width: 38px;
+  height: 38px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #1476df;
+
+  box-shadow:
+    0 2px 8px rgba(32, 93, 145, 0.08);
+}
+
+.blood-requirement-service > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.blood-requirement-service span {
+  margin-bottom: 3px;
+
+  color: #7b93aa;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.blood-requirement-service strong {
+  overflow: hidden;
+
+  color: #163a59;
+
+  font-size: 13px;
+  font-weight: 750;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.blood-requirement-navigation {
+  padding: 0 9px;
+}
+
+.blood-requirement-nav-title {
+  margin: 12px 11px 7px;
+
+  color: #91a2b2;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.blood-requirement-nav-link {
+  position: relative;
+
+  min-height: 43px;
+
+  margin: 3px 0;
+  padding: 0 12px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  border-radius: 10px;
+
+  color: #52677c;
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  background: transparent;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.blood-requirement-nav-link svg {
+  flex-shrink: 0;
+}
+
+.blood-requirement-nav-link:hover {
+  background: #f1f7fc;
+  color: #126ed0;
+}
+
+/* =========================================================
+   ACTIVE NAVIGATION
+   ========================================================= */
+
+.blood-requirement-nav-link-active,
+.blood-requirement-nav-link[aria-current="page"] {
+  position: relative;
+
+  background: #e8f3ff !important;
+  color: #096bd2 !important;
+
+  font-weight: 700;
+
+  border-radius: 10px;
+}
+
+.blood-requirement-nav-link-active::before,
+.blood-requirement-nav-link[aria-current="page"]::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 7px;
+  bottom: 7px;
+
+  width: 3px;
+
+  border-radius: 0 5px 5px 0;
+
+  background: #1479e8;
+}
+
+.blood-requirement-nav-link-active svg,
+.blood-requirement-nav-link[aria-current="page"] svg {
+  color: #096bd2;
+}
+
+/* =========================================================
+   SIDEBAR BOTTOM
+   ========================================================= */
+
+.blood-requirement-sidebar-bottom {
+  margin-top: auto;
+
+  padding: 12px 10px 15px;
+
+  border-top: 1px solid #edf1f5;
+}
+
+.blood-requirement-sidebar-divider {
+  display: none;
+}
+
+.blood-requirement-bottom-link {
+  width: 100%;
+  min-height: 41px;
+
+  padding: 0 11px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #667b8e;
+
+  text-decoration: none;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.blood-requirement-bottom-link:hover {
+  background: #f4f8fb;
+  color: #1475da;
+}
+
+.blood-requirement-bottom-link-active,
+.blood-requirement-bottom-link[aria-current="page"] {
+  background: #e8f3ff;
+  color: #096bd2;
+
+  font-weight: 700;
+}
+
+.blood-requirement-bottom-link-active:hover,
+.blood-requirement-bottom-link[aria-current="page"]:hover {
+  background: #e8f3ff;
+  color: #096bd2;
+}
+
+/* =========================================================
+   MAIN AREA
+   ========================================================= */
+
+.blood-requirement-main {
+  min-height: 100vh;
+
+  margin-left: 228px;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #f3f8fc;
+
+  transition: margin-left 0.25s ease;
+}
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+
+.blood-requirement-topbar {
+  position: sticky;
+  top: 0;
+
+  z-index: 900;
+
+  height: 70px;
+
+  padding: 0 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid #e4edf4;
+
+  backdrop-filter: blur(12px);
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   BREADCRUMB
+   ========================================================= */
+
+.blood-requirement-breadcrumb {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #8799aa;
+
+  font-size: 12px;
+}
+
+.blood-requirement-breadcrumb svg {
+  flex-shrink: 0;
+}
+
+.blood-requirement-breadcrumb-home {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+  outline: none;
+
+  background: transparent;
+
+  color: #7c90a3;
+
+  text-decoration: none;
+
+  font: inherit;
+
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.blood-requirement-breadcrumb-home:hover,
+.blood-requirement-breadcrumb-home:active,
+.blood-requirement-breadcrumb-home:focus,
+.blood-requirement-breadcrumb-home:focus-visible {
+  background: transparent;
+  border: 0;
+  outline: none;
+  box-shadow: none;
+
+  color: #1675dc;
+}
+
+.blood-requirement-breadcrumb strong {
+  color: #29465e;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   MOBILE MENU
+   ========================================================= */
+
+.blood-requirement-mobile-menu {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 10px;
+
+  border: 1px solid #dce7ef;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #38556e;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   TOPBAR ACTIONS
+   ========================================================= */
+
+.blood-requirement-topbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.blood-requirement-topbar-search {
+  width: 180px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 0 10px;
+
+  border: 1px solid #dce4ec;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #98a2b3;
+
+  box-sizing: border-box;
+}
+
+.blood-requirement-topbar-search input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+  color: #344054;
+
+  font-family: inherit;
+  font-size: 11px;
+}
+
+.blood-requirement-topbar-search input::placeholder {
+  color: #98a2b3;
+}
+
+.blood-requirement-icon-button {
+  position: relative;
+
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e0e9f0;
+  border-radius: 10px;
+
+  background: #ffffff;
+  color: #5c7184;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.blood-requirement-icon-button:hover {
+  color: #1675dd;
+  border-color: #cbdfee;
+  background: #f6faff;
+}
+
+.notification-dot {
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+
+  border: 1.5px solid #ffffff;
+}
+
+.blood-requirement-user {
+  padding-left: 7px;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.blood-requirement-user-avatar {
+  width: 37px;
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eaf4ff;
+  color: #1475da;
+}
+
+.blood-requirement-user-avatar span {
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.blood-requirement-user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.blood-requirement-user-info strong {
+  color: #243f56;
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.blood-requirement-user-info span {
+  margin-top: 1px;
+
+  color: #8a9baa;
+
+  font-size: 10px;
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.blood-requirement-content {
+  flex: 1;
+
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   MOBILE OVERLAY
+   ========================================================= */
+
+.blood-requirement-overlay {
+  display: none;
+
+  position: fixed;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+  background: rgba(8, 27, 43, 0.42);
+
+  z-index: 1100;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   SIDEBAR COLLAPSE
+   ========================================================= */
+
+.blood-requirement-sidebar-collapsed {
+  width: 78px !important;
+}
+
+.blood-requirement-layout-collapsed
+  .blood-requirement-main {
+  margin-left: 78px;
+}
+
+.blood-requirement-sidebar-collapsed
+  .blood-requirement-brand {
+  justify-content: center;
+}
+
+.blood-requirement-sidebar-collapsed
+  .blood-requirement-brand-link {
+  width: auto;
+  justify-content: center;
+}
+
+.blood-requirement-sidebar-collapsed
+  .blood-requirement-brand-icon {
+  margin: 0;
+}
+
+.blood-requirement-sidebar-collapsed
+  .blood-requirement-navigation {
+  padding: 0 10px;
+}
+
+.blood-requirement-sidebar-collapsed
+  .blood-requirement-nav-link {
+  justify-content: center;
+
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.blood-requirement-sidebar-collapsed
+  .blood-requirement-nav-link::before {
+  display: none;
+}
+
+.blood-requirement-sidebar-collapsed
+  .blood-requirement-sidebar-bottom {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.blood-requirement-sidebar-collapsed
+  .blood-requirement-bottom-link {
+  justify-content: center;
+
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.blood-requirement-collapse-button {
+  width: 34px;
+  height: 34px;
+
+  margin: 12px auto 3px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #cfe0ef;
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #1475da;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+
+  flex-shrink: 0;
+}
+
+.blood-requirement-collapse-button:hover {
+  background: #e8f3ff;
+  border-color: #9dc9f5;
+  color: #096bd2;
+}
+
+.blood-requirement-collapse-arrow {
+  transition: transform 0.25s ease;
+}
+
+.blood-requirement-collapse-arrow-open {
+  transform: rotate(180deg);
+}
+
+/* =========================================================
+   FOCUS RESET
+   ========================================================= */
+
+.blood-requirement-brand-link:focus,
+.blood-requirement-brand-link:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.blood-requirement-breadcrumb-home:focus,
+.blood-requirement-breadcrumb-home:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.blood-requirement-bottom-link:focus,
+.blood-requirement-bottom-link:focus-visible {
+  outline: none;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+[data-theme="dark"]
+  .blood-requirement-layout {
+  background: #0c1722;
+  color: #e7f0f7;
+}
+
+[data-theme="dark"]
+  .blood-requirement-sidebar {
+  background: #101d29;
+  border-right-color: #223443;
+}
+
+[data-theme="dark"]
+  .blood-requirement-brand {
+  border-bottom-color: #223443;
+}
+
+[data-theme="dark"]
+  .blood-requirement-brand-text strong {
+  color: #edf6fd;
+}
+
+[data-theme="dark"]
+  .blood-requirement-brand-text span {
+  color: #7f95a8;
+}
+
+[data-theme="dark"]
+  .blood-requirement-service {
+  background: #13283a;
+  border-color: #24445c;
+}
+
+[data-theme="dark"]
+  .blood-requirement-service-icon {
+  background: #19364d;
+  color: #55a8ff;
+}
+
+[data-theme="dark"]
+  .blood-requirement-service span {
+  color: #7f95a8;
+}
+
+[data-theme="dark"]
+  .blood-requirement-service strong {
+  color: #e4f1fb;
+}
+
+[data-theme="dark"]
+  .blood-requirement-nav-title {
+  color: #6f8597;
+}
+
+[data-theme="dark"]
+  .blood-requirement-nav-link {
+  color: #9cb0c0;
+}
+
+[data-theme="dark"]
+  .blood-requirement-nav-link:hover {
+  background: #172c3d;
+  color: #65afff;
+}
+
+[data-theme="dark"]
+  .blood-requirement-nav-link-active,
+[data-theme="dark"]
+  .blood-requirement-nav-link[aria-current="page"] {
+  background: #173652 !important;
+  color: #63afff !important;
+}
+
+[data-theme="dark"]
+  .blood-requirement-nav-link-active::before,
+[data-theme="dark"]
+  .blood-requirement-nav-link[aria-current="page"]::before {
+  background: #55a8ff;
+}
+
+[data-theme="dark"]
+  .blood-requirement-bottom-link {
+  color: #91a6b7;
+}
+
+[data-theme="dark"]
+  .blood-requirement-bottom-link:hover {
+  background: #172b3a;
+  color: #64adfb;
+}
+
+[data-theme="dark"]
+  .blood-requirement-bottom-link-active,
+[data-theme="dark"]
+  .blood-requirement-bottom-link[aria-current="page"] {
+  background: #173652;
+  color: #63afff;
+}
+
+[data-theme="dark"]
+  .blood-requirement-topbar {
+  background: rgba(16, 29, 41, 0.96);
+  border-bottom-color: #223443;
+}
+
+[data-theme="dark"]
+  .blood-requirement-breadcrumb {
+  color: #71879a;
+}
+
+[data-theme="dark"]
+  .blood-requirement-breadcrumb-home {
+  color: #8499aa;
+}
+
+[data-theme="dark"]
+  .blood-requirement-breadcrumb-home:hover {
+  color: #65afff;
+}
+
+[data-theme="dark"]
+  .blood-requirement-breadcrumb strong {
+  color: #d9e7f0;
+}
+
+[data-theme="dark"]
+  .blood-requirement-topbar-search,
+[data-theme="dark"]
+  .blood-requirement-icon-button,
+[data-theme="dark"]
+  .blood-requirement-mobile-menu {
+  background: #142533;
+  border-color: #294052;
+  color: #9bb0c0;
+}
+
+[data-theme="dark"]
+  .blood-requirement-topbar-search input {
+  color: #e7f0f7;
+}
+
+[data-theme="dark"]
+  .blood-requirement-user-info strong {
+  color: #e2edf5;
+}
+
+[data-theme="dark"]
+  .blood-requirement-user-info span {
+  color: #8196a7;
+}
+
+[data-theme="dark"]
+  .blood-requirement-user-avatar {
+  background: #18344b;
+  color: #5eafff;
+}
+
+[data-theme="dark"]
+  .blood-requirement-collapse-button {
+  background: #142533;
+  border-color: #294052;
+  color: #5eafff;
+}
+
+[data-theme="dark"]
+  .blood-requirement-collapse-button:hover {
+  background: #173652;
+  border-color: #3c6b92;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .blood-requirement-sidebar {
+    width: 230px;
+  }
+
+  .blood-requirement-main {
+    margin-left: 230px;
+  }
+
+  .blood-requirement-topbar {
+    padding: 0 20px;
+  }
+
+  .blood-requirement-user-info {
+    display: none;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 760px) {
+  .blood-requirement-sidebar {
+    width: 270px;
+
+    transform: translateX(-100%);
+
+    transition:
+      transform 0.25s ease,
+      width 0.25s ease;
+
+    box-shadow:
+      10px 0 35px rgba(0, 0, 0, 0.12);
+  }
+
+  .blood-requirement-sidebar-open {
+    transform: translateX(0);
+  }
+
+  .blood-requirement-sidebar-collapsed {
+    width: 270px !important;
+  }
+
+  .blood-requirement-mobile-close {
+    display: flex;
+  }
+
+  .blood-requirement-overlay {
+    display: block;
+  }
+
+  .blood-requirement-main,
+  .blood-requirement-layout-collapsed
+    .blood-requirement-main {
+    margin-left: 0;
+  }
+
+  .blood-requirement-topbar {
+    height: 62px;
+
+    padding: 0 15px;
+  }
+
+  .blood-requirement-mobile-menu {
+    display: flex;
+  }
+
+  .blood-requirement-breadcrumb-home {
+    display: none;
+  }
+
+  .blood-requirement-topbar-actions {
+    gap: 6px;
+  }
+
+  .blood-requirement-user {
+    display: none;
+  }
+
+  .blood-requirement-topbar-search {
+    display: none;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .blood-requirement-topbar {
+    padding: 0 11px;
+  }
+
+  .blood-requirement-breadcrumb > svg {
+    display: none;
+  }
+
+  .blood-requirement-breadcrumb > span {
+    display: none;
+  }
+
+  .blood-requirement-breadcrumb strong {
+    font-size: 12px;
+  }
+
+  .blood-requirement-icon-button {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+/* =========================================================
+   AUTHENTICATED PROFILE + CLEAN HEADER (MATCH BLOOD DONATION)
+   ========================================================= */
+
+.blood-requirement-topbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* The search field and notification control are removed from the JSX.
+   Keep these rules as a safeguard if old markup is cached. */
+.blood-requirement-topbar-search,
+.blood-requirement-icon-button,
+.notification-dot {
+  display: none !important;
+}
+
+/* Remove the square outline/background around the theme toggle. */
+.blood-requirement-topbar-actions > button,
+.blood-requirement-topbar-actions button[aria-label*="theme"],
+.blood-requirement-topbar-actions button[aria-label*="Theme"] {
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 50%;
+}
+
+.blood-requirement-topbar-actions > button:hover,
+.blood-requirement-topbar-actions button[aria-label*="theme"]:hover,
+.blood-requirement-topbar-actions button[aria-label*="Theme"]:hover {
+  background: rgba(100, 116, 139, 0.10) !important;
+}
+
+.blood-requirement-topbar-actions > button:focus,
+.blood-requirement-topbar-actions > button:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.blood-requirement-profile-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.blood-requirement-user {
+  padding: 5px 7px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  transition: background 0.2s ease;
+}
+
+.blood-requirement-user:hover {
+  background: #f1f6fb;
+}
+
+.blood-requirement-profile-chevron {
+  color: #8295a8;
+  transition: transform 0.2s ease;
+}
+
+.blood-requirement-profile-chevron-open {
+  transform: rotate(180deg);
+}
+
+.blood-requirement-profile-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 1200;
+  width: 290px;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid #e2eaf1;
+  border-radius: 14px;
+  box-shadow: 0 14px 36px rgba(16, 42, 67, 0.16);
+  box-sizing: border-box;
+}
+
+.blood-requirement-profile-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #edf2f6;
+}
+
+.blood-requirement-profile-large-avatar {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eaf4ff;
+  color: #1475da;
+}
+
+.blood-requirement-profile-heading-text {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.blood-requirement-profile-heading-text strong {
+  color: #243f56;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.blood-requirement-profile-heading-text span {
+  color: #8295a8;
+  font-size: 11px;
+}
+
+.blood-requirement-profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 15px 0;
+}
+
+.blood-requirement-profile-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  color: #60778b;
+  font-size: 12px;
+}
+
+.blood-requirement-profile-detail svg {
+  flex: 0 0 16px;
+  color: #1475da;
+}
+
+.blood-requirement-profile-detail span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.blood-requirement-profile-error {
+  margin: 0 0 12px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  background: #fff1f2;
+  color: #be123c;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.blood-requirement-logout-button {
+  width: 100%;
+  min-height: 39px;
+  margin-top: 0;
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #fee2e2;
+  border-radius: 9px;
+  background: #fff1f2;
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.blood-requirement-logout-button:hover {
+  background: #fee2e2;
+}
+
+.blood-requirement-logout-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* Dark mode profile dropdown */
+[data-theme="dark"] .blood-requirement-user:hover {
+  background: #172b3a;
+}
+
+[data-theme="dark"] .blood-requirement-profile-dropdown {
+  background: #101d29;
+  border-color: #294052;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.38);
+}
+
+[data-theme="dark"] .blood-requirement-profile-heading {
+  border-bottom-color: #294052;
+}
+
+[data-theme="dark"] .blood-requirement-profile-heading-text strong {
+  color: #e2edf5;
+}
+
+[data-theme="dark"] .blood-requirement-profile-heading-text span,
+[data-theme="dark"] .blood-requirement-profile-detail {
+  color: #9bb0c0;
+}
+
+[data-theme="dark"] .blood-requirement-profile-large-avatar {
+  background: #18344b;
+  color: #5eafff;
+}
+
+[data-theme="dark"] .blood-requirement-logout-button {
+  background: #451a24;
+  border-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+[data-theme="dark"] .blood-requirement-logout-button:hover {
+  background: #5b202b;
+}
+
+@media (max-width: 760px) {
+  .blood-requirement-user {
+    display: flex !important;
+    padding: 3px;
+  }
+
+  .blood-requirement-user-info,
+  .blood-requirement-profile-chevron {
+    display: none !important;
+  }
+
+  .blood-requirement-profile-dropdown {
+    position: fixed;
+    top: 68px;
+    right: 12px;
+    width: min(290px, calc(100vw - 24px));
+  }
+
+  .blood-requirement-topbar-actions {
+    gap: 7px;
+  }
+}
+
+
+/* =========================================================
+   BLOOD REQUIREMENT SERVICE IMAGE (highlighted sidebar icon)
+   ========================================================= */
+.blood-requirement-service-icon-photo {
+  overflow: hidden;
+  padding: 0;
+  background: #fff;
+}
+.blood-requirement-service-icon-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* =========================================================
+   PROFILE PHOTOS
+   ========================================================= */
+.blood-requirement-user-avatar,
+.blood-requirement-profile-large-avatar {
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.blood-requirement-user-avatar img,
+.blood-requirement-profile-large-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* =========================================================
+   EDIT PROFILE
+   ========================================================= */
+.blood-requirement-edit-button {
+  width: 100%;
+  min-height: 38px;
+  margin: 0 0 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid #d8e9f8;
+  border-radius: 9px;
+  background: #eff7ff;
+  color: #1268bd;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.blood-requirement-edit-button:hover { background: #e1f0ff; }
+
+.blood-requirement-edit-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(8, 24, 40, .56);
+  overflow-y: auto;
+}
+.blood-requirement-edit-modal {
+  width: min(100%, 480px);
+  max-height: 94vh;
+  overflow-y: auto;
+  padding: 22px;
+  border: 1px solid #e2eaf1;
+  border-radius: 18px;
+  background: #fff;
+  color: #243f56;
+  box-shadow: 0 24px 70px rgba(0,0,0,.22);
+  box-sizing: border-box;
+}
+.blood-requirement-edit-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.blood-requirement-edit-header span {
+  color: #1475da;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.blood-requirement-edit-header h2 { margin: 5px 0 0; font-size: 22px; }
+.blood-requirement-edit-header button {
+  border: 0;
+  background: transparent;
+  color: #718096;
+  cursor: pointer;
+}
+.blood-requirement-edit-avatar-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0 15px;
+}
+.blood-requirement-edit-preview {
+  width: 90px;
+  height: 90px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eaf4ff;
+  color: #1475da;
+}
+.blood-requirement-edit-preview img { width: 100%; height: 100%; object-fit: cover; }
+.blood-requirement-edit-avatar-area small { color: #8a9baa; font-size: 10px; }
+
+.blood-requirement-avatar-picker { margin: 0 0 14px; }
+.blood-requirement-avatar-picker > strong { font-size: 12px; }
+ .blood-requirement-avatar-options {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 9px;
+  margin-top: 9px;
+}
+.blood-requirement-avatar-options button {
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 2px;
+  overflow: hidden;
+  border: 2px solid #e2eaf1;
+  border-radius: 50%;
+  background: #f7fafc;
+  cursor: pointer;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.blood-requirement-avatar-options button:hover { transform: translateY(-2px); }
+.blood-requirement-avatar-options button.selected {
+  border-color: #1475da;
+  box-shadow: 0 0 0 3px #dceeff;
+}
+.blood-requirement-avatar-options img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.blood-requirement-edit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 11px 0;
+  color: #52677c;
+  font-size: 11px;
+  font-weight: 700;
+}
+.blood-requirement-edit-field input {
+  width: 100%;
+  height: 40px;
+  padding: 0 11px;
+  border: 1px solid #dce5ed;
+  border-radius: 8px;
+  background: #fff;
+  color: #243f56;
+  font: inherit;
+  font-size: 13px;
+  box-sizing: border-box;
+}
+.blood-requirement-edit-field input:focus {
+  outline: 2px solid #c7e2ff;
+  border-color: #75b7f5;
+}
+.blood-requirement-edit-field input[readonly] {
+  background: #f5f7fa;
+  color: #8295a8;
+}
+.blood-requirement-edit-error {
+  color: #be123c;
+  background: #fff1f2;
+  padding: 9px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.blood-requirement-edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 18px;
+}
+.blood-requirement-edit-actions button {
+  min-height: 39px;
+  padding: 0 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.blood-requirement-edit-cancel {
+  border: 1px solid #dce5ed;
+  background: #fff;
+  color: #52677c;
+}
+.blood-requirement-edit-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #1268bd;
+  background: #1475da;
+  color: #fff;
+}
+.blood-requirement-edit-actions button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+[data-theme="dark"] .blood-requirement-edit-modal {
+  background: #101d29;
+  color: #e2edf5;
+  border-color: #294052;
+}
+[data-theme="dark"] .blood-requirement-edit-field { color: #b5c6d3; }
+[data-theme="dark"] .blood-requirement-edit-field input {
+  background: #142533;
+  border-color: #294052;
+  color: #e2edf5;
+}
+[data-theme="dark"] .blood-requirement-edit-field input[readonly] { background: #1a2b39; }
+[data-theme="dark"] .blood-requirement-edit-button {
+  background: #173652;
+  border-color: #294f70;
+  color: #82c1ff;
+}
+[data-theme="dark"] .blood-requirement-edit-cancel {
+  background: #142533;
+  border-color: #294052;
+  color: #c3d2de;
+}
+@media (max-width: 520px) {
+  .blood-requirement-edit-overlay { padding: 9px; }
+  .blood-requirement-edit-modal { padding: 17px; }
+  .blood-requirement-avatar-options { gap: 7px; }
+}
+
+
+/* Profile save confirmation */
+.blood-requirement-save-success {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 14px;
+  padding: 11px 14px;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  background: #f0fdf4;
+  color: #166534;
+  font-size: 13px;
+  font-weight: 600;
+}
+.blood-requirement-save-success button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+[data-theme="dark"] .blood-requirement-save-success {
+  border-color: #166534;
+  background: #102b20;
+  color: #86efac;
+}
+
+/* Avatar-only profile editor */
+.blood-requirement-edit-avatar-area.avatar-only {
+  padding: 12px 0 18px;
+  gap: 7px;
+}
+.blood-requirement-edit-avatar-area.avatar-only .blood-requirement-edit-preview {
+  width: 96px;
+  height: 96px;
+  border: 4px solid #edf5ff;
+  box-shadow: 0 3px 12px rgba(35, 105, 180, .10);
+}
+.blood-requirement-edit-avatar-area.avatar-only small {
+  max-width: 300px;
+  text-align: center;
+  line-height: 1.45;
+}
+.blood-requirement-avatar-options button {
+  background: #f1f7fc;
+}
+.blood-requirement-avatar-options img {
+  object-fit: contain;
+  transform: scale(1.08);
+}

@@ -1,0 +1,1390 @@
+.organ-registration-page {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  color: var(--text-primary);
+}
+
+.organ-registration-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.organ-registration-eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.organ-registration-header h1 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.organ-registration-header p {
+  margin: 9px 0 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* BACK BUTTON */
+
+.organ-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  background: var(--card-background);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.organ-back-button:hover {
+  background: var(--hover-background);
+  transform: translateY(-1px);
+}
+
+/* INFO */
+
+.organ-registration-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 15px 17px;
+  margin-bottom: 18px;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+.organ-registration-info svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: #2563eb;
+}
+
+.organ-registration-info strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.organ-registration-info p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* ERROR */
+
+.organ-registration-error {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 18px;
+  padding: 12px 14px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.organ-registration-error svg {
+  flex: 0 0 auto;
+}
+
+/* FORM */
+
+.organ-registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.organ-form-section {
+  padding: 22px;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background: var(--card-background);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+}
+
+.organ-form-section-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.organ-section-icon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.organ-form-section-header h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 750;
+  color: var(--text-primary);
+}
+
+.organ-form-section-header p {
+  margin: 4px 0 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* FORM GRID */
+
+.organ-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.organ-form-group {
+  min-width: 0;
+}
+
+.organ-form-full {
+  grid-column: 1 / -1;
+}
+
+.organ-form-group label {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.organ-form-group label span,
+.organ-medical-question label span,
+.organ-form-submit-area p span {
+  color: #dc2626;
+}
+
+.organ-form-group input,
+.organ-form-group select,
+.organ-form-group textarea,
+.organ-medical-question textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  background: var(--input-background, var(--card-background));
+  color: var(--text-primary);
+  outline: none;
+  font-family: inherit;
+  font-size: 13px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.organ-form-group input,
+.organ-form-group select {
+  height: 42px;
+  padding: 0 12px;
+}
+
+.organ-form-group textarea,
+.organ-medical-question textarea {
+  padding: 11px 12px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.organ-form-group input::placeholder,
+.organ-form-group textarea::placeholder,
+.organ-medical-question textarea::placeholder {
+  color: #94a3b8;
+}
+
+.organ-form-group input:focus,
+.organ-form-group select:focus,
+.organ-form-group textarea:focus,
+.organ-medical-question textarea:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ORGAN OPTIONS */
+
+.organ-options-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.organ-option-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-height: 48px;
+  padding: 0 11px;
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  background: var(--card-background);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.organ-option-card:hover {
+  border-color: #93c5fd;
+  transform: translateY(-1px);
+}
+
+.organ-option-card.selected {
+  border-color: #60a5fa;
+  background: #eff6ff;
+}
+
+.organ-option-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.organ-option-check {
+  width: 19px;
+  height: 19px;
+  flex: 0 0 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 5px;
+  background: var(--card-background);
+  color: #2563eb;
+}
+
+.organ-option-card.selected .organ-option-check {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #fff;
+}
+
+.organ-option-name {
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+/* MEDICAL */
+
+.organ-medical-question {
+  padding: 16px;
+  margin-bottom: 13px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--hover-background);
+}
+
+.organ-medical-question:last-child {
+  margin-bottom: 0;
+}
+
+.organ-medical-question > label {
+  display: block;
+  margin-bottom: 11px;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.organ-radio-group {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.organ-radio-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.organ-radio-group input {
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  accent-color: #2563eb;
+}
+
+.organ-medical-question textarea {
+  display: block;
+  margin-top: 12px;
+}
+
+/* CONSENT */
+
+.organ-consent-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.organ-consent-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 13px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--hover-background);
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.organ-consent-item input {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+  margin: 2px 0 0;
+  accent-color: #2563eb;
+}
+
+/* SUBMIT */
+
+.organ-form-submit-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 3px 2px;
+}
+
+.organ-form-submit-area p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.organ-primary-button,
+.organ-secondary-button {
+  min-height: 43px;
+  padding: 0 17px;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.organ-primary-button {
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #fff;
+}
+
+.organ-primary-button:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.22);
+}
+
+.organ-secondary-button {
+  border: 1px solid var(--border-color);
+  background: var(--card-background);
+  color: var(--text-primary);
+}
+
+.organ-secondary-button:hover {
+  background: var(--hover-background);
+  transform: translateY(-1px);
+}
+
+.organ-preview-button {
+  min-width: 190px;
+}
+
+/* PREVIEW */
+
+.organ-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.organ-preview-card {
+  padding: 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background: var(--card-background);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+}
+
+.organ-preview-full {
+  grid-column: 1 / -1;
+}
+
+.organ-preview-card-header {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 17px;
+  color: #2563eb;
+}
+
+.organ-preview-card-header h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.organ-preview-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.organ-preview-field {
+  min-width: 0;
+}
+
+.organ-preview-field span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.organ-preview-field strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.organ-selected-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.organ-selected-list span {
+  padding: 7px 11px;
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.organ-preview-confirmation {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 17px;
+  padding: 15px 17px;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  background: #eff6ff;
+  color: #1e3a8a;
+}
+
+.organ-preview-confirmation svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: #2563eb;
+}
+
+.organ-preview-confirmation strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+}
+
+.organ-preview-confirmation p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.organ-preview-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 11px;
+  margin-top: 20px;
+}
+
+/* SUCCESS */
+
+.organ-registration-success {
+  max-width: 720px;
+  margin: 55px auto;
+  padding: 38px;
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  background: var(--card-background);
+  text-align: center;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.07);
+}
+
+.organ-success-icon {
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.organ-registration-success h1 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 26px;
+}
+
+.organ-registration-success > p {
+  max-width: 590px;
+  margin: 12px auto 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.organ-success-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 13px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background: var(--hover-background);
+  color: var(--text-secondary);
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.organ-success-note svg {
+  flex: 0 0 auto;
+  color: #2563eb;
+  margin-top: 2px;
+}
+
+.organ-success-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  margin-top: 24px;
+}
+
+/* DARK MODE */
+
+[data-theme="dark"] .organ-registration-info,
+[data-theme="dark"] .organ-preview-confirmation {
+  border-color: rgba(96, 165, 250, 0.3);
+  background: rgba(37, 99, 235, 0.12);
+  color: #bfdbfe;
+}
+
+[data-theme="dark"] .organ-registration-info svg,
+[data-theme="dark"] .organ-preview-confirmation svg {
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .organ-registration-error {
+  border-color: rgba(248, 113, 113, 0.3);
+  background: rgba(220, 38, 38, 0.12);
+  color: #fca5a5;
+}
+
+[data-theme="dark"] .organ-section-icon {
+  background: rgba(37, 99, 235, 0.13);
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .organ-option-card.selected {
+  border-color: rgba(96, 165, 250, 0.55);
+  background: rgba(37, 99, 235, 0.12);
+}
+
+[data-theme="dark"] .organ-option-check {
+  border-color: #475569;
+}
+
+[data-theme="dark"] .organ-option-card.selected .organ-option-check {
+  border-color: #3b82f6;
+  background: #2563eb;
+}
+
+[data-theme="dark"] .organ-selected-list span {
+  border-color: rgba(96, 165, 250, 0.35);
+  background: rgba(37, 99, 235, 0.12);
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .organ-success-icon {
+  background: rgba(22, 163, 74, 0.15);
+  color: #4ade80;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+  .organ-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .organ-options-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 800px) {
+  .organ-registration-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .organ-registration-header h1 {
+    font-size: 25px;
+  }
+
+  .organ-form-grid,
+  .organ-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .organ-preview-full {
+    grid-column: auto;
+  }
+
+  .organ-options-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .organ-preview-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .organ-form-submit-area {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .organ-preview-button {
+    width: 100%;
+  }
+
+  .organ-preview-actions {
+    flex-direction: column-reverse;
+  }
+
+  .organ-preview-actions button {
+    width: 100%;
+  }
+
+  .organ-success-actions {
+    flex-direction: column;
+  }
+
+  .organ-success-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .organ-registration-page {
+    padding-bottom: 25px;
+  }
+
+  .organ-form-section,
+  .organ-preview-card {
+    padding: 16px;
+  }
+
+  .organ-options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .organ-registration-success {
+    margin: 25px auto;
+    padding: 25px 18px;
+  }
+
+  .organ-registration-info {
+    padding: 13px;
+  }
+}
+
+/* =========================================================
+   DONATION TYPE
+   ========================================================= */
+
+.organ-donation-type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.organ-donation-type-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 11px;
+  background: var(--card-background);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.organ-donation-type-card:hover {
+  border-color: #93c5fd;
+  transform: translateY(-1px);
+}
+
+.organ-donation-type-card.selected {
+  border-color: #60a5fa;
+  background: #eff6ff;
+}
+
+.organ-donation-type-card input {
+  width: 17px;
+  height: 17px;
+  margin: 2px 0 0;
+  accent-color: #2563eb;
+  flex: 0 0 auto;
+}
+
+.organ-donation-type-card strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.organ-donation-type-card span {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* =========================================================
+   ELIGIBILITY SCREENING
+   ========================================================= */
+
+.organ-eligibility-section {
+  padding: 22px;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background: var(--card-background);
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
+}
+
+.organ-eligibility-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.organ-eligibility-header h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.organ-eligibility-header p {
+  margin: 4px 0 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.organ-eligibility-action {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.organ-eligibility-result {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 11px;
+}
+
+.organ-eligibility-result-icon {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.organ-eligibility-result-content {
+  min-width: 0;
+}
+
+.organ-eligibility-result-content h3 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.organ-eligibility-result-content p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.organ-eligibility-result-content ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+.organ-eligibility-result-content li {
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ELIGIBLE */
+
+.organ-eligibility-result.eligible {
+  border: 1px solid #bbf7d0;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.organ-eligibility-result.eligible
+  .organ-eligibility-result-icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+/* NOT ELIGIBLE */
+
+.organ-eligibility-result.not_eligible {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #991b1b;
+}
+
+.organ-eligibility-result.not_eligible
+  .organ-eligibility-result-icon {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* MEDICAL REVIEW */
+
+.organ-eligibility-result.medical_review {
+  border: 1px solid #fde68a;
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.organ-eligibility-result.medical_review
+  .organ-eligibility-result-icon {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+/* DISABLED PREVIEW BUTTON */
+
+.organ-preview-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.organ-preview-button:disabled:hover {
+  background: #2563eb;
+  transform: none;
+  box-shadow: none;
+}
+
+/* DARK MODE */
+
+[data-theme="dark"] .organ-donation-type-card.selected {
+  border-color: rgba(96, 165, 250, 0.55);
+  background: rgba(37, 99, 235, 0.12);
+}
+
+[data-theme="dark"] .organ-eligibility-result.eligible {
+  border-color: rgba(74, 222, 128, 0.25);
+  background: rgba(22, 163, 74, 0.1);
+  color: #86efac;
+}
+
+[data-theme="dark"]
+  .organ-eligibility-result.eligible
+  .organ-eligibility-result-icon {
+  background: rgba(22, 163, 74, 0.15);
+  color: #4ade80;
+}
+
+[data-theme="dark"]
+  .organ-eligibility-result.not_eligible {
+  border-color: rgba(248, 113, 113, 0.25);
+  background: rgba(220, 38, 38, 0.1);
+  color: #fca5a5;
+}
+
+[data-theme="dark"]
+  .organ-eligibility-result.not_eligible
+  .organ-eligibility-result-icon {
+  background: rgba(220, 38, 38, 0.15);
+  color: #f87171;
+}
+
+[data-theme="dark"]
+  .organ-eligibility-result.medical_review {
+  border-color: rgba(250, 204, 21, 0.25);
+  background: rgba(180, 83, 9, 0.1);
+  color: #fcd34d;
+}
+
+[data-theme="dark"]
+  .organ-eligibility-result.medical_review
+  .organ-eligibility-result-icon {
+  background: rgba(217, 119, 6, 0.15);
+  color: #fbbf24;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+  .organ-donation-type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .organ-eligibility-action {
+    justify-content: stretch;
+  }
+
+  .organ-eligibility-action button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .organ-eligibility-section {
+    padding: 16px;
+  }
+
+  .organ-eligibility-result {
+    padding: 13px;
+  }
+}
+/* =========================================================
+   FORM PAGE — MATCH THE BLOOD DONOR CARD DESIGN
+   ========================================================= */
+.organ-registration-page {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 0 34px;
+  color: var(--text-primary, #172b4d);
+}
+
+.organ-registration-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 0 0 24px;
+}
+
+.organ-registration-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+}
+
+.organ-registration-title-icon {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  background: #e8f2ff;
+  color: #2580ed;
+}
+
+.organ-registration-title-copy {
+  min-width: 0;
+}
+
+.organ-registration-header h1 {
+  margin: 0;
+  color: #142b49;
+  font-size: 27px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.organ-registration-header p {
+  margin: 5px 0 0;
+  color: #71839b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.organ-registration-eyebrow {
+  display: none;
+}
+
+.organ-confidential-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  flex: 0 0 auto;
+  border: 1px solid #ccebd9;
+  border-radius: 10px;
+  background: #f0fbf5;
+  color: #218653;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.organ-registration-info {
+  margin-bottom: 17px;
+  padding: 14px 17px;
+  border: 1px solid #c8ddff;
+  border-radius: 11px;
+  background: #f0f6ff;
+  color: #244a83;
+}
+
+.organ-form-section,
+.organ-eligibility-section {
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid #dce6f1;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(27, 55, 90, 0.045);
+}
+
+.organ-form-section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 57px;
+  margin: 0;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e8eef5;
+  background: #fff;
+}
+
+.organ-section-icon {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  border-radius: 8px;
+  background: transparent;
+  color: #2580ed;
+}
+
+.organ-form-section-header h2 {
+  color: #18314f;
+  font-size: 15px;
+  font-weight: 750;
+}
+
+.organ-form-section-header p {
+  display: none;
+}
+
+.organ-form-section > :not(.organ-form-section-header) {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.organ-form-section > :last-child:not(.organ-form-section-header) {
+  margin-bottom: 22px;
+}
+
+.organ-form-section > .organ-form-grid,
+.organ-form-section > .organ-donation-type-grid,
+.organ-form-section > .organ-consent-box,
+.organ-form-section > .organ-medical-question,
+.organ-form-section > .organ-options-grid {
+  margin-top: 21px;
+}
+
+.organ-form-grid {
+  column-gap: 22px;
+  row-gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.organ-form-group label {
+  margin-bottom: 7px;
+  color: #263d5a;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.organ-form-group input,
+.organ-form-group select,
+.organ-form-group textarea,
+.organ-medical-question textarea {
+  border: 1px solid #d8e3ef;
+  border-radius: 10px;
+  background: #fbfdff;
+  color: #243b59;
+  font-size: 13px;
+}
+
+.organ-form-group input,
+.organ-form-group select {
+  height: 43px;
+  padding: 0 12px;
+}
+
+.organ-form-group input:focus,
+.organ-form-group select:focus,
+.organ-form-group textarea:focus,
+.organ-medical-question textarea:focus {
+  border-color: #78aef5;
+  box-shadow: 0 0 0 3px rgba(37, 128, 237, 0.1);
+}
+
+.organ-options-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.organ-medical-question {
+  border-color: #e1eaf4;
+  border-radius: 11px;
+  background: #f8fbff;
+}
+
+.organ-option-card,
+.organ-donation-type-card,
+.organ-consent-item {
+  border-color: #dce6f1;
+  border-radius: 10px;
+}
+
+.organ-form-submit-area {
+  padding: 2px 0 0;
+}
+
+.organ-primary-button {
+  min-height: 45px;
+  padding: 0 20px;
+  border-radius: 9px;
+  background: #2479e8;
+  border-color: #2479e8;
+}
+
+.organ-primary-button:hover {
+  background: #1769d4;
+}
+
+.organ-preview-card {
+  border-color: #dce6f1;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(27, 55, 90, 0.045);
+}
+
+.organ-preview-card-header {
+  padding-bottom: 13px;
+  border-bottom: 1px solid #e8eef5;
+}
+
+.organ-eligibility-section {
+  padding: 20px;
+}
+
+.organ-eligibility-header h2 {
+  color: #18314f;
+}
+
+[data-theme="dark"] .organ-registration-header h1,
+[data-theme="dark"] .organ-form-section-header h2,
+[data-theme="dark"] .organ-form-group label,
+[data-theme="dark"] .organ-eligibility-header h2 {
+  color: var(--text-primary, #e5edf8);
+}
+
+[data-theme="dark"] .organ-registration-header p {
+  color: var(--text-secondary, #a9b8ca);
+}
+
+[data-theme="dark"] .organ-registration-title-icon {
+  background: rgba(37, 128, 237, 0.15);
+  color: #75b4ff;
+}
+
+[data-theme="dark"] .organ-confidential-badge {
+  border-color: rgba(52, 211, 153, 0.25);
+  background: rgba(16, 185, 129, 0.1);
+  color: #6ee7b7;
+}
+
+[data-theme="dark"] .organ-form-section,
+[data-theme="dark"] .organ-eligibility-section,
+[data-theme="dark"] .organ-form-section-header,
+[data-theme="dark"] .organ-preview-card {
+  border-color: var(--border-color, #334155);
+  background: var(--card-background, #172235);
+}
+
+[data-theme="dark"] .organ-form-section-header {
+  border-bottom-color: var(--border-color, #334155);
+}
+
+[data-theme="dark"] .organ-form-group input,
+[data-theme="dark"] .organ-form-group select,
+[data-theme="dark"] .organ-form-group textarea,
+[data-theme="dark"] .organ-medical-question textarea {
+  border-color: var(--border-color, #475569);
+  background: var(--input-background, #1e293b);
+  color: var(--text-primary, #e5edf8);
+}
+
+[data-theme="dark"] .organ-preview-card-header {
+  border-bottom-color: var(--border-color, #334155);
+}
+
+@media (max-width: 900px) {
+  .organ-form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .organ-options-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .organ-registration-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .organ-registration-title-wrap {
+    align-items: flex-start;
+  }
+
+  .organ-registration-header h1 {
+    font-size: 22px;
+  }
+
+  .organ-confidential-badge {
+    margin-left: 67px;
+  }
+
+  .organ-form-grid,
+  .organ-preview-grid,
+  .organ-donation-type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .organ-options-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .organ-registration-title-icon {
+    width: 43px;
+    height: 43px;
+    flex-basis: 43px;
+  }
+
+  .organ-confidential-badge {
+    margin-left: 58px;
+  }
+
+  .organ-form-section-header {
+    padding: 14px 15px;
+  }
+
+  .organ-form-section > :not(.organ-form-section-header) {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .organ-form-section > :last-child:not(.organ-form-section-header) {
+    margin-bottom: 17px;
+  }
+}

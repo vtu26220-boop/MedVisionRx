@@ -1,0 +1,1023 @@
+/* =========================================================
+   MEDVISIONRX
+   ORGAN BANKS
+   ========================================================= */
+
+.organ-banks-page {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--page-bg, #f6f9fc);
+  color: var(--text-primary, #172033);
+  padding: 28px;
+}
+
+.organ-banks-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.organ-banks-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.organ-banks-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.organ-banks-title-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf3ff;
+  color: #1677ff;
+  flex-shrink: 0;
+}
+
+.organ-banks-header h1 {
+  margin: 0;
+  font-size: 27px;
+  line-height: 1.2;
+  font-weight: 750;
+  letter-spacing: -0.3px;
+}
+
+.organ-banks-header p {
+  margin: 7px 0 0;
+  color: #718096;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.organ-banks-refresh {
+  border: 1px solid #d9e2ec;
+  background: #ffffff;
+  color: #334155;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.organ-banks-refresh:hover {
+  border-color: #1677ff;
+  color: #1677ff;
+}
+
+.organ-banks-refresh:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   INFORMATION
+   ========================================================= */
+
+.organ-banks-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 15px 17px;
+  border: 1px solid #dce9f8;
+  background: #f3f8ff;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  color: #24517e;
+}
+
+.organ-banks-info svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.organ-banks-info strong {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+
+.organ-banks-info p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #56728f;
+}
+
+.organ-banks-fallback {
+  margin-bottom: 18px;
+  padding: 11px 14px;
+  border-radius: 9px;
+  background: #fff8e7;
+  border: 1px solid #f3dfaa;
+  color: #795b16;
+  font-size: 13px;
+}
+
+/* =========================================================
+   FILTER CARD
+   ========================================================= */
+
+.organ-banks-filter-card {
+  background: #ffffff;
+  border: 1px solid #e1e8f0;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 22px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.035);
+}
+
+.organ-banks-filter-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.organ-banks-filter-heading h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.organ-banks-filter-heading p {
+  margin: 4px 0 0;
+  color: #7b8797;
+  font-size: 13px;
+}
+
+.organ-banks-filter-heading > svg {
+  color: #1677ff;
+}
+
+.organ-banks-filters {
+  display: grid;
+  grid-template-columns: minmax(240px, 1.8fr) 1fr 1fr 1.2fr auto;
+  gap: 10px;
+}
+
+.organ-banks-search {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  border: 1px solid #dbe3ec;
+  border-radius: 9px;
+  background: #ffffff;
+}
+
+.organ-banks-search > svg {
+  color: #8492a6;
+  flex-shrink: 0;
+}
+
+.organ-banks-search input {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: #172033;
+  font-size: 13px;
+}
+
+.organ-banks-search input::placeholder {
+  color: #9aa7b7;
+}
+
+.organ-banks-search button {
+  border: 0;
+  background: transparent;
+  color: #8492a6;
+  cursor: pointer;
+  display: flex;
+  padding: 3px;
+}
+
+.organ-banks-filters select {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #dbe3ec;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #344054;
+  outline: none;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.organ-banks-filters select:focus,
+.organ-banks-search:focus-within {
+  border-color: #1677ff;
+  box-shadow: 0 0 0 3px rgba(22, 119, 255, 0.08);
+}
+
+.organ-banks-clear {
+  height: 44px;
+  padding: 0 15px;
+  border: 1px solid #dbe3ec;
+  background: #f8fafc;
+  color: #475569;
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.organ-banks-clear:hover {
+  background: #eef5ff;
+  color: #1677ff;
+  border-color: #bdd5f7;
+}
+
+/* =========================================================
+   RESULTS
+   ========================================================= */
+
+.organ-banks-results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 2px 13px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.organ-banks-results-header strong {
+  color: #172033;
+  font-size: 15px;
+}
+
+.organ-banks-results-header > span {
+  color: #94a3b8;
+}
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.organ-banks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.organ-bank-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.035);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.organ-bank-card:hover {
+  transform: translateY(-2px);
+  border-color: #c9dcf3;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.07);
+}
+
+/* =========================================================
+   CARD TOP
+   ========================================================= */
+
+.organ-bank-card-top {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-bottom: 17px;
+}
+
+.organ-bank-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: #edf5ff;
+  color: #1677ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.organ-bank-heading {
+  min-width: 0;
+  flex: 1;
+}
+
+.organ-bank-name-row {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.organ-bank-name-row h3 {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.35;
+  color: #172033;
+  font-weight: 700;
+}
+
+.organ-bank-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  white-space: nowrap;
+  padding: 3px 7px;
+  border-radius: 20px;
+  background: #edf9f2;
+  color: #198754;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.organ-bank-type {
+  display: block;
+  margin-top: 5px;
+  color: #7b8797;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.organ-bank-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  margin-bottom: 12px;
+}
+
+.organ-bank-location > svg {
+  color: #1677ff;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.organ-bank-location strong {
+  display: block;
+  color: #344054;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.organ-bank-location p {
+  margin: 4px 0 0;
+  color: #7b8797;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+/* =========================================================
+   SERVICES
+   ========================================================= */
+
+.organ-bank-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 13px;
+}
+
+.organ-bank-service {
+  padding: 5px 8px;
+  border-radius: 6px;
+  background: #f1f6fb;
+  color: #52657a;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.organ-bank-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 15px;
+}
+
+.organ-bank-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #5f7085;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.organ-bank-contact-item:hover {
+  color: #1677ff;
+}
+
+.organ-bank-contact-item svg {
+  color: #1677ff;
+  flex-shrink: 0;
+}
+
+.organ-bank-contact-item span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* =========================================================
+   ACTIONS
+   ========================================================= */
+
+.organ-bank-actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  padding-top: 13px;
+  border-top: 1px solid #edf1f5;
+}
+
+.organ-bank-action {
+  min-height: 36px;
+  padding: 0 8px;
+  border-radius: 8px;
+  border: 1px solid #dce4ed;
+  background: #ffffff;
+  color: #475569;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.organ-bank-action:hover {
+  border-color: #1677ff;
+  color: #1677ff;
+  background: #f5f9ff;
+}
+
+.organ-bank-action.primary {
+  background: #1677ff;
+  border-color: #1677ff;
+  color: #ffffff;
+}
+
+.organ-bank-action.primary:hover {
+  background: #0968e5;
+  border-color: #0968e5;
+  color: #ffffff;
+}
+
+.organ-bank-action.disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.organ-bank-details-button {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #1677ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 13px;
+  padding: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.organ-bank-details-button:hover {
+  text-decoration: underline;
+}
+
+/* =========================================================
+   LOADING / EMPTY
+   ========================================================= */
+
+.organ-banks-loading,
+.organ-banks-empty {
+  min-height: 260px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #718096;
+  text-align: center;
+}
+
+.organ-banks-loading p,
+.organ-banks-empty p {
+  margin: 9px 0 0;
+  font-size: 13px;
+}
+
+.organ-banks-empty svg {
+  color: #94a3b8;
+}
+
+.organ-banks-empty h3 {
+  margin: 12px 0 3px;
+  color: #334155;
+  font-size: 16px;
+}
+
+.organ-banks-empty button {
+  margin-top: 14px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.organ-banks-empty button:hover {
+  color: #1677ff;
+  border-color: #1677ff;
+}
+
+/* =========================================================
+   FOOTER NOTE
+   ========================================================= */
+
+.organ-banks-footer-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 20px;
+  padding: 13px 2px;
+  color: #8492a6;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.organ-banks-footer-note svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+
+.organ-banks-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.52);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.organ-banks-modal {
+  width: min(600px, 100%);
+  max-height: 90vh;
+  overflow-y: auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.2);
+}
+
+.organ-banks-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 21px;
+  border-bottom: 1px solid #e9eef4;
+}
+
+.organ-banks-modal-header > div {
+  min-width: 0;
+}
+
+.organ-banks-modal-header span {
+  color: #1677ff;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.organ-banks-modal-header h2 {
+  margin: 5px 0 0;
+  color: #172033;
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.organ-banks-modal-header button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #e1e8f0;
+  background: #f8fafc;
+  color: #64748b;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.organ-banks-modal-header button:hover {
+  color: #ef4444;
+  border-color: #fecaca;
+  background: #fff5f5;
+}
+
+.organ-banks-modal-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.organ-banks-modal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.organ-banks-modal-item > svg {
+  color: #1677ff;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.organ-banks-modal-item span,
+.organ-banks-modal-services > span {
+  display: block;
+  color: #8995a5;
+  font-size: 11px;
+  margin-bottom: 3px;
+}
+
+.organ-banks-modal-item strong {
+  display: block;
+  color: #344054;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.organ-banks-modal-item p {
+  margin: 3px 0 0;
+  color: #718096;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.organ-banks-modal-services > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 7px;
+}
+
+.organ-banks-modal-services > div span {
+  display: inline-flex;
+  padding: 6px 9px;
+  border-radius: 7px;
+  background: #f1f6fb;
+  color: #52657a;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.organ-banks-modal-actions {
+  padding: 16px 20px 20px;
+  border-top: 1px solid #e9eef4;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.organ-banks-modal-actions .organ-bank-action {
+  flex: 1;
+  min-width: 120px;
+}
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+[data-theme="dark"] .organ-banks-page {
+  background: #0f172a;
+  color: #e5edf7;
+}
+
+[data-theme="dark"] .organ-banks-title-icon {
+  background: #172b4a;
+  color: #63a4ff;
+}
+
+[data-theme="dark"] .organ-banks-header p {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .organ-banks-refresh {
+  background: #162033;
+  border-color: #29374a;
+  color: #d5deea;
+}
+
+[data-theme="dark"] .organ-banks-info {
+  background: #10223a;
+  border-color: #203d62;
+  color: #b7d6fa;
+}
+
+[data-theme="dark"] .organ-banks-info p {
+  color: #91aeca;
+}
+
+[data-theme="dark"] .organ-banks-fallback {
+  background: #2c2617;
+  border-color: #5b4b25;
+  color: #e4c96f;
+}
+
+[data-theme="dark"] .organ-banks-filter-card,
+[data-theme="dark"] .organ-bank-card,
+[data-theme="dark"] .organ-banks-loading,
+[data-theme="dark"] .organ-banks-empty {
+  background: #162033;
+  border-color: #29374a;
+  box-shadow: none;
+}
+
+[data-theme="dark"] .organ-banks-filter-heading h2,
+[data-theme="dark"] .organ-bank-name-row h3,
+[data-theme="dark"] .organ-banks-results-header strong,
+[data-theme="dark"] .organ-banks-empty h3 {
+  color: #e7eef8;
+}
+
+[data-theme="dark"] .organ-banks-filter-heading p,
+[data-theme="dark"] .organ-banks-results-header,
+[data-theme="dark"] .organ-banks-results-header > span {
+  color: #8998ab;
+}
+
+[data-theme="dark"] .organ-banks-search,
+[data-theme="dark"] .organ-banks-filters select {
+  background: #101a2a;
+  border-color: #334155;
+  color: #dce5f0;
+}
+
+[data-theme="dark"] .organ-banks-search input {
+  color: #e5edf7;
+}
+
+[data-theme="dark"] .organ-banks-clear {
+  background: #101a2a;
+  border-color: #334155;
+  color: #aebccc;
+}
+
+[data-theme="dark"] .organ-bank-icon {
+  background: #172b4a;
+  color: #63a4ff;
+}
+
+[data-theme="dark"] .organ-bank-type,
+[data-theme="dark"] .organ-bank-location p {
+  color: #91a0b3;
+}
+
+[data-theme="dark"] .organ-bank-location {
+  background: #101a2a;
+}
+
+[data-theme="dark"] .organ-bank-location strong {
+  color: #d7e1ed;
+}
+
+[data-theme="dark"] .organ-bank-service,
+[data-theme="dark"] .organ-banks-modal-services > div span {
+  background: #202d40;
+  color: #aebdce;
+}
+
+[data-theme="dark"] .organ-bank-contact-item {
+  color: #a9b7c7;
+}
+
+[data-theme="dark"] .organ-bank-actions {
+  border-top-color: #29374a;
+}
+
+[data-theme="dark"] .organ-bank-action {
+  background: #101a2a;
+  border-color: #334155;
+  color: #c0ccda;
+}
+
+[data-theme="dark"] .organ-bank-action:hover {
+  background: #172b4a;
+  border-color: #4b8fe8;
+  color: #70adff;
+}
+
+[data-theme="dark"] .organ-bank-action.primary {
+  background: #1677ff;
+  border-color: #1677ff;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .organ-banks-footer-note {
+  color: #718096;
+}
+
+[data-theme="dark"] .organ-banks-modal {
+  background: #162033;
+}
+
+[data-theme="dark"] .organ-banks-modal-header {
+  border-bottom-color: #29374a;
+}
+
+[data-theme="dark"] .organ-banks-modal-header h2 {
+  color: #e7eef8;
+}
+
+[data-theme="dark"] .organ-banks-modal-header button {
+  background: #101a2a;
+  border-color: #334155;
+  color: #9baabc;
+}
+
+[data-theme="dark"] .organ-banks-modal-item strong {
+  color: #dce5ef;
+}
+
+[data-theme="dark"] .organ-banks-modal-item p {
+  color: #8fa0b3;
+}
+
+[data-theme="dark"] .organ-banks-modal-actions {
+  border-top-color: #29374a;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .organ-banks-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .organ-banks-filters {
+    grid-template-columns:
+      minmax(220px, 1.5fr)
+      1fr
+      1fr;
+  }
+
+  .organ-banks-search {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 800px) {
+  .organ-banks-page {
+    padding: 20px 15px;
+  }
+
+  .organ-banks-header {
+    align-items: flex-start;
+  }
+
+  .organ-banks-header h1 {
+    font-size: 23px;
+  }
+
+  .organ-banks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .organ-banks-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .organ-banks-search {
+    grid-column: 1 / -1;
+  }
+
+  .organ-banks-clear {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .organ-banks-header {
+    flex-direction: column;
+  }
+
+  .organ-banks-refresh {
+    width: 100%;
+  }
+
+  .organ-banks-title-row {
+    align-items: flex-start;
+  }
+
+  .organ-banks-filter-card {
+    padding: 15px;
+  }
+
+  .organ-banks-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .organ-banks-search,
+  .organ-banks-clear {
+    grid-column: auto;
+  }
+
+  .organ-banks-results-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .organ-bank-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .organ-bank-actions .organ-bank-action:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .organ-banks-modal-overlay {
+    padding: 10px;
+  }
+
+  .organ-banks-modal-actions {
+    flex-direction: column;
+  }
+
+  .organ-banks-modal-actions .organ-bank-action {
+    width: 100%;
+  }
+}
+
+.organ-banks-spin {
+  animation: organBanksSpin 0.9s linear infinite;
+}
+
+@keyframes organBanksSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,8 @@
+# Install into the Python environment that runs FastAPI.
+# Base application packages remain in requirements.txt.
+pypdfium2==5.15.2
+Pillow>=11.0,<13
+rapidocr==3.10.0
+onnxruntime==1.32.0
+
+# CPU inference. Install these on the hosted backend as well as your laptop.

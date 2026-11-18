@@ -1,0 +1,1291 @@
+/* ============================================================
+   MEDVISIONRX — BLOOD SEARCH
+   Responsive + dark mode
+   ============================================================ */
+
+.blood-search-page {
+  --bs-primary: #2563eb;
+  --bs-primary-dark: #1d4ed8;
+  --bs-primary-soft: #eff6ff;
+  --bs-text: #172033;
+  --bs-muted: #64748b;
+  --bs-border: #e2e8f0;
+  --bs-card: #ffffff;
+  --bs-page: #f8fafc;
+  --bs-success: #16a34a;
+  --bs-danger: #dc2626;
+
+  min-height: 100%;
+  padding: 30px;
+  background: var(--bs-page);
+  color: var(--bs-text);
+}
+
+[data-theme="dark"] .blood-search-page {
+  --bs-text: #e5e7eb;
+  --bs-muted: #94a3b8;
+  --bs-border: #263244;
+  --bs-card: #111827;
+  --bs-page: #0b1220;
+  --bs-primary-soft: #172554;
+}
+
+.blood-search-page *,
+.blood-search-page *::before,
+.blood-search-page *::after {
+  box-sizing: border-box;
+}
+
+.blood-search-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.blood-search-live-tag {
+  display: inline-flex;
+  align-items: center;
+  align-self: center;
+  gap: 9px;
+  padding: 10px 15px;
+  border: 1px solid #ccebd9;
+  border-radius: 9px;
+  background: #f0fbf5;
+  color: #16834b;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.blood-search-live-dot {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #16a765;
+  animation: blood-search-live-blink 1.3s ease-in-out infinite;
+}
+
+@keyframes blood-search-live-blink {
+  0%, 100% { opacity: 1; box-shadow: 0 0 0 3px rgba(22, 167, 101, .15); }
+  50% { opacity: .35; box-shadow: 0 0 0 6px rgba(22, 167, 101, .04); }
+}
+
+[data-theme="dark"] .blood-search-live-tag {
+  border-color: #285c45;
+  background: #102e22;
+  color: #86efac;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blood-search-live-dot { animation: none; }
+}
+
+.blood-search-eyebrow,
+.blood-donor-modal-eyebrow {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: var(--bs-primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+}
+
+.blood-search-header h1 {
+  margin: 0;
+  color: var(--bs-text);
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.blood-search-header p {
+  max-width: 700px;
+  margin: 8px 0 0;
+  color: var(--bs-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* FILTERS */
+.blood-search-filter-card {
+  padding: 18px;
+  margin-bottom: 24px;
+  border: 1px solid var(--bs-border);
+  border-radius: 14px;
+  background: var(--bs-card);
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.04);
+}
+
+.blood-search-filter-grid {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(180px, 1fr)
+    minmax(180px, 1fr) auto;
+  gap: 14px;
+  align-items: end;
+}
+
+.blood-search-field {
+  min-width: 0;
+}
+
+.blood-search-field label {
+  display: block;
+  margin: 0 0 7px;
+  color: var(--bs-text);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.blood-search-input-wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 43px;
+  gap: 9px;
+  padding: 0 12px;
+  border: 1px solid var(--bs-border);
+  border-radius: 9px;
+  background: var(--bs-card);
+  color: var(--bs-muted);
+}
+
+.blood-search-input-wrapper:focus-within {
+  border-color: var(--bs-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.blood-search-input-wrapper input,
+.blood-search-input-wrapper select {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--bs-text);
+  font: inherit;
+  font-size: 13px;
+}
+
+.blood-search-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.blood-search-button,
+.blood-search-clear-button {
+  min-height: 43px;
+  padding: 0 17px;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.blood-search-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--bs-primary);
+  color: #fff;
+}
+
+.blood-search-button:hover:not(:disabled) {
+  background: var(--bs-primary-dark);
+}
+
+.blood-search-button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.blood-search-clear-button {
+  background: var(--bs-card);
+  border-color: var(--bs-border);
+  color: var(--bs-text);
+}
+
+/* TABS */
+.blood-search-results-section {
+  min-width: 0;
+}
+
+.blood-search-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--bs-border);
+}
+
+.blood-search-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 15px;
+  margin-bottom: -1px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: var(--bs-muted);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.blood-search-tab span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 21px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--bs-page);
+  font-size: 11px;
+}
+
+.blood-search-tab.active {
+  border-bottom-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.blood-search-tab.active span {
+  background: var(--bs-primary-soft);
+  color: var(--bs-primary);
+}
+
+/* STATES */
+.blood-search-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #991b1b;
+  font-size: 13px;
+}
+
+[data-theme="dark"] .blood-search-error,
+[data-theme="dark"] .blood-donation-error {
+  border-color: #4b2525;
+  background: #2a1518;
+  color: #fecaca;
+}
+
+.blood-search-error span {
+  flex: 1;
+}
+
+.blood-search-error button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.blood-search-loading,
+.blood-search-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  padding: 30px;
+  border: 1px dashed var(--bs-border);
+  border-radius: 14px;
+  background: var(--bs-card);
+  text-align: center;
+}
+
+.blood-search-loading {
+  color: var(--bs-muted);
+}
+
+.blood-search-loading p,
+.blood-search-empty p {
+  max-width: 480px;
+  margin: 8px 0 0;
+  color: var(--bs-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.blood-search-empty h3 {
+  margin: 12px 0 0;
+  color: var(--bs-text);
+  font-size: 16px;
+}
+
+.blood-search-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--bs-primary-soft);
+  color: var(--bs-primary);
+}
+
+.blood-search-spin {
+  animation: blood-search-spin 0.9s linear infinite;
+}
+
+@keyframes blood-search-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* CARDS */
+.blood-donor-grid,
+.blood-requirement-results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.blood-donor-card,
+.blood-requirement-result-card {
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid var(--bs-border);
+  border-radius: 14px;
+  background: var(--bs-card);
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.035);
+}
+
+.blood-donor-card-header {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.blood-donor-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--bs-primary-soft);
+  color: var(--bs-primary);
+}
+
+.blood-donor-title {
+  min-width: 0;
+  flex: 1;
+}
+
+.blood-donor-title h3 {
+  margin: 0;
+  overflow: hidden;
+  color: var(--bs-text);
+  font-size: 14px;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.blood-donor-location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+  color: var(--bs-muted);
+  font-size: 11px;
+}
+
+.blood-donor-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 43px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 8px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+[data-theme="dark"] .blood-donor-group {
+  background: #3a1c20;
+  color: #fca5a5;
+}
+
+.blood-donor-verification {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #f0fdf4;
+  color: #15803d;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .blood-donor-verification {
+  background: #12251a;
+  color: #86efac;
+}
+
+.blood-donor-details {
+  display: grid;
+  gap: 8px;
+  padding: 13px 0;
+  color: var(--bs-muted);
+  font-size: 11px;
+}
+
+.blood-donor-details > div {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.blood-donor-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid var(--bs-border);
+}
+
+.blood-donor-contact,
+.blood-donor-details-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 11px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.blood-donor-save-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--bs-border);
+  border-radius: 8px;
+  background: var(--bs-card);
+  color: var(--bs-text);
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.blood-donor-save-button:hover:not(:disabled) {
+  border-color: var(--bs-primary);
+  color: var(--bs-primary);
+}
+
+.blood-donor-save-button.is-saved {
+  border-color: #93c5fd;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.blood-donor-save-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.blood-donor-contact {
+  flex: 1;
+  border: 1px solid var(--bs-primary);
+  background: var(--bs-primary);
+  color: #fff;
+}
+
+.blood-donor-details-button {
+  flex: 1;
+  border: 1px solid var(--bs-border);
+  background: var(--bs-card);
+  color: var(--bs-text);
+}
+
+/* REQUIREMENTS */
+.blood-requirement-result-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.blood-requirement-result-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.blood-requirement-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--bs-danger);
+}
+
+.blood-requirement-group strong {
+  font-size: 16px;
+}
+
+.blood-requirement-urgency {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 0 9px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.blood-requirement-urgency.normal {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.blood-requirement-urgency.urgent {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.blood-requirement-urgency.emergency {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+[data-theme="dark"] .blood-requirement-urgency.normal {
+  background: #172554;
+  color: #93c5fd;
+}
+
+[data-theme="dark"] .blood-requirement-urgency.urgent {
+  background: #2c1c10;
+  color: #fdba74;
+}
+
+[data-theme="dark"] .blood-requirement-urgency.emergency {
+  background: #321619;
+  color: #fca5a5;
+}
+
+.blood-requirement-result-card h3 {
+  margin: 15px 0 7px;
+  color: var(--bs-text);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.blood-requirement-result-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--bs-muted);
+  font-size: 11px;
+}
+
+.blood-requirement-result-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 15px 0 13px;
+}
+
+.blood-requirement-result-info > div {
+  padding: 10px;
+  border: 1px solid var(--bs-border);
+  border-radius: 9px;
+}
+
+.blood-requirement-result-info span,
+.blood-requirement-requester span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--bs-muted);
+  font-size: 10px;
+}
+
+.blood-requirement-result-info strong,
+.blood-requirement-requester strong {
+  display: block;
+  color: var(--bs-text);
+  font-size: 12px;
+}
+
+.blood-requirement-requester {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px;
+  margin-bottom: 13px;
+  border-radius: 9px;
+  background: var(--bs-page);
+}
+
+.blood-requirement-requester-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 31px;
+  width: 31px;
+  height: 31px;
+  border-radius: 8px;
+  background: var(--bs-primary-soft);
+  color: var(--bs-primary);
+}
+
+.blood-requirement-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  margin-top: auto;
+}
+
+.blood-requirement-contact-button,
+.blood-requirement-details-button,
+.blood-requirement-donate-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 37px;
+  padding: 0 9px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.blood-requirement-contact-button {
+  border: 1px solid var(--bs-primary);
+  background: var(--bs-primary);
+  color: #fff;
+}
+
+.blood-requirement-details-button {
+  border: 1px solid var(--bs-border);
+  background: var(--bs-card);
+  color: var(--bs-text);
+}
+
+.blood-requirement-donate-button {
+  border: 1px solid var(--bs-primary);
+  background: var(--bs-primary);
+  color: #fff;
+}
+
+.blood-requirement-card-actions .blood-requirement-donate-button {
+  grid-column: 1 / -1;
+}
+
+.blood-requirement-contact-button:hover,
+.blood-requirement-donate-button:hover:not(:disabled) {
+  background: var(--bs-primary-dark);
+}
+
+.blood-requirement-details-button:hover,
+.blood-requirement-modal-secondary:hover {
+  border-color: #cbd5e1;
+  background: var(--bs-page);
+}
+
+.blood-requirement-contact-button.disabled,
+.blood-requirement-donate-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* PRIVACY */
+.blood-search-privacy-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 13px 15px;
+  margin-top: 20px;
+  border: 1px solid var(--bs-border);
+  border-radius: 10px;
+  background: var(--bs-card);
+  color: var(--bs-muted);
+}
+
+.blood-search-privacy-notice svg {
+  flex: 0 0 auto;
+  color: var(--bs-primary);
+}
+
+.blood-search-privacy-notice p {
+  margin: 0;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+/* MODALS */
+.blood-donor-modal-overlay {
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.58);
+  backdrop-filter: blur(3px);
+}
+
+.blood-donor-modal {
+  width: min(650px, 100%);
+  max-height: min(760px, calc(100vh - 40px));
+  overflow-y: auto;
+  border: 1px solid var(--bs-border);
+  border-radius: 17px;
+  background: var(--bs-card);
+  box-shadow: 0 25px 70px rgba(15, 23, 42, 0.2);
+}
+
+.blood-donor-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px;
+  border-bottom: 1px solid var(--bs-border);
+}
+
+.blood-donor-modal-heading {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  gap: 12px;
+}
+
+.blood-donor-modal-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  background: var(--bs-primary-soft);
+  color: var(--bs-primary);
+}
+
+.blood-donor-modal-header h2 {
+  margin: 0;
+  color: var(--bs-text);
+  font-size: 19px;
+  line-height: 1.25;
+}
+
+.blood-donor-modal-location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  color: var(--bs-muted);
+  font-size: 11px;
+}
+
+.blood-donor-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--bs-border);
+  border-radius: 8px;
+  background: var(--bs-card);
+  color: var(--bs-muted);
+  cursor: pointer;
+}
+
+.blood-donor-modal-blood,
+.blood-requirement-modal-blood {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 20px;
+  padding: 13px;
+  border: 1px solid var(--bs-border);
+  border-radius: 11px;
+  background: var(--bs-page);
+}
+
+.blood-donor-modal-blood-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.blood-donor-modal-blood span,
+.blood-requirement-modal-blood span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--bs-muted);
+  font-size: 10px;
+}
+
+.blood-donor-modal-blood strong,
+.blood-requirement-modal-blood strong {
+  color: var(--bs-text);
+  font-size: 18px;
+}
+
+.blood-donor-modal-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.blood-donor-modal-detail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px;
+  border: 1px solid var(--bs-border);
+  border-radius: 10px;
+}
+
+.blood-donor-modal-detail-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--bs-primary-soft);
+  color: var(--bs-primary);
+}
+
+.blood-donor-modal-detail span {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--bs-muted);
+  font-size: 10px;
+}
+
+.blood-donor-modal-detail strong {
+  display: block;
+  color: var(--bs-text);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.blood-donor-modal-contact-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 18px 20px 0;
+  padding: 14px;
+  border: 1px solid var(--bs-border);
+  border-radius: 10px;
+}
+
+.blood-donor-modal-contact-section h3 {
+  margin: 0;
+  color: var(--bs-text);
+  font-size: 13px;
+}
+
+.blood-donor-modal-contact-section p {
+  max-width: 420px;
+  margin: 4px 0 0;
+  color: var(--bs-muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.blood-donor-modal-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  min-height: 36px;
+  padding: 0 12px;
+  border-radius: 8px;
+  background: var(--bs-primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.blood-donor-modal-no-contact {
+  color: var(--bs-muted);
+  font-size: 11px;
+}
+
+.blood-donor-modal-privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 14px 20px 20px;
+  padding: 11px;
+  border-radius: 9px;
+  background: var(--bs-page);
+  color: var(--bs-muted);
+}
+
+.blood-donor-modal-privacy p {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.blood-requirement-details-modal {
+  width: min(700px, 100%);
+}
+
+.blood-requirement-modal-blood {
+  justify-content: space-between;
+}
+
+.blood-requirement-modal-blood > div {
+  flex: 1;
+}
+
+.blood-requirement-reason {
+  margin: 16px 20px 0;
+  padding: 13px;
+  border: 1px solid var(--bs-border);
+  border-radius: 10px;
+}
+
+.blood-requirement-reason span {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--bs-muted);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.blood-requirement-reason p {
+  margin: 0;
+  color: var(--bs-text);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.blood-requirement-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 18px 20px 20px;
+}
+
+.blood-requirement-modal-secondary {
+  min-height: 37px;
+  padding: 0 14px;
+  border: 1px solid var(--bs-border);
+  border-radius: 8px;
+  background: var(--bs-card);
+  color: var(--bs-text);
+  font-size: 11px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.blood-requirement-modal-footer .blood-requirement-donate-button {
+  min-width: 145px;
+}
+
+/* DONATION CONFIRMATION */
+.blood-donation-confirm-modal {
+  width: min(590px, 100%);
+}
+
+.blood-donation-confirm-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  margin: 18px 20px;
+  padding: 13px;
+  border: 1px solid #bfdbfe;
+  border-radius: 11px;
+  background: var(--bs-primary-soft);
+}
+
+.blood-donation-confirm-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  background: var(--bs-card);
+  color: var(--bs-primary);
+}
+
+.blood-donation-confirm-message h3 {
+  margin: 1px 0 4px;
+  color: var(--bs-text);
+  font-size: 13px;
+}
+
+.blood-donation-confirm-message p {
+  margin: 0;
+  color: var(--bs-muted);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.blood-donation-confirm-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+  padding: 0 20px;
+}
+
+.blood-donation-confirm-summary > div {
+  padding: 11px;
+  border: 1px solid var(--bs-border);
+  border-radius: 9px;
+}
+
+.blood-donation-confirm-summary span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--bs-muted);
+  font-size: 10px;
+}
+
+.blood-donation-confirm-summary strong {
+  display: block;
+  color: var(--bs-text);
+  font-size: 11px;
+}
+
+.blood-donation-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 14px 20px 0;
+  padding: 11px 12px;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  background: #fef2f2;
+  color: #991b1b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.blood-donation-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 30px;
+  text-align: center;
+}
+
+.blood-donation-success-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.blood-donation-success h2 {
+  margin: 5px 0 8px;
+  color: var(--bs-text);
+  font-size: 21px;
+}
+
+.blood-donation-success p {
+  max-width: 410px;
+  margin: 0;
+  color: var(--bs-muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1100px) {
+  .blood-donor-grid,
+  .blood-requirement-results-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .blood-search-filter-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .blood-search-actions {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 720px) {
+  .blood-search-page {
+    padding: 20px 15px;
+  }
+
+  .blood-search-filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blood-search-actions {
+    grid-column: auto;
+  }
+
+  .blood-search-button,
+  .blood-search-clear-button {
+    flex: 1;
+  }
+
+  .blood-donor-grid,
+  .blood-requirement-results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blood-search-tabs {
+    overflow-x: auto;
+  }
+
+  .blood-search-tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .blood-donor-modal-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .blood-donor-modal {
+    max-height: 92vh;
+    border-radius: 17px 17px 0 0;
+  }
+
+  .blood-donor-modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blood-donor-modal-contact-section {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .blood-donor-modal-contact {
+    width: 100%;
+  }
+
+  .blood-requirement-modal-blood {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .blood-requirement-modal-blood .blood-requirement-urgency {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+
+  .blood-requirement-card-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .blood-requirement-card-actions .blood-requirement-donate-button {
+    grid-column: auto;
+  }
+
+  .blood-donation-confirm-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .blood-requirement-modal-footer {
+    flex-direction: column-reverse;
+  }
+
+  .blood-requirement-modal-footer > button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .blood-search-page {
+    padding: 16px 11px;
+  }
+
+  .blood-donor-card,
+  .blood-requirement-result-card {
+    padding: 14px;
+  }
+
+  .blood-donor-card-footer {
+    flex-direction: column;
+  }
+
+  .blood-donor-contact,
+  .blood-donor-details-button {
+    width: 100%;
+  }
+
+  .blood-donor-modal-header {
+    padding: 16px;
+  }
+
+  .blood-donor-modal-grid {
+    padding: 0 16px;
+  }
+
+  .blood-donor-modal-contact-section {
+    margin: 16px;
+  }
+
+  .blood-donor-modal-privacy {
+    margin: 12px 16px 16px;
+  }
+}
+
+
+@media (max-width: 560px) {
+  .blood-donor-card-footer {
+    flex-wrap: wrap;
+  }
+  .blood-donor-save-button {
+    flex: 0 0 100%;
+  }
+}

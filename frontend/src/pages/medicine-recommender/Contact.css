@@ -1,0 +1,742 @@
+/* ============================================================
+   MEDVISIONRX - MEDICINE RECOMMENDER CONTACT PAGE
+   Reference-based layout matching the supplied service contact page
+============================================================ */
+
+.medicine-contact-page {
+  width: 100%;
+  min-height: 100%;
+  background: #f5f9fe;
+  color: #172033;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.medicine-contact-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   HERO
+============================================================ */
+
+.medicine-contact-hero {
+  position: relative;
+  min-height: 300px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  align-items: center;
+  gap: 65px;
+  padding: 42px 10.5%;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 6% 92%, rgba(16, 185, 129, 0.07), transparent 17%),
+    radial-gradient(circle at 97% 8%, rgba(37, 99, 235, 0.08), transparent 20%),
+    linear-gradient(110deg, #f4f9ff, #eef7ff 56%, #ffffff);
+}
+
+.medicine-contact-hero::after {
+  position: absolute;
+  right: -80px;
+  top: -90px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.035);
+  content: "";
+}
+
+.medicine-contact-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.medicine-contact-glow-left {
+  width: 85px;
+  height: 85px;
+  left: -18px;
+  bottom: -30px;
+  background: rgba(16, 185, 129, 0.06);
+}
+
+.medicine-contact-glow-right {
+  width: 130px;
+  height: 130px;
+  right: 110px;
+  bottom: -75px;
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.medicine-contact-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+}
+
+.medicine-contact-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 22px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #64748b;
+  font-size: 9px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.medicine-contact-back:hover {
+  color: #2563eb;
+}
+
+.medicine-contact-eyebrow,
+.medicine-contact-small-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #2563eb;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.medicine-contact-hero h1 {
+  margin: 10px 0 9px;
+  color: #172238;
+  font-size: clamp(34px, 4vw, 51px);
+  line-height: 1.03;
+  font-weight: 820;
+  letter-spacing: -0.04em;
+}
+
+.medicine-contact-hero h1 span {
+  color: #2563eb;
+}
+
+.medicine-contact-hero-content > p {
+  max-width: 610px;
+  margin: 0;
+  color: #71849a;
+  font-size: 10px;
+  line-height: 1.65;
+}
+
+.medicine-contact-hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 16px;
+}
+
+.medicine-contact-hero-chips span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  border: 1px solid #d7e8f5;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: #587088;
+  font-size: 7px;
+  font-weight: 700;
+}
+
+.medicine-contact-hero-chips svg {
+  color: #16a34a;
+}
+
+/* HERO SUPPORT CARD */
+
+.medicine-contact-support-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  min-height: 185px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  overflow: hidden;
+  border: 1px solid #d7e8fa;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 18px 45px rgba(37, 99, 235, 0.08);
+  text-align: center;
+}
+
+.medicine-contact-support-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: #eaf3ff;
+  color: #2563eb;
+}
+
+.medicine-contact-support-card > span {
+  color: #2563eb;
+  font-size: 6px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.medicine-contact-support-card h2 {
+  margin: 7px 0 3px;
+  color: #1e2e45;
+  font-size: 16px;
+  line-height: 1.05;
+}
+
+.medicine-contact-support-card p {
+  margin: 0;
+  color: #8a9bad;
+  font-size: 7px;
+}
+
+.medicine-contact-support-watermark {
+  position: absolute;
+  right: 11px;
+  bottom: 7px;
+  color: rgba(37, 99, 235, 0.08);
+}
+
+/* ============================================================
+   SUPPORT TYPES
+============================================================ */
+
+.medicine-contact-types-section {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 14px 10.5% 10px;
+  background: #ffffff;
+}
+
+.medicine-contact-type-card {
+  min-height: 96px;
+  padding: 13px;
+  border: 1px solid #e1ebf4;
+  border-radius: 11px;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(37, 83, 124, 0.045);
+}
+
+.medicine-contact-type-icon {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}
+
+.medicine-contact-blue .medicine-contact-type-icon {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.medicine-contact-purple .medicine-contact-type-icon {
+  color: #8b5cf6;
+  background: #f5f3ff;
+}
+
+.medicine-contact-green .medicine-contact-type-icon {
+  color: #10b981;
+  background: #ecfdf5;
+}
+
+.medicine-contact-type-card h3 {
+  margin: 0 0 4px;
+  color: #21334b;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.medicine-contact-type-card p {
+  margin: 0;
+  color: #788ba0;
+  font-size: 7px;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   MAIN CONTACT SECTION
+============================================================ */
+
+.medicine-contact-main-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) 300px;
+  gap: 12px;
+  max-width: 820px;
+  margin: 6px auto 0;
+  padding: 0 10.5% 40px;
+  background: #ffffff;
+}
+
+.medicine-contact-form-card,
+.medicine-contact-info-card {
+  border: 1px solid #deebf5;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(42, 86, 123, 0.05);
+}
+
+.medicine-contact-form-card {
+  padding: 16px;
+}
+
+.medicine-contact-form-card h2,
+.medicine-contact-info-card h2 {
+  margin: 5px 0 3px;
+  color: #1b2f47;
+  font-size: 15px;
+  line-height: 1.1;
+  font-weight: 800;
+}
+
+.medicine-contact-form-intro {
+  margin: 0 0 13px;
+  color: #7c8ea1;
+  font-size: 7px;
+  line-height: 1.5;
+}
+
+.medicine-contact-form-card form {
+  display: grid;
+  gap: 5px;
+}
+
+.medicine-contact-form-card label {
+  margin-top: 2px;
+  color: #3e536a;
+  font-size: 7px;
+  font-weight: 700;
+}
+
+.medicine-contact-form-card label span {
+  color: #ef4444;
+}
+
+.medicine-contact-form-card input,
+.medicine-contact-form-card select,
+.medicine-contact-form-card textarea {
+  width: 100%;
+  border: 1px solid #d7e4ef;
+  border-radius: 6px;
+  outline: none;
+  background: #ffffff;
+  color: #334a62;
+  font: inherit;
+  font-size: 7px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.medicine-contact-form-card input,
+.medicine-contact-form-card select {
+  height: 31px;
+  padding: 0 9px;
+}
+
+.medicine-contact-form-card textarea {
+  min-height: 66px;
+  padding: 8px 9px;
+  resize: vertical;
+}
+
+.medicine-contact-form-card input::placeholder,
+.medicine-contact-form-card textarea::placeholder {
+  color: #a0afbd;
+}
+
+.medicine-contact-form-card input:focus,
+.medicine-contact-form-card select:focus,
+.medicine-contact-form-card textarea:focus {
+  border-color: #6ca8ef;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.07);
+}
+
+.medicine-contact-send-button {
+  min-height: 31px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 2px;
+  border: 1px solid #2563eb;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #ffffff;
+  font-size: 7px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+.medicine-contact-send-button:hover {
+  filter: brightness(1.07);
+  transform: translateY(-1px);
+}
+
+.medicine-contact-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ============================================================
+   CONTACT INFO
+============================================================ */
+
+.medicine-contact-info-card {
+  padding: 15px;
+}
+
+.medicine-contact-info-card h2 strong {
+  color: #2563eb;
+}
+
+.medicine-contact-method {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 13px;
+}
+
+.medicine-contact-method-icon {
+  width: 31px;
+  height: 31px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+}
+
+.medicine-contact-method-icon.mail {
+  color: #2563eb;
+  background: #eaf3ff;
+}
+
+.medicine-contact-method-icon.phone {
+  color: #16a34a;
+  background: #ecfdf5;
+}
+
+.medicine-contact-method-icon.whatsapp {
+  color: #10b981;
+  background: #ecfdf5;
+}
+
+.medicine-contact-method h3 {
+  margin: 1px 0 2px;
+  color: #2d4259;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.medicine-contact-method a {
+  display: inline-block;
+  color: #2563eb;
+  font-size: 7px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.medicine-contact-method a:hover {
+  text-decoration: underline;
+}
+
+.medicine-contact-method p {
+  margin: 2px 0 0;
+  color: #96a5b4;
+  font-size: 6.5px;
+  line-height: 1.4;
+}
+
+/* SUPPORT HOURS */
+
+.medicine-contact-hours-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 60px;
+  padding: 10px 12px;
+  border: 1px solid #d9e9fc;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #f3f8ff, #f7fbff);
+}
+
+.medicine-contact-hours-icon {
+  width: 31px;
+  height: 31px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #2563eb;
+  border: 1px solid #dceafa;
+}
+
+.medicine-contact-hours-card h3 {
+  margin: 0 0 2px;
+  color: #334b64;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.medicine-contact-hours-card p,
+.medicine-contact-hours-card span {
+  display: block;
+  margin: 0;
+  color: #8396a8;
+  font-size: 6.5px;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   THANK YOU
+============================================================ */
+
+.medicine-contact-thankyou {
+  position: relative;
+  max-width: 820px;
+  min-height: 60px;
+  display: grid;
+  grid-template-columns: 31px minmax(0, 1fr);
+  align-items: center;
+  gap: 9px;
+  margin: 0 auto 35px;
+  padding: 10px 13px;
+  overflow: hidden;
+  border: 1px solid #d7e8fa;
+  border-radius: 10px;
+  background: linear-gradient(100deg, #eef7ff, #f7fbff);
+}
+
+.medicine-contact-thankyou-icon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #fff0f4;
+  color: #f43f5e;
+}
+
+.medicine-contact-thankyou h3 {
+  margin: 0 0 2px;
+  color: #33485f;
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.medicine-contact-thankyou p {
+  max-width: 650px;
+  margin: 0;
+  color: #7b8da0;
+  font-size: 6.5px;
+  line-height: 1.45;
+}
+
+.medicine-contact-thankyou-watermark {
+  position: absolute;
+  right: 12px;
+  color: rgba(37, 99, 235, 0.08);
+}
+
+/* ============================================================
+   DARK MODE
+============================================================ */
+
+.medicine-dark .medicine-contact-page {
+  background: #0a1728;
+  color: #e8f0f8;
+}
+
+.medicine-dark .medicine-contact-hero {
+  background:
+    radial-gradient(circle at 6% 92%, rgba(16, 185, 129, 0.06), transparent 17%),
+    radial-gradient(circle at 97% 8%, rgba(37, 99, 235, 0.09), transparent 20%),
+    linear-gradient(110deg, #091a2d, #0b223a 56%, #0d1c2e);
+}
+
+.medicine-dark .medicine-contact-hero h1,
+.medicine-dark .medicine-contact-support-card h2,
+.medicine-dark .medicine-contact-form-card h2,
+.medicine-dark .medicine-contact-info-card h2,
+.medicine-dark .medicine-contact-type-card h3,
+.medicine-dark .medicine-contact-method h3,
+.medicine-dark .medicine-contact-hours-card h3,
+.medicine-dark .medicine-contact-thankyou h3 {
+  color: #edf5ff;
+}
+
+.medicine-dark .medicine-contact-hero-content > p,
+.medicine-dark .medicine-contact-type-card p,
+.medicine-dark .medicine-contact-form-intro,
+.medicine-dark .medicine-contact-method p,
+.medicine-dark .medicine-contact-hours-card p,
+.medicine-dark .medicine-contact-hours-card span,
+.medicine-dark .medicine-contact-thankyou p {
+  color: #8ea6bd;
+}
+
+.medicine-dark .medicine-contact-support-card,
+.medicine-dark .medicine-contact-type-card,
+.medicine-dark .medicine-contact-form-card,
+.medicine-dark .medicine-contact-info-card {
+  border-color: #244563;
+  background: #0f2942;
+}
+
+.medicine-dark .medicine-contact-types-section,
+.medicine-dark .medicine-contact-main-section {
+  background: #0b1b2f;
+}
+
+.medicine-dark .medicine-contact-hero-chips span {
+  border-color: #2b4d6c;
+  background: rgba(15, 40, 62, 0.9);
+  color: #a5bbcf;
+}
+
+.medicine-dark .medicine-contact-form-card label {
+  color: #a6bbcd;
+}
+
+.medicine-dark .medicine-contact-form-card input,
+.medicine-dark .medicine-contact-form-card select,
+.medicine-dark .medicine-contact-form-card textarea {
+  border-color: #31516e;
+  background: #0b2035;
+  color: #dbe8f3;
+}
+
+.medicine-dark .medicine-contact-form-card input::placeholder,
+.medicine-dark .medicine-contact-form-card textarea::placeholder {
+  color: #6f879c;
+}
+
+.medicine-dark .medicine-contact-hours-card,
+.medicine-dark .medicine-contact-thankyou {
+  border-color: #244563;
+  background: linear-gradient(100deg, #0f2942, #11263b);
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 950px) {
+  .medicine-contact-hero {
+    grid-template-columns: minmax(0, 1fr) 230px;
+    gap: 35px;
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+
+  .medicine-contact-types-section,
+  .medicine-contact-main-section {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}
+
+@media (max-width: 780px) {
+  .medicine-contact-hero {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 34px 24px 40px;
+  }
+
+  .medicine-contact-hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .medicine-contact-back {
+    justify-content: center;
+  }
+
+  .medicine-contact-hero h1 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .medicine-contact-hero-content > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .medicine-contact-hero-chips {
+    justify-content: center;
+  }
+
+  .medicine-contact-support-card {
+    width: min(275px, 100%);
+    justify-self: center;
+  }
+
+  .medicine-contact-types-section {
+    grid-template-columns: 1fr;
+    max-width: 570px;
+  }
+
+  .medicine-contact-main-section {
+    grid-template-columns: 1fr;
+    max-width: 650px;
+  }
+
+  .medicine-contact-right-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .medicine-contact-thankyou {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .medicine-contact-hero {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .medicine-contact-hero h1 {
+    font-size: 32px;
+  }
+
+  .medicine-contact-types-section,
+  .medicine-contact-main-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .medicine-contact-right-column {
+    display: flex;
+  }
+
+  .medicine-contact-thankyou {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+.medicine-contact-success, .medicine-contact-error { padding: 12px; margin: 14px 0; border-radius: 8px; font-size: 12px; line-height: 1.6; }
+.medicine-contact-success { background: #eaf8ef; color: #216b42; border: 1px solid #b9dfc6; }
+.medicine-contact-error { background: #fff1f2; color: #ab3048; border: 1px solid #f2c4cd; }
+.medicine-contact-send-button:disabled { opacity: .6; cursor: not-allowed; }
+[data-theme="dark"] .medicine-contact-success { background: #153226; color: #a4dfbb; border-color: #35634a; }
+[data-theme="dark"] .medicine-contact-error { background: #38202a; color: #f2b5c2; border-color: #71404b; }
