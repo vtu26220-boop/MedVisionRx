@@ -1,0 +1,13 @@
+*
+!Dockerfile
+!requirements-deploy.txt
+!requirements-admin.txt
+!requirements-prescription.txt
+!app/
+!app/**
+app/uploads/
+app/models/prescription/
+**/__pycache__/
+**/*.pyc
+**/.env
+**/*service-account*.json

@@ -9,7 +9,7 @@ from pymongo.errors import DuplicateKeyError
 from bson import ObjectId
 from fastapi import APIRouter, Depends, HTTPException, Query
 from fastapi.concurrency import run_in_threadpool
-from fastapi.responses import FileResponse, JSONResponse
+from fastapi.responses import JSONResponse
 from firebase_admin import auth
 from pydantic import BaseModel, EmailStr, Field, StringConstraints, ValidationError, AwareDatetime
 
@@ -55,7 +55,7 @@ def safe(value):
     if isinstance(value, (datetime, ObjectId)):
         return value.isoformat() if isinstance(value, datetime) else str(value)
     if isinstance(value, list): return [safe(v) for v in value]
-    if isinstance(value, dict): return {k: safe(v) for k, v in value.items() if k not in {"file_path", "password", "password_hash", "profileImageUrl", "raw_text"}}
+    if isinstance(value, dict): return {k: safe(v) for k, v in value.items() if k not in {"file_path", "storage_file_id", "storage_provider", "password", "password_hash", "profileImageUrl", "raw_text"}}
     return value
 
 
@@ -329,12 +329,10 @@ async def clinical_access(identifier: str, body: AccessReason, actor=Depends(rev
 async def original(identifier: str, body: AccessReason, actor=Depends(reviewer)):
     row = await database["prescriptions"].find_one({"_id": identifier})
     if not row: raise HTTPException(404, "Prescription not found.")
-    from app.services.prescription_service import STORAGE
-    path = Path(row.get("file_path", "")).resolve()
-    if path.parent != STORAGE.resolve() or not path.is_file(): raise HTTPException(404, "Original file unavailable.")
+    from app.services.prescription_storage import original_response
+    response = await original_response(row)
     await audit(actor, "prescription_original_viewed", "prescriptions", identifier, body.reason)
-    media = "application/pdf" if path.suffix == ".pdf" else "image/png" if path.suffix == ".png" else "image/jpeg"
-    return FileResponse(path, media_type=media, headers={"Cache-Control": "private, no-store"})
+    return response
 
 
 @router.post("/support/request", status_code=201)

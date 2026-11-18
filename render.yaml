@@ -1,0 +1,22 @@
+# Create only a Free backend; configure secrets privately in the Render dashboard.
+services:
+  - type: web
+    name: medvisionrx-api
+    runtime: docker
+    plan: free
+    rootDir: backend
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: DATABASE_NAME
+        value: medvisionrx
+      - key: CORS_ORIGINS
+        sync: false
+      - key: MEDVISION_ADMIN_UIDS
+        sync: false
+      - key: PRESCRIPTION_STORAGE
+        value: gridfs
+      - key: PRESCRIPTION_OCR_PROVIDER
+        value: local

@@ -47,6 +47,10 @@ Configure Firebase web authentication in `frontend/src/firebase.ts` for your own
 
 Open the local URL printed by Vite. API documentation is available at http://127.0.0.1:8000/docs while the backend runs.
 
+## Deployment
+
+See [free hosting setup](docs/DEPLOYMENT.md) for the prepared Render backend and Vercel frontend configuration. Prescription originals can be stored privately in the existing Atlas database; never publish them in this repository.
+
 ## Configuration and documentation
 
 - [Prescription setup](backend/PRESCRIPTION_SETUP.md)

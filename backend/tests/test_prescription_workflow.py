@@ -63,6 +63,7 @@ class PrescriptionWorkflowTests(unittest.TestCase):
         self.storage = Path(self.temp.name)
         self.collection = Collection()
         self.patches = [
+            patch.dict(os.environ, {"PRESCRIPTION_STORAGE": "local"}),
             patch.object(api, "STORAGE", self.storage), patch.object(service, "STORAGE", self.storage),
             patch.object(api, "prescriptions_collection", self.collection), patch.object(service, "prescriptions_collection", self.collection),
             patch.object(api, "capabilities", return_value={"available": True, "provider": "Test OCR", "pdf": True}),

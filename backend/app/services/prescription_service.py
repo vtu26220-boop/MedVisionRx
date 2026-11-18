@@ -7,6 +7,7 @@ from pathlib import Path
 from fastapi.concurrency import run_in_threadpool
 
 from app.db.mongodb import database
+from app.services.prescription_storage import delete_original
 from app.services.prescription_ocr import extract_document, image_pages
 from app.services.prescription_name_index import recognized_name
 from app.services.prescription_structure import extract_document_details, extract_prescribed_instructions, is_instruction_continuation
@@ -21,7 +22,7 @@ STORAGE = Path(__file__).resolve().parents[1] / "uploads" / "prescription-privat
 def serialize(document):
     if not document:
         return None
-    result = {key: value for key, value in document.items() if key not in {"_id", "file_path", "user_id"}}
+    result = {key: value for key, value in document.items() if key not in {"_id", "file_path", "user_id", "storage_file_id", "storage_provider"}}
     result["id"] = str(document["_id"])
     # Older saved uploads gain a readable view from stored text only. No OCR or
     # external medicine lookup is rerun and the stored record is not changed.
@@ -156,10 +157,11 @@ async def reference_candidates(medicines, rows):
     return await enrich_references(medicines, rows)
 
 
-async def analyze_prescription(*, file_path, filename, user_id, prescription_id):
-    path = Path(file_path)
-    pages = await run_in_threadpool(image_pages, path.read_bytes(), path.suffix)
-    ocr = await run_in_threadpool(extract_document, pages, path.parent)
+async def analyze_prescription(*, filename, user_id, prescription_id, file_path=None, file_content=None):
+    # Hosted uploads need no local disk; preserve the optional legacy file input.
+    content = file_content if file_content is not None else await run_in_threadpool(Path(file_path).read_bytes)
+    pages = await run_in_threadpool(image_pages, content, Path(filename).suffix.lower())
+    ocr = await run_in_threadpool(extract_document, pages, STORAGE)
     if not ocr["text"]:
         raise ValueError("No readable text was found. Upload a clearer image or ask a pharmacist to read the prescription.")
     rows = await catalogue()
@@ -224,11 +226,9 @@ async def delete_prescription(prescription_id, user_id):
     existing = await prescriptions_collection.find_one(query)
     if existing and existing.get("status") == "processing":
         raise ValueError("Wait for this upload to finish processing before deleting it.")
-    document = await prescriptions_collection.find_one_and_delete(query)
-    if not document:
+    if not existing:
         return False
-    # Only a server-generated private upload can be removed.
-    path = Path(document.get("file_path", "")).resolve()
-    if path.parent == STORAGE.resolve() and path.is_file():
-        path.unlink(missing_ok=True)
-    return True
+    # Keep the history row if storage deletion fails, so cleanup can be retried.
+    await delete_original(existing, STORAGE)
+    document = await prescriptions_collection.find_one_and_delete(query)
+    return bool(document)

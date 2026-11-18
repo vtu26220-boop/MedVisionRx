@@ -17,9 +17,12 @@ BACKEND_DIR = os.path.dirname(
     )
 )
 
-SERVICE_ACCOUNT_PATH = os.path.join(
-    BACKEND_DIR,
-    "firebase-service-account.json",
+# Render mounts private secret files under /etc/secrets. Local setup still works.
+SERVICE_ACCOUNT_PATH = (
+    os.getenv("FIREBASE_SERVICE_ACCOUNT_PATH")
+    or os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+    or ("/etc/secrets/firebase-service-account.json" if os.path.isfile("/etc/secrets/firebase-service-account.json")
+        else os.path.join(BACKEND_DIR, "firebase-service-account.json"))
 )
 
 

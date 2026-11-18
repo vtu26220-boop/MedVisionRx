@@ -4,11 +4,12 @@ from uuid import UUID, uuid4
 
 from fastapi import APIRouter, Depends, File, Header, HTTPException, UploadFile
 from fastapi.concurrency import run_in_threadpool
-from fastapi.responses import FileResponse
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from pydantic import BaseModel, Field, field_validator
 
 from app.core.firebase_admin import verify_firebase_token
+from pymongo.errors import DuplicateKeyError
+from app.services.prescription_storage import save_original, original_response
 from app.services.prescription_ocr import capabilities, image_pages
 from app.services.prescription_service import (
     STORAGE, analyze_prescription, confirm_prescription, delete_prescription,
@@ -111,17 +112,19 @@ async def scan(file: UploadFile = File(...), user_id: str = Depends(current_user
             raise HTTPException(409, "This upload is still processing. Open History in a moment.")
         return {"success": True, "data": existing}
     # Never trust a client-supplied owner ID or filename as a storage path.
-    STORAGE.mkdir(parents=True, exist_ok=True)
-    path = STORAGE / f"{identifier}{extension}"
     if await prescriptions_collection.find_one({"_id": identifier}):
         raise HTTPException(409, "Upload identifier already exists. Start a new upload.")
     now = datetime.now(timezone.utc)
     document = {"_id": identifier, "user_id": user_id, "filename": Path(file.filename or "prescription").name,
-                "file_path": str(path), "status": "processing", "medicines": [], "created_at": now, "updated_at": now, "version": 1}
-    await prescriptions_collection.insert_one(document)
+                "status": "processing", "medicines": [], "created_at": now, "updated_at": now, "version": 1}
     try:
-        path.write_bytes(content)
-        result = await analyze_prescription(file_path=str(path), filename=document["filename"], user_id=user_id, prescription_id=identifier)
+        await prescriptions_collection.insert_one(document)
+    except DuplicateKeyError:
+        raise HTTPException(409, "Upload identifier already exists. Open History or start a new upload.") from None
+    try:
+        stored = await save_original(identifier, user_id, extension, content, STORAGE)
+        await prescriptions_collection.update_one({"_id": identifier, "user_id": user_id}, {"$set": stored})
+        result = await analyze_prescription(file_content=content, filename=document["filename"], user_id=user_id, prescription_id=identifier)
         return {"success": True, "data": result}
     except Exception as exc:
         message = str(exc) if isinstance(exc, (ValueError, RuntimeError)) else "Analysis failed. Try a clearer image or check OCR configuration."
@@ -153,13 +156,9 @@ async def review(prescription_id: str, body: Review, user_id: str = Depends(curr
 @router.get("/{prescription_id}/original")
 async def original(prescription_id: str, user_id: str = Depends(current_user)):
     row = await prescriptions_collection.find_one({"_id": prescription_id, "user_id": user_id})
-    if not row or not row.get("file_path"):
+    if not row:
         raise HTTPException(404, "Original file not found.")
-    path = Path(row["file_path"]).resolve()
-    if path.parent != STORAGE.resolve() or not path.is_file():
-        raise HTTPException(404, "Original file not found.")
-    media = "application/pdf" if path.suffix == ".pdf" else "image/png" if path.suffix == ".png" else "image/jpeg"
-    return FileResponse(path, media_type=media, headers={"Cache-Control": "private, no-store"})
+    return await original_response(row, STORAGE)
 
 
 @router.get("/{prescription_id}/report")
