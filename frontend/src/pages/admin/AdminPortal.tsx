@@ -92,12 +92,12 @@ function LoginScreen({ error: accessError }: { error: string }) {
       {notice && <div className="ad-notice" role="status">{notice}</div>}
       {auth.currentUser && accessError ? <>
         <p>Signed in as {auth.currentUser.email}. This session has no verified administrator access.</p>
-        <button className="ad-primary" disabled={busy} onClick={() => void signOutAdministrator()}>Switch account</button>
+        <button className="admin-login-submit" disabled={busy} onClick={() => void signOutAdministrator()}>Switch account</button>
       </> : <form onSubmit={login}>
         <label>Email address<input type="email" autoComplete="username" required value={email} onChange={(event) => setEmail(event.target.value)} /></label>
         <label>Password<input type="password" autoComplete="current-password" required minLength={6} value={password} onChange={(event) => setPassword(event.target.value)} /></label>
-        <button type="button" className="ad-link ad-forgot-password" disabled={busy || !email} onClick={reset}>Forgot password?</button>
-        <button type="submit" className="ad-primary" disabled={busy}>{busy ? "Signing in..." : "Sign in to Admin Portal"}</button>
+        <button type="button" className="admin-login-reset" disabled={busy || !email} onClick={reset}>Forgot password?</button>
+        <button type="submit" className="admin-login-submit" disabled={busy}>{busy ? "Signing in..." : "Sign in to Admin Portal"}</button>
       </form>}
       <Link className="ad-secondary ad-return-website" to="/services"><ExternalLink size={16} />Return to website</Link>
     </section>

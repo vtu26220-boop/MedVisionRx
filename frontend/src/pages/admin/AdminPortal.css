@@ -226,3 +226,17 @@
 .ad-support-conversation { max-height:290px; overflow:auto; margin-bottom:20px; }
 .ad-support-conversation article { border-bottom:1px solid var(--ad-border); padding:10px 0; }
 .ad-support-conversation article>div { display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+
+/* Keep authentication controls independent of generic ad-* class filters. */
+.ad-login-card .admin-login-submit {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 100%; min-height: 43px; margin: 0 0 15px; padding: 9px 15px;
+  border: 1px solid #1c60e8; border-radius: 8px; background: #1c60e8;
+  color: #fff; font-size: 13px; font-weight: 650; cursor: pointer;
+}
+.ad-login-card .admin-login-submit:hover { background: #164fc1; }
+.ad-login-card .admin-login-reset {
+  display: block; width: fit-content; margin: -4px 0 20px auto; padding: 4px 0;
+  border: 0; background: transparent; color: var(--ad-blue);
+  text-align: right; font-size: 12px; font-weight: 600; cursor: pointer;
+}
